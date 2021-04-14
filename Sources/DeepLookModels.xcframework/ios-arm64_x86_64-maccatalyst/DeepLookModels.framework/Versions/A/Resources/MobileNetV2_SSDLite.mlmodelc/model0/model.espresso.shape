@@ -1,0 +1,1840 @@
+{
+  "layer_shapes" : {
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_15\/expand\/Relu6:0" : {
+      "k" : 960,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv\/depthwise\/Relu6:0" : {
+      "k" : 32,
+      "w" : 150,
+      "n" : 1,
+      "h" : 150
+    },
+    "BoxPredictor_1\/Reshape:0" : {
+      "k" : 4,
+      "w" : 1,
+      "n" : 1,
+      "h" : 600
+    },
+    "concat:0_concat" : {
+      "k" : 1917,
+      "w" : 1,
+      "n" : 1,
+      "h" : 4
+    },
+    "BoxPredictor_0\/BoxEncodingPredictor\/BiasAdd:0" : {
+      "k" : 12,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "BoxPredictor_0\/Reshape:0_swap_H_C_0" : {
+      "k" : 1083,
+      "w" : 1,
+      "n" : 1,
+      "h" : 4
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_6\/expand\/Relu6:0" : {
+      "k" : 192,
+      "w" : 38,
+      "n" : 1,
+      "h" : 38
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_8\/depthwise\/Relu6:0_clip" : {
+      "k" : 384,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_3\/project\/BatchNorm\/batchnorm\/add_1:0" : {
+      "k" : 32,
+      "w" : 38,
+      "n" : 1,
+      "h" : 38
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_2\/depthwise\/Relu6:0_neg" : {
+      "k" : 144,
+      "w" : 75,
+      "n" : 1,
+      "h" : 75
+    },
+    "BoxPredictor_2\/ClassPredictor\/BiasAdd:0" : {
+      "k" : 546,
+      "w" : 5,
+      "n" : 1,
+      "h" : 5
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_2\/depthwise\/Relu6:0" : {
+      "k" : 144,
+      "w" : 75,
+      "n" : 1,
+      "h" : 75
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_15\/depthwise\/Relu6:0" : {
+      "k" : 960,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/layer_19_1_Conv2d_4_1x1_128\/Relu6:0_clip" : {
+      "k" : 128,
+      "w" : 3,
+      "n" : 1,
+      "h" : 3
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_11\/expand\/Relu6:0_neg" : {
+      "k" : 576,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_BoxPredictor_2\/BoxEncodingPredictor_depthwise\/Relu6:0" : {
+      "k" : 512,
+      "w" : 5,
+      "n" : 1,
+      "h" : 5
+    },
+    "relu_BoxPredictor_5\/BoxEncodingPredictor_depthwise\/Relu6:0_neg" : {
+      "k" : 128,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "relu_BoxPredictor_0\/ClassPredictor_depthwise\/Relu6:0_clip" : {
+      "k" : 576,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/layer_19_2_Conv2d_3_3x3_s2_256\/Relu6:0" : {
+      "k" : 256,
+      "w" : 3,
+      "n" : 1,
+      "h" : 3
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_1\/depthwise\/Relu6:0_neg" : {
+      "k" : 96,
+      "w" : 75,
+      "n" : 1,
+      "h" : 75
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_4\/expand\/Relu6:0" : {
+      "k" : 192,
+      "w" : 38,
+      "n" : 1,
+      "h" : 38
+    },
+    "relu_BoxPredictor_5\/BoxEncodingPredictor_depthwise\/Relu6:0" : {
+      "k" : 128,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_12\/project\/BatchNorm\/batchnorm\/add_1:0" : {
+      "k" : 96,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_BoxPredictor_0\/ClassPredictor_depthwise\/Relu6:0" : {
+      "k" : 576,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_1\/expand\/Relu6:0" : {
+      "k" : 96,
+      "w" : 150,
+      "n" : 1,
+      "h" : 150
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_4\/add:0" : {
+      "k" : 32,
+      "w" : 38,
+      "n" : 1,
+      "h" : 38
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_7\/add:0" : {
+      "k" : 64,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/layer_19_2_Conv2d_3_3x3_s2_256_depthwise\/Relu6:0" : {
+      "k" : 128,
+      "w" : 3,
+      "n" : 1,
+      "h" : 3
+    },
+    "FeatureExtractor\/MobilenetV2\/Conv\/Relu6:0" : {
+      "k" : 32,
+      "w" : 150,
+      "n" : 1,
+      "h" : 150
+    },
+    "relu_BoxPredictor_4\/ClassPredictor_depthwise\/Relu6:0_clip" : {
+      "k" : 256,
+      "w" : 2,
+      "n" : 1,
+      "h" : 2
+    },
+    "BoxPredictor_5\/ClassPredictor\/BiasAdd:0" : {
+      "k" : 546,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/layer_19_2_Conv2d_2_3x3_s2_512_depthwise\/Relu6:0" : {
+      "k" : 256,
+      "w" : 5,
+      "n" : 1,
+      "h" : 5
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_15\/project\/BatchNorm\/batchnorm\/add_1:0" : {
+      "k" : 160,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "BoxPredictor_3\/Reshape_1:0" : {
+      "k" : 91,
+      "w" : 54,
+      "n" : 1,
+      "h" : 1
+    },
+    "BoxPredictor_1\/BoxEncodingPredictor_depthwise\/Relu6:0" : {
+      "k" : 1280,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "FeatureExtractor\/MobilenetV2\/layer_19_1_Conv2d_4_1x1_128\/Relu6:0" : {
+      "k" : 128,
+      "w" : 3,
+      "n" : 1,
+      "h" : 3
+    },
+    "relu_BoxPredictor_5\/ClassPredictor_depthwise\/Relu6:0_neg" : {
+      "k" : 128,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_1\/depthwise\/Relu6:0_clip" : {
+      "k" : 96,
+      "w" : 75,
+      "n" : 1,
+      "h" : 75
+    },
+    "BoxPredictor_3\/Reshape:0_swap_H_C_3" : {
+      "k" : 54,
+      "w" : 1,
+      "n" : 1,
+      "h" : 4
+    },
+    "FeatureExtractor\/MobilenetV2\/layer_19_2_Conv2d_2_3x3_s2_512\/Relu6:0" : {
+      "k" : 512,
+      "w" : 5,
+      "n" : 1,
+      "h" : 5
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_14\/depthwise\/Relu6:0_neg" : {
+      "k" : 960,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_4\/depthwise\/Relu6:0" : {
+      "k" : 192,
+      "w" : 38,
+      "n" : 1,
+      "h" : 38
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/layer_19_1_Conv2d_3_1x1_128\/Relu6:0_neg" : {
+      "k" : 128,
+      "w" : 5,
+      "n" : 1,
+      "h" : 5
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_2\/expand\/Relu6:0_clip" : {
+      "k" : 144,
+      "w" : 75,
+      "n" : 1,
+      "h" : 75
+    },
+    "FeatureExtractor\/MobilenetV2\/layer_19_2_Conv2d_4_3x3_s2_256\/Relu6:0" : {
+      "k" : 256,
+      "w" : 2,
+      "n" : 1,
+      "h" : 2
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_3\/depthwise\/Relu6:0" : {
+      "k" : 144,
+      "w" : 38,
+      "n" : 1,
+      "h" : 38
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_8\/project\/BatchNorm\/batchnorm\/add_1:0" : {
+      "k" : 64,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/layer_19_2_Conv2d_5_3x3_s2_128\/Relu6:0_clip" : {
+      "k" : 128,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/layer_19_2_Conv2d_3_3x3_s2_256\/Relu6:0_clip" : {
+      "k" : 256,
+      "w" : 3,
+      "n" : 1,
+      "h" : 3
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/layer_19_1_Conv2d_2_1x1_256\/Relu6:0_clip" : {
+      "k" : 256,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_14\/depthwise\/Relu6:0_clip" : {
+      "k" : 960,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_4\/expand\/Relu6:0_clip" : {
+      "k" : 192,
+      "w" : 38,
+      "n" : 1,
+      "h" : 38
+    },
+    "BoxPredictor_0\/ClassPredictor_depthwise\/Relu6:0" : {
+      "k" : 576,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/layer_19_1_Conv2d_5_1x1_64\/Relu6:0_neg" : {
+      "k" : 64,
+      "w" : 2,
+      "n" : 1,
+      "h" : 2
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_10\/depthwise\/Relu6:0_neg" : {
+      "k" : 384,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "BoxPredictor_3\/ClassPredictor_depthwise\/Relu6:0" : {
+      "k" : 256,
+      "w" : 3,
+      "n" : 1,
+      "h" : 3
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_3\/expand\/Relu6:0" : {
+      "k" : 144,
+      "w" : 75,
+      "n" : 1,
+      "h" : 75
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_2\/expand\/Relu6:0_neg" : {
+      "k" : 144,
+      "w" : 75,
+      "n" : 1,
+      "h" : 75
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/layer_19_2_Conv2d_2_3x3_s2_512\/Relu6:0_clip" : {
+      "k" : 512,
+      "w" : 5,
+      "n" : 1,
+      "h" : 5
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_10\/depthwise\/Relu6:0" : {
+      "k" : 384,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_14\/expand\/Relu6:0_neg" : {
+      "k" : 960,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_1\/depthwise\/Relu6:0" : {
+      "k" : 96,
+      "w" : 75,
+      "n" : 1,
+      "h" : 75
+    },
+    "BoxPredictor_3\/Reshape:0" : {
+      "k" : 4,
+      "w" : 1,
+      "n" : 1,
+      "h" : 54
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/layer_19_2_Conv2d_4_3x3_s2_256_depthwise\/Relu6:0" : {
+      "k" : 128,
+      "w" : 2,
+      "n" : 1,
+      "h" : 2
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_6\/expand\/Relu6:0_clip" : {
+      "k" : 192,
+      "w" : 38,
+      "n" : 1,
+      "h" : 38
+    },
+    "relu_BoxPredictor_4\/ClassPredictor_depthwise\/Relu6:0" : {
+      "k" : 256,
+      "w" : 2,
+      "n" : 1,
+      "h" : 2
+    },
+    "FeatureExtractor\/MobilenetV2\/layer_19_2_Conv2d_5_3x3_s2_128_depthwise\/Relu6:0" : {
+      "k" : 64,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_16\/depthwise\/Relu6:0" : {
+      "k" : 960,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_14\/expand\/Relu6:0" : {
+      "k" : 960,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/Conv_1\/Relu6:0_clip" : {
+      "k" : 1280,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_9\/depthwise\/Relu6:0_neg" : {
+      "k" : 384,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_13\/depthwise\/Relu6:0" : {
+      "k" : 576,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_11\/expand\/Relu6:0_clip" : {
+      "k" : 576,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/layer_19_2_Conv2d_2_3x3_s2_512_depthwise\/Relu6:0_neg" : {
+      "k" : 256,
+      "w" : 5,
+      "n" : 1,
+      "h" : 5
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_8\/expand\/Relu6:0_clip" : {
+      "k" : 384,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "BoxPredictor_2\/BoxEncodingPredictor_depthwise\/Relu6:0" : {
+      "k" : 512,
+      "w" : 5,
+      "n" : 1,
+      "h" : 5
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_13\/expand\/Relu6:0" : {
+      "k" : 576,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_6\/depthwise\/Relu6:0" : {
+      "k" : 192,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_BoxPredictor_4\/BoxEncodingPredictor_depthwise\/Relu6:0_neg" : {
+      "k" : 256,
+      "w" : 2,
+      "n" : 1,
+      "h" : 2
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_8\/depthwise\/Relu6:0_neg" : {
+      "k" : 384,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_13\/depthwise\/Relu6:0" : {
+      "k" : 576,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "relu_BoxPredictor_1\/ClassPredictor_depthwise\/Relu6:0_clip" : {
+      "k" : 1280,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/layer_19_2_Conv2d_2_3x3_s2_512_depthwise\/Relu6:0_clip" : {
+      "k" : 256,
+      "w" : 5,
+      "n" : 1,
+      "h" : 5
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_10\/expand\/Relu6:0" : {
+      "k" : 384,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/Conv_1\/Relu6:0" : {
+      "k" : 1280,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "BoxPredictor_5\/BoxEncodingPredictor\/BiasAdd:0" : {
+      "k" : 24,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_3\/depthwise\/Relu6:0_clip" : {
+      "k" : 144,
+      "w" : 38,
+      "n" : 1,
+      "h" : 38
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_5\/project\/BatchNorm\/batchnorm\/add_1:0" : {
+      "k" : 32,
+      "w" : 38,
+      "n" : 1,
+      "h" : 38
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_11\/depthwise\/Relu6:0" : {
+      "k" : 576,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/Conv\/Relu6:0" : {
+      "k" : 32,
+      "w" : 150,
+      "n" : 1,
+      "h" : 150
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_5\/expand\/Relu6:0" : {
+      "k" : 192,
+      "w" : 38,
+      "n" : 1,
+      "h" : 38
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_5\/depthwise\/Relu6:0_clip" : {
+      "k" : 192,
+      "w" : 38,
+      "n" : 1,
+      "h" : 38
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_7\/expand\/Relu6:0_neg" : {
+      "k" : 384,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "BoxPredictor_4\/Reshape_1:0" : {
+      "k" : 91,
+      "w" : 24,
+      "n" : 1,
+      "h" : 1
+    },
+    "relu_BoxPredictor_5\/ClassPredictor_depthwise\/Relu6:0_clip" : {
+      "k" : 128,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_13\/expand\/Relu6:0" : {
+      "k" : 576,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "BoxPredictor_2\/BoxEncodingPredictor\/BiasAdd:0" : {
+      "k" : 24,
+      "w" : 5,
+      "n" : 1,
+      "h" : 5
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/layer_19_1_Conv2d_2_1x1_256\/Relu6:0" : {
+      "k" : 256,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_8\/depthwise\/Relu6:0" : {
+      "k" : 384,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_13\/expand\/Relu6:0_clip" : {
+      "k" : 576,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_BoxPredictor_3\/BoxEncodingPredictor_depthwise\/Relu6:0_neg" : {
+      "k" : 256,
+      "w" : 3,
+      "n" : 1,
+      "h" : 3
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_16\/expand\/Relu6:0" : {
+      "k" : 960,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/layer_19_1_Conv2d_5_1x1_64\/Relu6:0_clip" : {
+      "k" : 64,
+      "w" : 2,
+      "n" : 1,
+      "h" : 2
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_8\/depthwise\/Relu6:0" : {
+      "k" : 384,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_13\/depthwise\/Relu6:0_clip" : {
+      "k" : 576,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "BoxPredictor_5\/Reshape_1:0_swap_W_C_5" : {
+      "k" : 6,
+      "w" : 91,
+      "n" : 1,
+      "h" : 1
+    },
+    "BoxPredictor_3\/BoxEncodingPredictor_depthwise\/Relu6:0" : {
+      "k" : 256,
+      "w" : 3,
+      "n" : 1,
+      "h" : 3
+    },
+    "relu_BoxPredictor_4\/BoxEncodingPredictor_depthwise\/Relu6:0_clip" : {
+      "k" : 256,
+      "w" : 2,
+      "n" : 1,
+      "h" : 2
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_11\/add:0" : {
+      "k" : 96,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_BoxPredictor_0\/BoxEncodingPredictor_depthwise\/Relu6:0" : {
+      "k" : 576,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "Postprocessor\/scale_logits:0" : {
+      "k" : 91,
+      "w" : 1917,
+      "n" : 1,
+      "h" : 1
+    },
+    "relu_BoxPredictor_0\/BoxEncodingPredictor_depthwise\/Relu6:0_clip" : {
+      "k" : 576,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/layer_19_2_Conv2d_2_3x3_s2_512\/Relu6:0" : {
+      "k" : 512,
+      "w" : 5,
+      "n" : 1,
+      "h" : 5
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_11\/project\/BatchNorm\/batchnorm\/add_1:0" : {
+      "k" : 96,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_BoxPredictor_3\/BoxEncodingPredictor_depthwise\/Relu6:0" : {
+      "k" : 256,
+      "w" : 3,
+      "n" : 1,
+      "h" : 3
+    },
+    "BoxPredictor_3\/ClassPredictor\/BiasAdd:0" : {
+      "k" : 546,
+      "w" : 3,
+      "n" : 1,
+      "h" : 3
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_3\/expand\/Relu6:0_neg" : {
+      "k" : 144,
+      "w" : 75,
+      "n" : 1,
+      "h" : 75
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/layer_19_2_Conv2d_3_3x3_s2_256_depthwise\/Relu6:0_clip" : {
+      "k" : 128,
+      "w" : 3,
+      "n" : 1,
+      "h" : 3
+    },
+    "FeatureExtractor\/MobilenetV2\/layer_19_2_Conv2d_5_3x3_s2_128\/Relu6:0" : {
+      "k" : 128,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "FeatureExtractor\/MobilenetV2\/layer_19_2_Conv2d_3_3x3_s2_256\/Relu6:0" : {
+      "k" : 256,
+      "w" : 3,
+      "n" : 1,
+      "h" : 3
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_7\/depthwise\/Relu6:0_neg" : {
+      "k" : 384,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/Conv\/Relu6:0_neg" : {
+      "k" : 32,
+      "w" : 150,
+      "n" : 1,
+      "h" : 150
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_2\/add:0" : {
+      "k" : 24,
+      "w" : 75,
+      "n" : 1,
+      "h" : 75
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_14\/add:0" : {
+      "k" : 160,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_5\/add:0" : {
+      "k" : 32,
+      "w" : 38,
+      "n" : 1,
+      "h" : 38
+    },
+    "relu_BoxPredictor_1\/ClassPredictor_depthwise\/Relu6:0" : {
+      "k" : 1280,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_2\/expand\/Relu6:0" : {
+      "k" : 144,
+      "w" : 75,
+      "n" : 1,
+      "h" : 75
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_9\/expand\/Relu6:0" : {
+      "k" : 384,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_8\/add:0" : {
+      "k" : 64,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "BoxPredictor_0\/Reshape:0" : {
+      "k" : 4,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1083
+    },
+    "BoxPredictor_0\/ClassPredictor\/BiasAdd:0" : {
+      "k" : 273,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/layer_19_2_Conv2d_4_3x3_s2_256\/Relu6:0" : {
+      "k" : 256,
+      "w" : 2,
+      "n" : 1,
+      "h" : 2
+    },
+    "FeatureExtractor\/MobilenetV2\/layer_19_1_Conv2d_5_1x1_64\/Relu6:0" : {
+      "k" : 64,
+      "w" : 2,
+      "n" : 1,
+      "h" : 2
+    },
+    "relu_BoxPredictor_2\/BoxEncodingPredictor_depthwise\/Relu6:0_clip" : {
+      "k" : 512,
+      "w" : 5,
+      "n" : 1,
+      "h" : 5
+    },
+    "BoxPredictor_4\/Reshape_1:0_swap_W_C_4" : {
+      "k" : 24,
+      "w" : 91,
+      "n" : 1,
+      "h" : 1
+    },
+    "BoxPredictor_1\/Reshape:0_swap_H_C_1" : {
+      "k" : 600,
+      "w" : 1,
+      "n" : 1,
+      "h" : 4
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_15\/expand\/Relu6:0_clip" : {
+      "k" : 960,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_14\/project\/BatchNorm\/batchnorm\/add_1:0" : {
+      "k" : 160,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "relu_BoxPredictor_5\/ClassPredictor_depthwise\/Relu6:0" : {
+      "k" : 128,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "BoxPredictor_0\/Reshape_1:0" : {
+      "k" : 91,
+      "w" : 1083,
+      "n" : 1,
+      "h" : 1
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_7\/depthwise\/Relu6:0_clip" : {
+      "k" : 384,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv\/depthwise\/Relu6:0" : {
+      "k" : 32,
+      "w" : 150,
+      "n" : 1,
+      "h" : 150
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_15\/depthwise\/Relu6:0_neg" : {
+      "k" : 960,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_4\/expand\/Relu6:0" : {
+      "k" : 192,
+      "w" : 38,
+      "n" : 1,
+      "h" : 38
+    },
+    "FeatureExtractor\/MobilenetV2\/layer_19_1_Conv2d_2_1x1_256\/Relu6:0" : {
+      "k" : 256,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_9\/expand\/Relu6:0" : {
+      "k" : 384,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_1\/depthwise\/Relu6:0" : {
+      "k" : 96,
+      "w" : 75,
+      "n" : 1,
+      "h" : 75
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_6\/depthwise\/Relu6:0" : {
+      "k" : 192,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_15\/depthwise\/Relu6:0" : {
+      "k" : 960,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_9\/depthwise\/Relu6:0_clip" : {
+      "k" : 384,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/layer_19_2_Conv2d_4_3x3_s2_256_depthwise\/Relu6:0_neg" : {
+      "k" : 128,
+      "w" : 2,
+      "n" : 1,
+      "h" : 2
+    },
+    "BoxPredictor_4\/BoxEncodingPredictor_depthwise\/Relu6:0" : {
+      "k" : 256,
+      "w" : 2,
+      "n" : 1,
+      "h" : 2
+    },
+    "BoxPredictor_3\/Reshape_1:0_swap_W_C_3" : {
+      "k" : 54,
+      "w" : 91,
+      "n" : 1,
+      "h" : 1
+    },
+    "BoxPredictor_5\/Reshape:0" : {
+      "k" : 4,
+      "w" : 1,
+      "n" : 1,
+      "h" : 6
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_11\/depthwise\/Relu6:0_neg" : {
+      "k" : 576,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_12\/expand\/Relu6:0_neg" : {
+      "k" : 576,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_8\/expand\/Relu6:0_neg" : {
+      "k" : 384,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/layer_19_2_Conv2d_3_3x3_s2_256\/Relu6:0_neg" : {
+      "k" : 256,
+      "w" : 3,
+      "n" : 1,
+      "h" : 3
+    },
+    "BoxPredictor_2\/ClassPredictor_depthwise\/Relu6:0" : {
+      "k" : 512,
+      "w" : 5,
+      "n" : 1,
+      "h" : 5
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/Conv\/Relu6:0_clip" : {
+      "k" : 32,
+      "w" : 150,
+      "n" : 1,
+      "h" : 150
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_2\/project\/BatchNorm\/batchnorm\/add_1:0" : {
+      "k" : 24,
+      "w" : 75,
+      "n" : 1,
+      "h" : 75
+    },
+    "BoxPredictor_5\/ClassPredictor_depthwise\/Relu6:0" : {
+      "k" : 128,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_12\/expand\/Relu6:0" : {
+      "k" : 576,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv\/depthwise\/Relu6:0_neg" : {
+      "k" : 32,
+      "w" : 150,
+      "n" : 1,
+      "h" : 150
+    },
+    "relu_BoxPredictor_2\/BoxEncodingPredictor_depthwise\/Relu6:0_neg" : {
+      "k" : 512,
+      "w" : 5,
+      "n" : 1,
+      "h" : 5
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_12\/depthwise\/Relu6:0_clip" : {
+      "k" : 576,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_1\/expand\/Relu6:0" : {
+      "k" : 96,
+      "w" : 150,
+      "n" : 1,
+      "h" : 150
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_12\/depthwise\/Relu6:0" : {
+      "k" : 576,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_7\/project\/BatchNorm\/batchnorm\/add_1:0" : {
+      "k" : 64,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "BoxPredictor_4\/Reshape:0_swap_H_C_4" : {
+      "k" : 24,
+      "w" : 1,
+      "n" : 1,
+      "h" : 4
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/layer_19_1_Conv2d_4_1x1_128\/Relu6:0_neg" : {
+      "k" : 128,
+      "w" : 3,
+      "n" : 1,
+      "h" : 3
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_15\/expand\/Relu6:0_neg" : {
+      "k" : 960,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_12\/expand\/Relu6:0" : {
+      "k" : 576,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "FeatureExtractor\/MobilenetV2\/layer_19_1_Conv2d_3_1x1_128\/Relu6:0" : {
+      "k" : 128,
+      "w" : 5,
+      "n" : 1,
+      "h" : 5
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_6\/depthwise\/Relu6:0_neg" : {
+      "k" : 192,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "image" : {
+      "k" : 3,
+      "w" : 300,
+      "n" : 1,
+      "h" : 300
+    },
+    "BoxPredictor_2\/Reshape_1:0_swap_W_C_2" : {
+      "k" : 150,
+      "w" : 91,
+      "n" : 1,
+      "h" : 1
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_16\/depthwise\/Relu6:0" : {
+      "k" : 960,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "scores" : {
+      "k" : 91,
+      "w" : 1917,
+      "n" : 1,
+      "h" : 1
+    },
+    "BoxPredictor_0\/Reshape_1:0_swap_W_C_0" : {
+      "k" : 1083,
+      "w" : 91,
+      "n" : 1,
+      "h" : 1
+    },
+    "relu_BoxPredictor_2\/ClassPredictor_depthwise\/Relu6:0_clip" : {
+      "k" : 512,
+      "w" : 5,
+      "n" : 1,
+      "h" : 5
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/layer_19_1_Conv2d_2_1x1_256\/Relu6:0_neg" : {
+      "k" : 256,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_5\/depthwise\/Relu6:0_neg" : {
+      "k" : 192,
+      "w" : 38,
+      "n" : 1,
+      "h" : 38
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_8\/expand\/Relu6:0" : {
+      "k" : 384,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_3\/depthwise\/Relu6:0" : {
+      "k" : 144,
+      "w" : 38,
+      "n" : 1,
+      "h" : 38
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_4\/expand\/Relu6:0_neg" : {
+      "k" : 192,
+      "w" : 38,
+      "n" : 1,
+      "h" : 38
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/layer_19_2_Conv2d_4_3x3_s2_256_depthwise\/Relu6:0_clip" : {
+      "k" : 128,
+      "w" : 2,
+      "n" : 1,
+      "h" : 2
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_11\/depthwise\/Relu6:0_clip" : {
+      "k" : 576,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_8\/expand\/Relu6:0" : {
+      "k" : 384,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "BoxPredictor_5\/BoxEncodingPredictor_depthwise\/Relu6:0" : {
+      "k" : 128,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/layer_19_2_Conv2d_4_3x3_s2_256\/Relu6:0_neg" : {
+      "k" : 256,
+      "w" : 2,
+      "n" : 1,
+      "h" : 2
+    },
+    "BoxPredictor_2\/Reshape:0" : {
+      "k" : 4,
+      "w" : 1,
+      "n" : 1,
+      "h" : 150
+    },
+    "BoxPredictor_5\/Reshape_1:0" : {
+      "k" : 91,
+      "w" : 6,
+      "n" : 1,
+      "h" : 1
+    },
+    "relu_BoxPredictor_1\/BoxEncodingPredictor_depthwise\/Relu6:0_neg" : {
+      "k" : 1280,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "BoxPredictor_4\/BoxEncodingPredictor\/BiasAdd:0" : {
+      "k" : 24,
+      "w" : 2,
+      "n" : 1,
+      "h" : 2
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/layer_19_1_Conv2d_3_1x1_128\/Relu6:0" : {
+      "k" : 128,
+      "w" : 5,
+      "n" : 1,
+      "h" : 5
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_11\/expand\/Relu6:0" : {
+      "k" : 576,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "BoxPredictor_1\/Reshape_1:0_swap_W_C_1" : {
+      "k" : 600,
+      "w" : 91,
+      "n" : 1,
+      "h" : 1
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_14\/depthwise\/Relu6:0" : {
+      "k" : 960,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_3\/expand\/Relu6:0" : {
+      "k" : 144,
+      "w" : 75,
+      "n" : 1,
+      "h" : 75
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_5\/expand\/Relu6:0_clip" : {
+      "k" : 192,
+      "w" : 38,
+      "n" : 1,
+      "h" : 38
+    },
+    "BoxPredictor_1\/Reshape_1:0" : {
+      "k" : 91,
+      "w" : 600,
+      "n" : 1,
+      "h" : 1
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_4\/depthwise\/Relu6:0" : {
+      "k" : 192,
+      "w" : 38,
+      "n" : 1,
+      "h" : 38
+    },
+    "relu_BoxPredictor_2\/ClassPredictor_depthwise\/Relu6:0" : {
+      "k" : 512,
+      "w" : 5,
+      "n" : 1,
+      "h" : 5
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_15\/expand\/Relu6:0" : {
+      "k" : 960,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/layer_19_2_Conv2d_2_3x3_s2_512\/Relu6:0_neg" : {
+      "k" : 512,
+      "w" : 5,
+      "n" : 1,
+      "h" : 5
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/layer_19_2_Conv2d_4_3x3_s2_256\/Relu6:0_clip" : {
+      "k" : 256,
+      "w" : 2,
+      "n" : 1,
+      "h" : 2
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_4\/project\/BatchNorm\/batchnorm\/add_1:0" : {
+      "k" : 32,
+      "w" : 38,
+      "n" : 1,
+      "h" : 38
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_7\/expand\/Relu6:0_clip" : {
+      "k" : 384,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv\/depthwise\/Relu6:0_clip" : {
+      "k" : 32,
+      "w" : 150,
+      "n" : 1,
+      "h" : 150
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_9\/project\/BatchNorm\/batchnorm\/add_1:0" : {
+      "k" : 64,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "BoxPredictor_1\/BoxEncodingPredictor\/BiasAdd:0" : {
+      "k" : 24,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_12\/add:0" : {
+      "k" : 96,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_2\/depthwise\/Relu6:0" : {
+      "k" : 144,
+      "w" : 75,
+      "n" : 1,
+      "h" : 75
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_10\/expand\/Relu6:0_clip" : {
+      "k" : 384,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_16\/depthwise\/Relu6:0_neg" : {
+      "k" : 960,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "FeatureExtractor\/MobilenetV2\/layer_19_2_Conv2d_3_3x3_s2_256_depthwise\/Relu6:0" : {
+      "k" : 128,
+      "w" : 3,
+      "n" : 1,
+      "h" : 3
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_1\/expand\/Relu6:0_clip" : {
+      "k" : 96,
+      "w" : 150,
+      "n" : 1,
+      "h" : 150
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_5\/depthwise\/Relu6:0" : {
+      "k" : 192,
+      "w" : 38,
+      "n" : 1,
+      "h" : 38
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_9\/expand\/Relu6:0_clip" : {
+      "k" : 384,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_12\/depthwise\/Relu6:0" : {
+      "k" : 576,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/layer_19_1_Conv2d_3_1x1_128\/Relu6:0_clip" : {
+      "k" : 128,
+      "w" : 5,
+      "n" : 1,
+      "h" : 5
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_10\/expand\/Relu6:0_neg" : {
+      "k" : 384,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_2\/depthwise\/Relu6:0_clip" : {
+      "k" : 144,
+      "w" : 75,
+      "n" : 1,
+      "h" : 75
+    },
+    "concat_1:0" : {
+      "k" : 91,
+      "w" : 1917,
+      "n" : 1,
+      "h" : 1
+    },
+    "relu_BoxPredictor_1\/BoxEncodingPredictor_depthwise\/Relu6:0" : {
+      "k" : 1280,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_9\/expand\/Relu6:0_neg" : {
+      "k" : 384,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_7\/expand\/Relu6:0" : {
+      "k" : 384,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_15\/add:0" : {
+      "k" : 160,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_12\/depthwise\/Relu6:0_neg" : {
+      "k" : 576,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_3\/expand\/Relu6:0_clip" : {
+      "k" : 144,
+      "w" : 75,
+      "n" : 1,
+      "h" : 75
+    },
+    "concat_1:0_concat" : {
+      "k" : 1917,
+      "w" : 91,
+      "n" : 1,
+      "h" : 1
+    },
+    "BoxPredictor_2\/Reshape:0_swap_H_C_2" : {
+      "k" : 150,
+      "w" : 1,
+      "n" : 1,
+      "h" : 4
+    },
+    "relu_BoxPredictor_4\/BoxEncodingPredictor_depthwise\/Relu6:0" : {
+      "k" : 256,
+      "w" : 2,
+      "n" : 1,
+      "h" : 2
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/layer_19_2_Conv2d_5_3x3_s2_128\/Relu6:0" : {
+      "k" : 128,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_4\/depthwise\/Relu6:0_neg" : {
+      "k" : 192,
+      "w" : 38,
+      "n" : 1,
+      "h" : 38
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/layer_19_2_Conv2d_5_3x3_s2_128\/Relu6:0_neg" : {
+      "k" : 128,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "BoxPredictor_4\/ClassPredictor\/BiasAdd:0" : {
+      "k" : 546,
+      "w" : 2,
+      "n" : 1,
+      "h" : 2
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_13\/project\/BatchNorm\/batchnorm\/add_1:0" : {
+      "k" : 160,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_9\/add:0" : {
+      "k" : 64,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_10\/depthwise\/Relu6:0" : {
+      "k" : 384,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_10\/depthwise\/Relu6:0_clip" : {
+      "k" : 384,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_12\/expand\/Relu6:0_clip" : {
+      "k" : 576,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "BoxPredictor_1\/ClassPredictor\/BiasAdd:0" : {
+      "k" : 546,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "relu_BoxPredictor_3\/ClassPredictor_depthwise\/Relu6:0_clip" : {
+      "k" : 256,
+      "w" : 3,
+      "n" : 1,
+      "h" : 3
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_5\/expand\/Relu6:0_neg" : {
+      "k" : 192,
+      "w" : 38,
+      "n" : 1,
+      "h" : 38
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/layer_19_2_Conv2d_5_3x3_s2_128_depthwise\/Relu6:0_clip" : {
+      "k" : 64,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_7\/depthwise\/Relu6:0" : {
+      "k" : 384,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_16\/project\/BatchNorm\/batchnorm\/add_1:0" : {
+      "k" : 320,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/layer_19_1_Conv2d_5_1x1_64\/Relu6:0" : {
+      "k" : 64,
+      "w" : 2,
+      "n" : 1,
+      "h" : 2
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_9\/depthwise\/Relu6:0" : {
+      "k" : 384,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv\/project\/BatchNorm\/batchnorm\/add_1:0" : {
+      "k" : 16,
+      "w" : 150,
+      "n" : 1,
+      "h" : 150
+    },
+    "FeatureExtractor\/MobilenetV2\/Conv_1\/Relu6:0" : {
+      "k" : 1280,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "relu_BoxPredictor_0\/BoxEncodingPredictor_depthwise\/Relu6:0_neg" : {
+      "k" : 576,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_BoxPredictor_0\/ClassPredictor_depthwise\/Relu6:0_neg" : {
+      "k" : 576,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "FeatureExtractor\/MobilenetV2\/layer_19_2_Conv2d_4_3x3_s2_256_depthwise\/Relu6:0" : {
+      "k" : 128,
+      "w" : 2,
+      "n" : 1,
+      "h" : 2
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_10\/project\/BatchNorm\/batchnorm\/add_1:0" : {
+      "k" : 96,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/layer_19_2_Conv2d_5_3x3_s2_128_depthwise\/Relu6:0_neg" : {
+      "k" : 64,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "BoxPredictor_2\/Reshape_1:0" : {
+      "k" : 91,
+      "w" : 150,
+      "n" : 1,
+      "h" : 1
+    },
+    "relu_BoxPredictor_1\/ClassPredictor_depthwise\/Relu6:0_neg" : {
+      "k" : 1280,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/Conv_1\/Relu6:0_neg" : {
+      "k" : 1280,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_10\/expand\/Relu6:0" : {
+      "k" : 384,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "FeatureExtractor\/MobilenetV2\/layer_19_2_Conv2d_2_3x3_s2_512_depthwise\/Relu6:0" : {
+      "k" : 256,
+      "w" : 5,
+      "n" : 1,
+      "h" : 5
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_6\/expand\/Relu6:0" : {
+      "k" : 192,
+      "w" : 38,
+      "n" : 1,
+      "h" : 38
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/layer_19_1_Conv2d_4_1x1_128\/Relu6:0" : {
+      "k" : 128,
+      "w" : 3,
+      "n" : 1,
+      "h" : 3
+    },
+    "relu_BoxPredictor_3\/BoxEncodingPredictor_depthwise\/Relu6:0_clip" : {
+      "k" : 256,
+      "w" : 3,
+      "n" : 1,
+      "h" : 3
+    },
+    "BoxPredictor_1\/ClassPredictor_depthwise\/Relu6:0" : {
+      "k" : 1280,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_4\/depthwise\/Relu6:0_clip" : {
+      "k" : 192,
+      "w" : 38,
+      "n" : 1,
+      "h" : 38
+    },
+    "BoxPredictor_4\/ClassPredictor_depthwise\/Relu6:0" : {
+      "k" : 256,
+      "w" : 2,
+      "n" : 1,
+      "h" : 2
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_13\/expand\/Relu6:0_neg" : {
+      "k" : 576,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_7\/expand\/Relu6:0" : {
+      "k" : 384,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_BoxPredictor_3\/ClassPredictor_depthwise\/Relu6:0" : {
+      "k" : 256,
+      "w" : 3,
+      "n" : 1,
+      "h" : 3
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_14\/depthwise\/Relu6:0" : {
+      "k" : 960,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_6\/depthwise\/Relu6:0_clip" : {
+      "k" : 192,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_3\/depthwise\/Relu6:0_neg" : {
+      "k" : 144,
+      "w" : 38,
+      "n" : 1,
+      "h" : 38
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_14\/expand\/Relu6:0_clip" : {
+      "k" : 960,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_16\/expand\/Relu6:0_neg" : {
+      "k" : 960,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "relu_BoxPredictor_5\/BoxEncodingPredictor_depthwise\/Relu6:0_clip" : {
+      "k" : 128,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_1\/project\/BatchNorm\/batchnorm\/add_1:0" : {
+      "k" : 24,
+      "w" : 75,
+      "n" : 1,
+      "h" : 75
+    },
+    "boxes" : {
+      "k" : 4,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1917
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_9\/depthwise\/Relu6:0" : {
+      "k" : 384,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_6\/project\/BatchNorm\/batchnorm\/add_1:0" : {
+      "k" : 64,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_BoxPredictor_1\/BoxEncodingPredictor_depthwise\/Relu6:0_clip" : {
+      "k" : 1280,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "BoxPredictor_4\/Reshape:0" : {
+      "k" : 4,
+      "w" : 1,
+      "n" : 1,
+      "h" : 24
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_2\/expand\/Relu6:0" : {
+      "k" : 144,
+      "w" : 75,
+      "n" : 1,
+      "h" : 75
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_16\/expand\/Relu6:0" : {
+      "k" : 960,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_11\/depthwise\/Relu6:0" : {
+      "k" : 576,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_13\/depthwise\/Relu6:0_neg" : {
+      "k" : 576,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_16\/depthwise\/Relu6:0_clip" : {
+      "k" : 960,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_14\/expand\/Relu6:0" : {
+      "k" : 960,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "BoxPredictor_5\/Reshape:0_swap_H_C_5" : {
+      "k" : 6,
+      "w" : 1,
+      "n" : 1,
+      "h" : 4
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_5\/expand\/Relu6:0" : {
+      "k" : 192,
+      "w" : 38,
+      "n" : 1,
+      "h" : 38
+    },
+    "relu_BoxPredictor_2\/ClassPredictor_depthwise\/Relu6:0_neg" : {
+      "k" : 512,
+      "w" : 5,
+      "n" : 1,
+      "h" : 5
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_7\/depthwise\/Relu6:0" : {
+      "k" : 384,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_11\/expand\/Relu6:0" : {
+      "k" : 576,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "BoxPredictor_3\/BoxEncodingPredictor\/BiasAdd:0" : {
+      "k" : 24,
+      "w" : 3,
+      "n" : 1,
+      "h" : 3
+    },
+    "relu_BoxPredictor_3\/ClassPredictor_depthwise\/Relu6:0_neg" : {
+      "k" : 256,
+      "w" : 3,
+      "n" : 1,
+      "h" : 3
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_1\/expand\/Relu6:0_neg" : {
+      "k" : 96,
+      "w" : 150,
+      "n" : 1,
+      "h" : 150
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_16\/expand\/Relu6:0_clip" : {
+      "k" : 960,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/layer_19_2_Conv2d_3_3x3_s2_256_depthwise\/Relu6:0_neg" : {
+      "k" : 128,
+      "w" : 3,
+      "n" : 1,
+      "h" : 3
+    },
+    "relu_BoxPredictor_4\/ClassPredictor_depthwise\/Relu6:0_neg" : {
+      "k" : 256,
+      "w" : 2,
+      "n" : 1,
+      "h" : 2
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_6\/expand\/Relu6:0_neg" : {
+      "k" : 192,
+      "w" : 38,
+      "n" : 1,
+      "h" : 38
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/expanded_conv_15\/depthwise\/Relu6:0_clip" : {
+      "k" : 960,
+      "w" : 10,
+      "n" : 1,
+      "h" : 10
+    },
+    "relu_FeatureExtractor\/MobilenetV2\/layer_19_2_Conv2d_5_3x3_s2_128_depthwise\/Relu6:0" : {
+      "k" : 64,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "BoxPredictor_0\/BoxEncodingPredictor_depthwise\/Relu6:0" : {
+      "k" : 576,
+      "w" : 19,
+      "n" : 1,
+      "h" : 19
+    },
+    "FeatureExtractor\/MobilenetV2\/expanded_conv_5\/depthwise\/Relu6:0" : {
+      "k" : 192,
+      "w" : 38,
+      "n" : 1,
+      "h" : 38
+    }
+  }
+}

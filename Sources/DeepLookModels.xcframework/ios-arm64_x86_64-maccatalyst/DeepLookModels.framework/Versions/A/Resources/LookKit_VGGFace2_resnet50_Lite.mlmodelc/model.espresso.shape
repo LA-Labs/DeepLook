@@ -1,0 +1,648 @@
+{
+  "layer_shapes" : {
+    "vggface_resnet50\/activation_73\/Relu" : {
+      "k" : 1024,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "vggface_resnet50\/add_16\/add" : {
+      "k" : 256,
+      "w" : 55,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 55
+    },
+    "vggface_resnet50\/activation_50\/Relu" : {
+      "k" : 64,
+      "w" : 55,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 55
+    },
+    "vggface_resnet50\/activation_75\/Relu" : {
+      "k" : 256,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "vggface_resnet50\/add_22\/add" : {
+      "k" : 512,
+      "w" : 28,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 28
+    },
+    "avg_pool_7" : {
+      "k" : 2048,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "vggface_resnet50\/activation_52\/Relu" : {
+      "k" : 256,
+      "w" : 55,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 55
+    },
+    "vggface_resnet50\/activation_77\/Relu" : {
+      "k" : 256,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "Identity" : {
+      "k" : 1,
+      "w" : 2048,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "batch_norm_385" : {
+      "k" : 512,
+      "w" : 28,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 28
+    },
+    "vggface_resnet50\/avg_pool\/AvgPool" : {
+      "k" : 1,
+      "w" : 2048,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "vggface_resnet50\/add_21\/add" : {
+      "k" : 512,
+      "w" : 28,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 28
+    },
+    "vggface_resnet50\/activation_54\/Relu" : {
+      "k" : 64,
+      "w" : 55,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 55
+    },
+    "batch_norm_420" : {
+      "k" : 2048,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "vggface_resnet50\/activation_79\/Relu" : {
+      "k" : 1024,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "vggface_resnet50\/activation_56\/Relu" : {
+      "k" : 64,
+      "w" : 55,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 55
+    },
+    "batch_norm_394" : {
+      "k" : 512,
+      "w" : 28,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 28
+    },
+    "vggface_resnet50\/add_20\/add" : {
+      "k" : 512,
+      "w" : 28,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 28
+    },
+    "vggface_resnet50\/activation_81\/Relu" : {
+      "k" : 256,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "vggface_resnet50\/activation_58\/Relu" : {
+      "k" : 256,
+      "w" : 55,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 55
+    },
+    "vggface_resnet50\/avg_pool\/AvgPool1" : {
+      "k" : 1,
+      "w" : 2048,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "batch_norm_415" : {
+      "k" : 2048,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "vggface_resnet50\/activation_83\/Relu" : {
+      "k" : 256,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "input_2" : {
+      "k" : 3,
+      "w" : 224,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 224
+    },
+    "batch_norm_401" : {
+      "k" : 1024,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "vggface_resnet50\/activation_60\/Relu" : {
+      "k" : 128,
+      "w" : 28,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 28
+    },
+    "vggface_resnet50\/activation_85\/Relu" : {
+      "k" : 1024,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "batch_norm_375" : {
+      "k" : 256,
+      "w" : 55,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 55
+    },
+    "max_pool_7" : {
+      "k" : 64,
+      "w" : 55,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 55
+    },
+    "batch_norm_398" : {
+      "k" : 1024,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "vggface_resnet50\/activation_87\/Relu" : {
+      "k" : 256,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "batch_norm_410" : {
+      "k" : 1024,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "vggface_resnet50\/activation_62\/Relu" : {
+      "k" : 128,
+      "w" : 28,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 28
+    },
+    "vggface_resnet50\/activation_64\/Relu" : {
+      "k" : 512,
+      "w" : 28,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 28
+    },
+    "vggface_resnet50\/activation_89\/Relu" : {
+      "k" : 512,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "vggface_resnet50\/activation_66\/Relu" : {
+      "k" : 128,
+      "w" : 28,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 28
+    },
+    "vggface_resnet50\/activation_68\/Relu" : {
+      "k" : 128,
+      "w" : 28,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 28
+    },
+    "vggface_resnet50\/activation_91\/Relu" : {
+      "k" : 2048,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "vggface_resnet50\/activation_93\/Relu" : {
+      "k" : 512,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "vggface_resnet50\/activation_70\/Relu" : {
+      "k" : 512,
+      "w" : 28,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 28
+    },
+    "batch_norm_388" : {
+      "k" : 512,
+      "w" : 28,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 28
+    },
+    "vggface_resnet50\/activation_95\/Relu" : {
+      "k" : 512,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "batch_norm_423" : {
+      "k" : 2048,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "vggface_resnet50\/activation_49\/Relu" : {
+      "k" : 64,
+      "w" : 112,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 112
+    },
+    "vggface_resnet50\/activation_72\/Relu" : {
+      "k" : 256,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "vggface_resnet50\/activation_97\/Relu" : {
+      "k" : 2048,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "vggface_resnet50\/activation_74\/Relu" : {
+      "k" : 256,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "batch_norm_383" : {
+      "k" : 512,
+      "w" : 28,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 28
+    },
+    "vggface_resnet50\/activation_51\/Relu" : {
+      "k" : 64,
+      "w" : 55,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 55
+    },
+    "vggface_resnet50\/activation_76\/Relu" : {
+      "k" : 1024,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "vggface_resnet50\/activation_53\/Relu" : {
+      "k" : 64,
+      "w" : 55,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 55
+    },
+    "batch_norm_404" : {
+      "k" : 1024,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "vggface_resnet50\/activation_78\/Relu" : {
+      "k" : 256,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "vggface_resnet50\/add_29\/add" : {
+      "k" : 2048,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "batch_norm_378" : {
+      "k" : 256,
+      "w" : 55,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 55
+    },
+    "vggface_resnet50\/activation_55\/Relu" : {
+      "k" : 256,
+      "w" : 55,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 55
+    },
+    "batch_norm_413" : {
+      "k" : 1024,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "vggface_resnet50\/activation_57\/Relu" : {
+      "k" : 64,
+      "w" : 55,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 55
+    },
+    "vggface_resnet50\/add_28\/add" : {
+      "k" : 1024,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "vggface_resnet50\/activation_80\/Relu" : {
+      "k" : 256,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "batch_norm_373" : {
+      "k" : 256,
+      "w" : 55,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 55
+    },
+    "vggface_resnet50\/activation_82\/Relu" : {
+      "k" : 1024,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "vggface_resnet50\/activation_59\/Relu" : {
+      "k" : 128,
+      "w" : 28,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 28
+    },
+    "batch_norm_396" : {
+      "k" : 1024,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "vggface_resnet50\/add_27\/add" : {
+      "k" : 1024,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "vggface_resnet50\/activation_84\/Relu" : {
+      "k" : 256,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "vggface_resnet50\/activation_61\/Relu" : {
+      "k" : 512,
+      "w" : 28,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 28
+    },
+    "vggface_resnet50\/activation_86\/Relu" : {
+      "k" : 256,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "batch_norm_417" : {
+      "k" : 2048,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "batch_norm_391" : {
+      "k" : 512,
+      "w" : 28,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 28
+    },
+    "vggface_resnet50\/add_26\/add" : {
+      "k" : 1024,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "vggface_resnet50\/activation_63\/Relu" : {
+      "k" : 128,
+      "w" : 28,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 28
+    },
+    "vggface_resnet50\/activation_88\/Relu" : {
+      "k" : 1024,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "vggface_resnet50\/activation_65\/Relu" : {
+      "k" : 128,
+      "w" : 28,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 28
+    },
+    "vggface_resnet50\/add_19\/add" : {
+      "k" : 512,
+      "w" : 28,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 28
+    },
+    "vggface_resnet50\/add_25\/add" : {
+      "k" : 1024,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "vggface_resnet50\/activation_67\/Relu" : {
+      "k" : 512,
+      "w" : 28,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 28
+    },
+    "vggface_resnet50\/add_31\/add" : {
+      "k" : 2048,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "vggface_resnet50\/activation_90\/Relu" : {
+      "k" : 512,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "vggface_resnet50\/global_average_pooling2d_1\/Mean_squeeze" : {
+      "k" : 1,
+      "w" : 2048,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "vggface_resnet50\/add_18\/add" : {
+      "k" : 256,
+      "w" : 55,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 55
+    },
+    "vggface_resnet50\/activation_92\/Relu" : {
+      "k" : 512,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "vggface_resnet50\/activation_69\/Relu" : {
+      "k" : 128,
+      "w" : 28,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 28
+    },
+    "vggface_resnet50\/add_24\/add" : {
+      "k" : 1024,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "vggface_resnet50\/add_30\/add" : {
+      "k" : 2048,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "vggface_resnet50\/activation_94\/Relu" : {
+      "k" : 2048,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "batch_norm_407" : {
+      "k" : 1024,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "batch_norm_381" : {
+      "k" : 256,
+      "w" : 55,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 55
+    },
+    "vggface_resnet50\/add_17\/add" : {
+      "k" : 256,
+      "w" : 55,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 55
+    },
+    "vggface_resnet50\/activation_71\/Relu" : {
+      "k" : 256,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    },
+    "vggface_resnet50\/activation_96\/Relu" : {
+      "k" : 512,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "vggface_resnet50\/add_23\/add" : {
+      "k" : 1024,
+      "w" : 14,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 14
+    }
+  }
+}

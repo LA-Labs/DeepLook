@@ -1,0 +1,68 @@
+[
+  {
+    "shortDescription" : "Facial expression model",
+    "metadataOutputVersion" : "3.0",
+    "outputSchema" : [
+      {
+        "hasShapeFlexibility" : "0",
+        "isOptional" : "0",
+        "dataType" : "Float32",
+        "formattedType" : "MultiArray (Float32)",
+        "shortDescription" : "",
+        "shape" : "[]",
+        "name" : "Identity",
+        "type" : "MultiArray"
+      }
+    ],
+    "version" : "1.0",
+    "modelParameters" : [
+
+    ],
+    "author" : "La-Labs",
+    "specificationVersion" : 4,
+    "license" : "Copyright © 2021 La-Labs. All rights reserved.",
+    "isUpdatable" : "0",
+    "availability" : {
+      "macOS" : "10.15",
+      "tvOS" : "13.0",
+      "watchOS" : "6.0",
+      "iOS" : "13.0",
+      "macCatalyst" : "13.0"
+    },
+    "modelType" : {
+      "name" : "MLModelType_neuralNetwork"
+    },
+    "inputSchema" : [
+      {
+        "formattedType" : "Image (Grayscale 48 × 48)",
+        "hasSizeFlexibility" : "1",
+        "shortDescription" : "",
+        "sizeRange" : "[[48, 48], [48, 48]]",
+        "width" : "48",
+        "type" : "Image",
+        "isColor" : "0",
+        "height" : "48",
+        "sizeFlexibility" : "48 × 48",
+        "colorspace" : "Grayscale",
+        "name" : "conv2d_5_input",
+        "isOptional" : "0"
+      }
+    ],
+    "userDefinedMetadata" : {
+      "com.github.apple.coremltools.version" : "4.1",
+      "com.github.apple.coremltools.source" : "tensorflow==2.4.1"
+    },
+    "generatedClassName" : "LookKit_Facial_expression",
+    "neuralNetworkLayerTypeHistogram" : {
+      "ActivationReLU" : 7,
+      "ReshapeStatic" : 1,
+      "PoolingAverage" : 2,
+      "SoftmaxND" : 1,
+      "Transpose" : 1,
+      "Convolution" : 5,
+      "InnerProduct" : 3,
+      "PoolingMax" : 1
+    },
+    "method" : "predict"
+  }
+]

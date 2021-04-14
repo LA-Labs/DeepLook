@@ -1,0 +1,5034 @@
+{
+  "transform_params" : {
+    "input_1" : {
+      "bias_a" : 0,
+      "bias_g" : 0,
+      "bias_r" : 0,
+      "bias_b" : 0,
+      "center_mean" : 0,
+      "is_network_bgr" : 0,
+      "scale" : 1
+    }
+  },
+  "properties" : {
+
+  },
+  "analyses" : {
+
+  },
+  "format_version" : 200,
+  "storage" : "model.espresso.weights",
+  "layers" : [
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv1\/7x7_s2\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation\/Relu",
+      "K" : 3,
+      "blob_biases" : 1,
+      "stride_x" : 2,
+      "name" : "vggface_senet50\/conv1\/7x7_s2\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "stride_y" : 2,
+      "has_biases" : 1,
+      "C" : 64,
+      "bottom" : "input_1",
+      "weights" : {
+        "per_ch_qscale" : 7,
+        "W_U4" : 3,
+        "per_ch_qbias" : 5
+      },
+      "Nx" : 7,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 7,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "debug_info" : "max_pool_0",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "size_x" : 3,
+      "top" : "max_pool_0",
+      "top_shape_style" : 0,
+      "stride_x" : 2,
+      "avg_or_max" : 1,
+      "average_count_exclude_padding" : 1,
+      "type" : "pool",
+      "name" : "max_pool_0",
+      "pad_t" : 0,
+      "stride_y" : 2,
+      "bottom" : "vggface_senet50\/activation\/Relu",
+      "weights" : {
+
+      },
+      "pad_mode" : 2,
+      "size_y" : 3,
+      "pad_value" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv2_1_1x1_reduce\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_1\/Relu",
+      "K" : 64,
+      "blob_biases" : 9,
+      "name" : "vggface_senet50\/conv2_1_1x1_reduce\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 64,
+      "bottom" : "max_pool_0",
+      "weights" : {
+        "per_ch_qscale" : 15,
+        "W_U4" : 11,
+        "per_ch_qbias" : 13
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv2_1_1x1_proj\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_norm_2",
+      "K" : 64,
+      "blob_biases" : 17,
+      "name" : "vggface_senet50\/conv2_1_1x1_proj\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "max_pool_0",
+      "weights" : {
+        "per_ch_qscale" : 23,
+        "W_U4" : 19,
+        "per_ch_qbias" : 21
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv2_1_3x3\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_2\/Relu",
+      "K" : 64,
+      "blob_biases" : 25,
+      "name" : "vggface_senet50\/conv2_1_3x3\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 64,
+      "bottom" : "vggface_senet50\/activation_1\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 31,
+        "W_U4" : 27,
+        "per_ch_qbias" : 29
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv2_1_1x1_increase\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_norm_4",
+      "K" : 64,
+      "blob_biases" : 33,
+      "name" : "vggface_senet50\/conv2_1_1x1_increase\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "vggface_senet50\/activation_2\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 39,
+        "W_U4" : 35,
+        "per_ch_qbias" : 37
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "axis_h" : 0,
+      "axis_w" : 2,
+      "bottom" : "batch_norm_4",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_225",
+      "top" : "transpose_225",
+      "type" : "transpose",
+      "name" : "transpose_225"
+    },
+    {
+      "axis_mode" : 4,
+      "bottom" : "transpose_225",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 1,
+      "nd_mode" : true,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d\/Mean",
+      "use_version" : 1,
+      "top" : "transpose_2251",
+      "type" : "reduce",
+      "name" : "vggface_senet50\/global_average_pooling2d\/Mean0"
+    },
+    {
+      "axis_mode" : 2,
+      "bottom" : "transpose_2251",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 2,
+      "nd_mode" : true,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d\/Mean",
+      "use_version" : 1,
+      "top" : "vggface_senet50\/global_average_pooling2d\/Mean_squeeze",
+      "type" : "reduce",
+      "name" : "vggface_senet50\/global_average_pooling2d\/Mean"
+    },
+    {
+      "size_of_axes" : 2,
+      "bottom" : "vggface_senet50\/global_average_pooling2d\/Mean_squeeze",
+      "axes_0" : 1,
+      "axes_1" : 2,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d\/Mean",
+      "version" : 1,
+      "top" : "vggface_senet50\/global_average_pooling2d\/Mean",
+      "type" : "squeeze",
+      "name" : "vggface_senet50\/global_average_pooling2d\/Mean"
+    },
+    {
+      "name" : "vggface_senet50\/reshape\/Reshape",
+      "weights" : {
+
+      },
+      "dst_w" : 256,
+      "version" : 1,
+      "dst_n" : -1,
+      "dst_nd_rank" : 4,
+      "type" : "reshape",
+      "dst_h" : 1,
+      "mode" : 0,
+      "dynamic_shape" : false,
+      "bottom" : "vggface_senet50\/global_average_pooling2d\/Mean",
+      "debug_info" : "vggface_senet50\/reshape\/Reshape",
+      "dst_seq" : 1,
+      "dst_k" : 1,
+      "top" : "vggface_senet50\/reshape\/Reshape"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 1,
+      "bottom" : "vggface_senet50\/reshape\/Reshape",
+      "axis_k" : 0,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_17",
+      "top" : "transpose_17",
+      "type" : "transpose",
+      "name" : "transpose_17"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv2_1_1x1_down\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_3\/Relu",
+      "K" : 256,
+      "blob_biases" : 41,
+      "name" : "vggface_senet50\/conv2_1_1x1_down\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 16,
+      "bottom" : "transpose_17",
+      "weights" : {
+        "per_ch_qscale" : 47,
+        "W_U4" : 43,
+        "per_ch_qbias" : 45
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv2_1_1x1_up\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/conv2_1_1x1_up\/BiasAdd",
+      "K" : 16,
+      "blob_biases" : 49,
+      "name" : "vggface_senet50\/conv2_1_1x1_up\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "vggface_senet50\/activation_3\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 55,
+        "W_U4" : 51,
+        "per_ch_qbias" : 53
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "vggface_senet50\/conv2_1_1x1_up\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "vggface_senet50\/activation_4\/Sigmoid",
+      "top" : "vggface_senet50\/activation_4\/Sigmoid",
+      "type" : "activation",
+      "name" : "vggface_senet50\/activation_4\/Sigmoid"
+    },
+    {
+      "bottom" : "batch_norm_4,vggface_senet50\/activation_4\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "vggface_senet50\/multiply\/mul",
+      "nd_mode" : true,
+      "top" : "vggface_senet50\/multiply\/mul",
+      "type" : "elementwise",
+      "name" : "vggface_senet50\/multiply\/mul",
+      "beta" : 0
+    },
+    {
+      "bottom" : "vggface_senet50\/multiply\/mul,batch_norm_2",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "vggface_senet50\/add\/add",
+      "nd_mode" : true,
+      "top" : "vggface_senet50\/add\/add",
+      "type" : "elementwise",
+      "name" : "vggface_senet50\/add\/add",
+      "beta" : 0
+    },
+    {
+      "bottom" : "vggface_senet50\/add\/add",
+      "weights" : {
+
+      },
+      "mode" : 0,
+      "debug_info" : "vggface_senet50\/activation_5\/Relu",
+      "top" : "vggface_senet50\/activation_5\/Relu",
+      "type" : "activation",
+      "name" : "vggface_senet50\/activation_5\/Relu"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv2_2_1x1_reduce\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_6\/Relu",
+      "K" : 256,
+      "blob_biases" : 57,
+      "name" : "vggface_senet50\/conv2_2_1x1_reduce\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 64,
+      "bottom" : "vggface_senet50\/activation_5\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 63,
+        "W_U4" : 59,
+        "per_ch_qbias" : 61
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv2_2_3x3\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_7\/Relu",
+      "K" : 64,
+      "blob_biases" : 65,
+      "name" : "vggface_senet50\/conv2_2_3x3\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 64,
+      "bottom" : "vggface_senet50\/activation_6\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 71,
+        "W_U4" : 67,
+        "per_ch_qbias" : 69
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv2_2_1x1_increase\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_norm_7",
+      "K" : 64,
+      "blob_biases" : 73,
+      "name" : "vggface_senet50\/conv2_2_1x1_increase\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "vggface_senet50\/activation_7\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 79,
+        "W_U4" : 75,
+        "per_ch_qbias" : 77
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "axis_h" : 0,
+      "axis_w" : 2,
+      "bottom" : "batch_norm_7",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_226",
+      "top" : "transpose_226",
+      "type" : "transpose",
+      "name" : "transpose_226"
+    },
+    {
+      "axis_mode" : 4,
+      "bottom" : "transpose_226",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 1,
+      "nd_mode" : true,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_1\/Mean",
+      "use_version" : 1,
+      "top" : "transpose_2261",
+      "type" : "reduce",
+      "name" : "vggface_senet50\/global_average_pooling2d_1\/Mean0"
+    },
+    {
+      "axis_mode" : 2,
+      "bottom" : "transpose_2261",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 2,
+      "nd_mode" : true,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_1\/Mean",
+      "use_version" : 1,
+      "top" : "vggface_senet50\/global_average_pooling2d_1\/Mean_squeeze",
+      "type" : "reduce",
+      "name" : "vggface_senet50\/global_average_pooling2d_1\/Mean"
+    },
+    {
+      "size_of_axes" : 2,
+      "bottom" : "vggface_senet50\/global_average_pooling2d_1\/Mean_squeeze",
+      "axes_0" : 1,
+      "axes_1" : 2,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_1\/Mean",
+      "version" : 1,
+      "top" : "vggface_senet50\/global_average_pooling2d_1\/Mean",
+      "type" : "squeeze",
+      "name" : "vggface_senet50\/global_average_pooling2d_1\/Mean"
+    },
+    {
+      "name" : "vggface_senet50\/reshape_1\/Reshape",
+      "weights" : {
+
+      },
+      "dst_w" : 256,
+      "version" : 1,
+      "dst_n" : -1,
+      "dst_nd_rank" : 4,
+      "type" : "reshape",
+      "dst_h" : 1,
+      "mode" : 0,
+      "dynamic_shape" : false,
+      "bottom" : "vggface_senet50\/global_average_pooling2d_1\/Mean",
+      "debug_info" : "vggface_senet50\/reshape_1\/Reshape",
+      "dst_seq" : 1,
+      "dst_k" : 1,
+      "top" : "vggface_senet50\/reshape_1\/Reshape"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 1,
+      "bottom" : "vggface_senet50\/reshape_1\/Reshape",
+      "axis_k" : 0,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_30",
+      "top" : "transpose_30",
+      "type" : "transpose",
+      "name" : "transpose_30"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv2_2_1x1_down\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_8\/Relu",
+      "K" : 256,
+      "blob_biases" : 81,
+      "name" : "vggface_senet50\/conv2_2_1x1_down\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 16,
+      "bottom" : "transpose_30",
+      "weights" : {
+        "per_ch_qscale" : 87,
+        "W_U4" : 83,
+        "per_ch_qbias" : 85
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv2_2_1x1_up\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/conv2_2_1x1_up\/BiasAdd",
+      "K" : 16,
+      "blob_biases" : 89,
+      "name" : "vggface_senet50\/conv2_2_1x1_up\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "vggface_senet50\/activation_8\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 95,
+        "W_U4" : 91,
+        "per_ch_qbias" : 93
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "vggface_senet50\/conv2_2_1x1_up\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "vggface_senet50\/activation_9\/Sigmoid",
+      "top" : "vggface_senet50\/activation_9\/Sigmoid",
+      "type" : "activation",
+      "name" : "vggface_senet50\/activation_9\/Sigmoid"
+    },
+    {
+      "bottom" : "batch_norm_7,vggface_senet50\/activation_9\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "vggface_senet50\/multiply_1\/mul",
+      "nd_mode" : true,
+      "top" : "vggface_senet50\/multiply_1\/mul",
+      "type" : "elementwise",
+      "name" : "vggface_senet50\/multiply_1\/mul",
+      "beta" : 0
+    },
+    {
+      "bottom" : "vggface_senet50\/multiply_1\/mul,vggface_senet50\/activation_5\/Relu",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "vggface_senet50\/add_1\/add",
+      "nd_mode" : true,
+      "top" : "vggface_senet50\/add_1\/add",
+      "type" : "elementwise",
+      "name" : "vggface_senet50\/add_1\/add",
+      "beta" : 0
+    },
+    {
+      "bottom" : "vggface_senet50\/add_1\/add",
+      "weights" : {
+
+      },
+      "mode" : 0,
+      "debug_info" : "vggface_senet50\/activation_10\/Relu",
+      "top" : "vggface_senet50\/activation_10\/Relu",
+      "type" : "activation",
+      "name" : "vggface_senet50\/activation_10\/Relu"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv2_3_1x1_reduce\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_11\/Relu",
+      "K" : 256,
+      "blob_biases" : 97,
+      "name" : "vggface_senet50\/conv2_3_1x1_reduce\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 64,
+      "bottom" : "vggface_senet50\/activation_10\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 103,
+        "W_U4" : 99,
+        "per_ch_qbias" : 101
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv2_3_3x3\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_12\/Relu",
+      "K" : 64,
+      "blob_biases" : 105,
+      "name" : "vggface_senet50\/conv2_3_3x3\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 64,
+      "bottom" : "vggface_senet50\/activation_11\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 111,
+        "W_U4" : 107,
+        "per_ch_qbias" : 109
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv2_3_1x1_increase\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_norm_10",
+      "K" : 64,
+      "blob_biases" : 113,
+      "name" : "vggface_senet50\/conv2_3_1x1_increase\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "vggface_senet50\/activation_12\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 119,
+        "W_U4" : 115,
+        "per_ch_qbias" : 117
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "axis_h" : 0,
+      "axis_w" : 2,
+      "bottom" : "batch_norm_10",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_227",
+      "top" : "transpose_227",
+      "type" : "transpose",
+      "name" : "transpose_227"
+    },
+    {
+      "axis_mode" : 4,
+      "bottom" : "transpose_227",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 1,
+      "nd_mode" : true,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_2\/Mean",
+      "use_version" : 1,
+      "top" : "transpose_2271",
+      "type" : "reduce",
+      "name" : "vggface_senet50\/global_average_pooling2d_2\/Mean0"
+    },
+    {
+      "axis_mode" : 2,
+      "bottom" : "transpose_2271",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 2,
+      "nd_mode" : true,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_2\/Mean",
+      "use_version" : 1,
+      "top" : "vggface_senet50\/global_average_pooling2d_2\/Mean_squeeze",
+      "type" : "reduce",
+      "name" : "vggface_senet50\/global_average_pooling2d_2\/Mean"
+    },
+    {
+      "size_of_axes" : 2,
+      "bottom" : "vggface_senet50\/global_average_pooling2d_2\/Mean_squeeze",
+      "axes_0" : 1,
+      "axes_1" : 2,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_2\/Mean",
+      "version" : 1,
+      "top" : "vggface_senet50\/global_average_pooling2d_2\/Mean",
+      "type" : "squeeze",
+      "name" : "vggface_senet50\/global_average_pooling2d_2\/Mean"
+    },
+    {
+      "name" : "vggface_senet50\/reshape_2\/Reshape",
+      "weights" : {
+
+      },
+      "dst_w" : 256,
+      "version" : 1,
+      "dst_n" : -1,
+      "dst_nd_rank" : 4,
+      "type" : "reshape",
+      "dst_h" : 1,
+      "mode" : 0,
+      "dynamic_shape" : false,
+      "bottom" : "vggface_senet50\/global_average_pooling2d_2\/Mean",
+      "debug_info" : "vggface_senet50\/reshape_2\/Reshape",
+      "dst_seq" : 1,
+      "dst_k" : 1,
+      "top" : "vggface_senet50\/reshape_2\/Reshape"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 1,
+      "bottom" : "vggface_senet50\/reshape_2\/Reshape",
+      "axis_k" : 0,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_43",
+      "top" : "transpose_43",
+      "type" : "transpose",
+      "name" : "transpose_43"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv2_3_1x1_down\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_13\/Relu",
+      "K" : 256,
+      "blob_biases" : 121,
+      "name" : "vggface_senet50\/conv2_3_1x1_down\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 16,
+      "bottom" : "transpose_43",
+      "weights" : {
+        "per_ch_qscale" : 127,
+        "W_U4" : 123,
+        "per_ch_qbias" : 125
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv2_3_1x1_up\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/conv2_3_1x1_up\/BiasAdd",
+      "K" : 16,
+      "blob_biases" : 129,
+      "name" : "vggface_senet50\/conv2_3_1x1_up\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "vggface_senet50\/activation_13\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 135,
+        "W_U4" : 131,
+        "per_ch_qbias" : 133
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "vggface_senet50\/conv2_3_1x1_up\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "vggface_senet50\/activation_14\/Sigmoid",
+      "top" : "vggface_senet50\/activation_14\/Sigmoid",
+      "type" : "activation",
+      "name" : "vggface_senet50\/activation_14\/Sigmoid"
+    },
+    {
+      "bottom" : "batch_norm_10,vggface_senet50\/activation_14\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "vggface_senet50\/multiply_2\/mul",
+      "nd_mode" : true,
+      "top" : "vggface_senet50\/multiply_2\/mul",
+      "type" : "elementwise",
+      "name" : "vggface_senet50\/multiply_2\/mul",
+      "beta" : 0
+    },
+    {
+      "bottom" : "vggface_senet50\/multiply_2\/mul,vggface_senet50\/activation_10\/Relu",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "vggface_senet50\/add_2\/add",
+      "nd_mode" : true,
+      "top" : "vggface_senet50\/add_2\/add",
+      "type" : "elementwise",
+      "name" : "vggface_senet50\/add_2\/add",
+      "beta" : 0
+    },
+    {
+      "bottom" : "vggface_senet50\/add_2\/add",
+      "weights" : {
+
+      },
+      "mode" : 0,
+      "debug_info" : "vggface_senet50\/activation_15\/Relu",
+      "top" : "vggface_senet50\/activation_15\/Relu",
+      "type" : "activation",
+      "name" : "vggface_senet50\/activation_15\/Relu"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv3_1_1x1_reduce\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_16\/Relu",
+      "K" : 256,
+      "blob_biases" : 137,
+      "stride_x" : 2,
+      "name" : "vggface_senet50\/conv3_1_1x1_reduce\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "stride_y" : 2,
+      "has_biases" : 1,
+      "C" : 128,
+      "bottom" : "vggface_senet50\/activation_15\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 143,
+        "W_U4" : 139,
+        "per_ch_qbias" : 141
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv3_1_1x1_proj\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_norm_12",
+      "K" : 256,
+      "blob_biases" : 145,
+      "stride_x" : 2,
+      "name" : "vggface_senet50\/conv3_1_1x1_proj\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "stride_y" : 2,
+      "has_biases" : 1,
+      "C" : 512,
+      "bottom" : "vggface_senet50\/activation_15\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 151,
+        "W_U4" : 147,
+        "per_ch_qbias" : 149
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv3_1_3x3\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_17\/Relu",
+      "K" : 128,
+      "blob_biases" : 153,
+      "name" : "vggface_senet50\/conv3_1_3x3\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 128,
+      "bottom" : "vggface_senet50\/activation_16\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 159,
+        "W_U4" : 155,
+        "per_ch_qbias" : 157
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv3_1_1x1_increase\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_norm_14",
+      "K" : 128,
+      "blob_biases" : 161,
+      "name" : "vggface_senet50\/conv3_1_1x1_increase\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 512,
+      "bottom" : "vggface_senet50\/activation_17\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 167,
+        "W_U4" : 163,
+        "per_ch_qbias" : 165
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "axis_h" : 0,
+      "axis_w" : 2,
+      "bottom" : "batch_norm_14",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_228",
+      "top" : "transpose_228",
+      "type" : "transpose",
+      "name" : "transpose_228"
+    },
+    {
+      "axis_mode" : 4,
+      "bottom" : "transpose_228",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 1,
+      "nd_mode" : true,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_3\/Mean",
+      "use_version" : 1,
+      "top" : "transpose_2281",
+      "type" : "reduce",
+      "name" : "vggface_senet50\/global_average_pooling2d_3\/Mean0"
+    },
+    {
+      "axis_mode" : 2,
+      "bottom" : "transpose_2281",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 2,
+      "nd_mode" : true,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_3\/Mean",
+      "use_version" : 1,
+      "top" : "vggface_senet50\/global_average_pooling2d_3\/Mean_squeeze",
+      "type" : "reduce",
+      "name" : "vggface_senet50\/global_average_pooling2d_3\/Mean"
+    },
+    {
+      "size_of_axes" : 2,
+      "bottom" : "vggface_senet50\/global_average_pooling2d_3\/Mean_squeeze",
+      "axes_0" : 1,
+      "axes_1" : 2,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_3\/Mean",
+      "version" : 1,
+      "top" : "vggface_senet50\/global_average_pooling2d_3\/Mean",
+      "type" : "squeeze",
+      "name" : "vggface_senet50\/global_average_pooling2d_3\/Mean"
+    },
+    {
+      "name" : "vggface_senet50\/reshape_3\/Reshape",
+      "weights" : {
+
+      },
+      "dst_w" : 512,
+      "version" : 1,
+      "dst_n" : -1,
+      "dst_nd_rank" : 4,
+      "type" : "reshape",
+      "dst_h" : 1,
+      "mode" : 0,
+      "dynamic_shape" : false,
+      "bottom" : "vggface_senet50\/global_average_pooling2d_3\/Mean",
+      "debug_info" : "vggface_senet50\/reshape_3\/Reshape",
+      "dst_seq" : 1,
+      "dst_k" : 1,
+      "top" : "vggface_senet50\/reshape_3\/Reshape"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 1,
+      "bottom" : "vggface_senet50\/reshape_3\/Reshape",
+      "axis_k" : 0,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_59",
+      "top" : "transpose_59",
+      "type" : "transpose",
+      "name" : "transpose_59"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv3_1_1x1_down\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_18\/Relu",
+      "K" : 512,
+      "blob_biases" : 169,
+      "name" : "vggface_senet50\/conv3_1_1x1_down\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 32,
+      "bottom" : "transpose_59",
+      "weights" : {
+        "per_ch_qscale" : 175,
+        "W_U4" : 171,
+        "per_ch_qbias" : 173
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv3_1_1x1_up\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/conv3_1_1x1_up\/BiasAdd",
+      "K" : 32,
+      "blob_biases" : 177,
+      "name" : "vggface_senet50\/conv3_1_1x1_up\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 512,
+      "bottom" : "vggface_senet50\/activation_18\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 183,
+        "W_U4" : 179,
+        "per_ch_qbias" : 181
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "vggface_senet50\/conv3_1_1x1_up\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "vggface_senet50\/activation_19\/Sigmoid",
+      "top" : "vggface_senet50\/activation_19\/Sigmoid",
+      "type" : "activation",
+      "name" : "vggface_senet50\/activation_19\/Sigmoid"
+    },
+    {
+      "bottom" : "batch_norm_14,vggface_senet50\/activation_19\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "vggface_senet50\/multiply_3\/mul",
+      "nd_mode" : true,
+      "top" : "vggface_senet50\/multiply_3\/mul",
+      "type" : "elementwise",
+      "name" : "vggface_senet50\/multiply_3\/mul",
+      "beta" : 0
+    },
+    {
+      "bottom" : "vggface_senet50\/multiply_3\/mul,batch_norm_12",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "vggface_senet50\/add_3\/add",
+      "nd_mode" : true,
+      "top" : "vggface_senet50\/add_3\/add",
+      "type" : "elementwise",
+      "name" : "vggface_senet50\/add_3\/add",
+      "beta" : 0
+    },
+    {
+      "bottom" : "vggface_senet50\/add_3\/add",
+      "weights" : {
+
+      },
+      "mode" : 0,
+      "debug_info" : "vggface_senet50\/activation_20\/Relu",
+      "top" : "vggface_senet50\/activation_20\/Relu",
+      "type" : "activation",
+      "name" : "vggface_senet50\/activation_20\/Relu"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv3_2_1x1_reduce\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_21\/Relu",
+      "K" : 512,
+      "blob_biases" : 185,
+      "name" : "vggface_senet50\/conv3_2_1x1_reduce\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 128,
+      "bottom" : "vggface_senet50\/activation_20\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 191,
+        "W_U4" : 187,
+        "per_ch_qbias" : 189
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv3_2_3x3\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_22\/Relu",
+      "K" : 128,
+      "blob_biases" : 193,
+      "name" : "vggface_senet50\/conv3_2_3x3\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 128,
+      "bottom" : "vggface_senet50\/activation_21\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 199,
+        "W_U4" : 195,
+        "per_ch_qbias" : 197
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv3_2_1x1_increase\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_norm_17",
+      "K" : 128,
+      "blob_biases" : 201,
+      "name" : "vggface_senet50\/conv3_2_1x1_increase\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 512,
+      "bottom" : "vggface_senet50\/activation_22\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 207,
+        "W_U4" : 203,
+        "per_ch_qbias" : 205
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "axis_h" : 0,
+      "axis_w" : 2,
+      "bottom" : "batch_norm_17",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_229",
+      "top" : "transpose_229",
+      "type" : "transpose",
+      "name" : "transpose_229"
+    },
+    {
+      "axis_mode" : 4,
+      "bottom" : "transpose_229",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 1,
+      "nd_mode" : true,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_4\/Mean",
+      "use_version" : 1,
+      "top" : "transpose_2291",
+      "type" : "reduce",
+      "name" : "vggface_senet50\/global_average_pooling2d_4\/Mean0"
+    },
+    {
+      "axis_mode" : 2,
+      "bottom" : "transpose_2291",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 2,
+      "nd_mode" : true,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_4\/Mean",
+      "use_version" : 1,
+      "top" : "vggface_senet50\/global_average_pooling2d_4\/Mean_squeeze",
+      "type" : "reduce",
+      "name" : "vggface_senet50\/global_average_pooling2d_4\/Mean"
+    },
+    {
+      "size_of_axes" : 2,
+      "bottom" : "vggface_senet50\/global_average_pooling2d_4\/Mean_squeeze",
+      "axes_0" : 1,
+      "axes_1" : 2,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_4\/Mean",
+      "version" : 1,
+      "top" : "vggface_senet50\/global_average_pooling2d_4\/Mean",
+      "type" : "squeeze",
+      "name" : "vggface_senet50\/global_average_pooling2d_4\/Mean"
+    },
+    {
+      "name" : "vggface_senet50\/reshape_4\/Reshape",
+      "weights" : {
+
+      },
+      "dst_w" : 512,
+      "version" : 1,
+      "dst_n" : -1,
+      "dst_nd_rank" : 4,
+      "type" : "reshape",
+      "dst_h" : 1,
+      "mode" : 0,
+      "dynamic_shape" : false,
+      "bottom" : "vggface_senet50\/global_average_pooling2d_4\/Mean",
+      "debug_info" : "vggface_senet50\/reshape_4\/Reshape",
+      "dst_seq" : 1,
+      "dst_k" : 1,
+      "top" : "vggface_senet50\/reshape_4\/Reshape"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 1,
+      "bottom" : "vggface_senet50\/reshape_4\/Reshape",
+      "axis_k" : 0,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_72",
+      "top" : "transpose_72",
+      "type" : "transpose",
+      "name" : "transpose_72"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv3_2_1x1_down\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_23\/Relu",
+      "K" : 512,
+      "blob_biases" : 209,
+      "name" : "vggface_senet50\/conv3_2_1x1_down\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 32,
+      "bottom" : "transpose_72",
+      "weights" : {
+        "per_ch_qscale" : 215,
+        "W_U4" : 211,
+        "per_ch_qbias" : 213
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv3_2_1x1_up\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/conv3_2_1x1_up\/BiasAdd",
+      "K" : 32,
+      "blob_biases" : 217,
+      "name" : "vggface_senet50\/conv3_2_1x1_up\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 512,
+      "bottom" : "vggface_senet50\/activation_23\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 223,
+        "W_U4" : 219,
+        "per_ch_qbias" : 221
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "vggface_senet50\/conv3_2_1x1_up\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "vggface_senet50\/activation_24\/Sigmoid",
+      "top" : "vggface_senet50\/activation_24\/Sigmoid",
+      "type" : "activation",
+      "name" : "vggface_senet50\/activation_24\/Sigmoid"
+    },
+    {
+      "bottom" : "batch_norm_17,vggface_senet50\/activation_24\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "vggface_senet50\/multiply_4\/mul",
+      "nd_mode" : true,
+      "top" : "vggface_senet50\/multiply_4\/mul",
+      "type" : "elementwise",
+      "name" : "vggface_senet50\/multiply_4\/mul",
+      "beta" : 0
+    },
+    {
+      "bottom" : "vggface_senet50\/multiply_4\/mul,vggface_senet50\/activation_20\/Relu",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "vggface_senet50\/add_4\/add",
+      "nd_mode" : true,
+      "top" : "vggface_senet50\/add_4\/add",
+      "type" : "elementwise",
+      "name" : "vggface_senet50\/add_4\/add",
+      "beta" : 0
+    },
+    {
+      "bottom" : "vggface_senet50\/add_4\/add",
+      "weights" : {
+
+      },
+      "mode" : 0,
+      "debug_info" : "vggface_senet50\/activation_25\/Relu",
+      "top" : "vggface_senet50\/activation_25\/Relu",
+      "type" : "activation",
+      "name" : "vggface_senet50\/activation_25\/Relu"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv3_3_1x1_reduce\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_26\/Relu",
+      "K" : 512,
+      "blob_biases" : 225,
+      "name" : "vggface_senet50\/conv3_3_1x1_reduce\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 128,
+      "bottom" : "vggface_senet50\/activation_25\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 231,
+        "W_U4" : 227,
+        "per_ch_qbias" : 229
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv3_3_3x3\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_27\/Relu",
+      "K" : 128,
+      "blob_biases" : 233,
+      "name" : "vggface_senet50\/conv3_3_3x3\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 128,
+      "bottom" : "vggface_senet50\/activation_26\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 239,
+        "W_U4" : 235,
+        "per_ch_qbias" : 237
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv3_3_1x1_increase\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_norm_20",
+      "K" : 128,
+      "blob_biases" : 241,
+      "name" : "vggface_senet50\/conv3_3_1x1_increase\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 512,
+      "bottom" : "vggface_senet50\/activation_27\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 247,
+        "W_U4" : 243,
+        "per_ch_qbias" : 245
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "axis_h" : 0,
+      "axis_w" : 2,
+      "bottom" : "batch_norm_20",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_230",
+      "top" : "transpose_230",
+      "type" : "transpose",
+      "name" : "transpose_230"
+    },
+    {
+      "axis_mode" : 4,
+      "bottom" : "transpose_230",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 1,
+      "nd_mode" : true,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_5\/Mean",
+      "use_version" : 1,
+      "top" : "transpose_2301",
+      "type" : "reduce",
+      "name" : "vggface_senet50\/global_average_pooling2d_5\/Mean0"
+    },
+    {
+      "axis_mode" : 2,
+      "bottom" : "transpose_2301",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 2,
+      "nd_mode" : true,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_5\/Mean",
+      "use_version" : 1,
+      "top" : "vggface_senet50\/global_average_pooling2d_5\/Mean_squeeze",
+      "type" : "reduce",
+      "name" : "vggface_senet50\/global_average_pooling2d_5\/Mean"
+    },
+    {
+      "size_of_axes" : 2,
+      "bottom" : "vggface_senet50\/global_average_pooling2d_5\/Mean_squeeze",
+      "axes_0" : 1,
+      "axes_1" : 2,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_5\/Mean",
+      "version" : 1,
+      "top" : "vggface_senet50\/global_average_pooling2d_5\/Mean",
+      "type" : "squeeze",
+      "name" : "vggface_senet50\/global_average_pooling2d_5\/Mean"
+    },
+    {
+      "name" : "vggface_senet50\/reshape_5\/Reshape",
+      "weights" : {
+
+      },
+      "dst_w" : 512,
+      "version" : 1,
+      "dst_n" : -1,
+      "dst_nd_rank" : 4,
+      "type" : "reshape",
+      "dst_h" : 1,
+      "mode" : 0,
+      "dynamic_shape" : false,
+      "bottom" : "vggface_senet50\/global_average_pooling2d_5\/Mean",
+      "debug_info" : "vggface_senet50\/reshape_5\/Reshape",
+      "dst_seq" : 1,
+      "dst_k" : 1,
+      "top" : "vggface_senet50\/reshape_5\/Reshape"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 1,
+      "bottom" : "vggface_senet50\/reshape_5\/Reshape",
+      "axis_k" : 0,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_85",
+      "top" : "transpose_85",
+      "type" : "transpose",
+      "name" : "transpose_85"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv3_3_1x1_down\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_28\/Relu",
+      "K" : 512,
+      "blob_biases" : 249,
+      "name" : "vggface_senet50\/conv3_3_1x1_down\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 32,
+      "bottom" : "transpose_85",
+      "weights" : {
+        "per_ch_qscale" : 255,
+        "W_U4" : 251,
+        "per_ch_qbias" : 253
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv3_3_1x1_up\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/conv3_3_1x1_up\/BiasAdd",
+      "K" : 32,
+      "blob_biases" : 257,
+      "name" : "vggface_senet50\/conv3_3_1x1_up\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 512,
+      "bottom" : "vggface_senet50\/activation_28\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 263,
+        "W_U4" : 259,
+        "per_ch_qbias" : 261
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "vggface_senet50\/conv3_3_1x1_up\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "vggface_senet50\/activation_29\/Sigmoid",
+      "top" : "vggface_senet50\/activation_29\/Sigmoid",
+      "type" : "activation",
+      "name" : "vggface_senet50\/activation_29\/Sigmoid"
+    },
+    {
+      "bottom" : "batch_norm_20,vggface_senet50\/activation_29\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "vggface_senet50\/multiply_5\/mul",
+      "nd_mode" : true,
+      "top" : "vggface_senet50\/multiply_5\/mul",
+      "type" : "elementwise",
+      "name" : "vggface_senet50\/multiply_5\/mul",
+      "beta" : 0
+    },
+    {
+      "bottom" : "vggface_senet50\/multiply_5\/mul,vggface_senet50\/activation_25\/Relu",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "vggface_senet50\/add_5\/add",
+      "nd_mode" : true,
+      "top" : "vggface_senet50\/add_5\/add",
+      "type" : "elementwise",
+      "name" : "vggface_senet50\/add_5\/add",
+      "beta" : 0
+    },
+    {
+      "bottom" : "vggface_senet50\/add_5\/add",
+      "weights" : {
+
+      },
+      "mode" : 0,
+      "debug_info" : "vggface_senet50\/activation_30\/Relu",
+      "top" : "vggface_senet50\/activation_30\/Relu",
+      "type" : "activation",
+      "name" : "vggface_senet50\/activation_30\/Relu"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv3_4_1x1_reduce\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_31\/Relu",
+      "K" : 512,
+      "blob_biases" : 265,
+      "name" : "vggface_senet50\/conv3_4_1x1_reduce\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 128,
+      "bottom" : "vggface_senet50\/activation_30\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 271,
+        "W_U4" : 267,
+        "per_ch_qbias" : 269
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv3_4_3x3\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_32\/Relu",
+      "K" : 128,
+      "blob_biases" : 273,
+      "name" : "vggface_senet50\/conv3_4_3x3\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 128,
+      "bottom" : "vggface_senet50\/activation_31\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 279,
+        "W_U4" : 275,
+        "per_ch_qbias" : 277
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv3_4_1x1_increase\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_norm_23",
+      "K" : 128,
+      "blob_biases" : 281,
+      "name" : "vggface_senet50\/conv3_4_1x1_increase\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 512,
+      "bottom" : "vggface_senet50\/activation_32\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 287,
+        "W_U4" : 283,
+        "per_ch_qbias" : 285
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "axis_h" : 0,
+      "axis_w" : 2,
+      "bottom" : "batch_norm_23",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_231",
+      "top" : "transpose_231",
+      "type" : "transpose",
+      "name" : "transpose_231"
+    },
+    {
+      "axis_mode" : 4,
+      "bottom" : "transpose_231",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 1,
+      "nd_mode" : true,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_6\/Mean",
+      "use_version" : 1,
+      "top" : "transpose_2311",
+      "type" : "reduce",
+      "name" : "vggface_senet50\/global_average_pooling2d_6\/Mean0"
+    },
+    {
+      "axis_mode" : 2,
+      "bottom" : "transpose_2311",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 2,
+      "nd_mode" : true,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_6\/Mean",
+      "use_version" : 1,
+      "top" : "vggface_senet50\/global_average_pooling2d_6\/Mean_squeeze",
+      "type" : "reduce",
+      "name" : "vggface_senet50\/global_average_pooling2d_6\/Mean"
+    },
+    {
+      "size_of_axes" : 2,
+      "bottom" : "vggface_senet50\/global_average_pooling2d_6\/Mean_squeeze",
+      "axes_0" : 1,
+      "axes_1" : 2,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_6\/Mean",
+      "version" : 1,
+      "top" : "vggface_senet50\/global_average_pooling2d_6\/Mean",
+      "type" : "squeeze",
+      "name" : "vggface_senet50\/global_average_pooling2d_6\/Mean"
+    },
+    {
+      "name" : "vggface_senet50\/reshape_6\/Reshape",
+      "weights" : {
+
+      },
+      "dst_w" : 512,
+      "version" : 1,
+      "dst_n" : -1,
+      "dst_nd_rank" : 4,
+      "type" : "reshape",
+      "dst_h" : 1,
+      "mode" : 0,
+      "dynamic_shape" : false,
+      "bottom" : "vggface_senet50\/global_average_pooling2d_6\/Mean",
+      "debug_info" : "vggface_senet50\/reshape_6\/Reshape",
+      "dst_seq" : 1,
+      "dst_k" : 1,
+      "top" : "vggface_senet50\/reshape_6\/Reshape"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 1,
+      "bottom" : "vggface_senet50\/reshape_6\/Reshape",
+      "axis_k" : 0,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_98",
+      "top" : "transpose_98",
+      "type" : "transpose",
+      "name" : "transpose_98"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv3_4_1x1_down\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_33\/Relu",
+      "K" : 512,
+      "blob_biases" : 289,
+      "name" : "vggface_senet50\/conv3_4_1x1_down\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 32,
+      "bottom" : "transpose_98",
+      "weights" : {
+        "per_ch_qscale" : 295,
+        "W_U4" : 291,
+        "per_ch_qbias" : 293
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv3_4_1x1_up\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/conv3_4_1x1_up\/BiasAdd",
+      "K" : 32,
+      "blob_biases" : 297,
+      "name" : "vggface_senet50\/conv3_4_1x1_up\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 512,
+      "bottom" : "vggface_senet50\/activation_33\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 303,
+        "W_U4" : 299,
+        "per_ch_qbias" : 301
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "vggface_senet50\/conv3_4_1x1_up\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "vggface_senet50\/activation_34\/Sigmoid",
+      "top" : "vggface_senet50\/activation_34\/Sigmoid",
+      "type" : "activation",
+      "name" : "vggface_senet50\/activation_34\/Sigmoid"
+    },
+    {
+      "bottom" : "batch_norm_23,vggface_senet50\/activation_34\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "vggface_senet50\/multiply_6\/mul",
+      "nd_mode" : true,
+      "top" : "vggface_senet50\/multiply_6\/mul",
+      "type" : "elementwise",
+      "name" : "vggface_senet50\/multiply_6\/mul",
+      "beta" : 0
+    },
+    {
+      "bottom" : "vggface_senet50\/multiply_6\/mul,vggface_senet50\/activation_30\/Relu",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "vggface_senet50\/add_6\/add",
+      "nd_mode" : true,
+      "top" : "vggface_senet50\/add_6\/add",
+      "type" : "elementwise",
+      "name" : "vggface_senet50\/add_6\/add",
+      "beta" : 0
+    },
+    {
+      "bottom" : "vggface_senet50\/add_6\/add",
+      "weights" : {
+
+      },
+      "mode" : 0,
+      "debug_info" : "vggface_senet50\/activation_35\/Relu",
+      "top" : "vggface_senet50\/activation_35\/Relu",
+      "type" : "activation",
+      "name" : "vggface_senet50\/activation_35\/Relu"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv4_1_1x1_reduce\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_36\/Relu",
+      "K" : 512,
+      "blob_biases" : 305,
+      "stride_x" : 2,
+      "name" : "vggface_senet50\/conv4_1_1x1_reduce\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "stride_y" : 2,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "vggface_senet50\/activation_35\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 311,
+        "W_U4" : 307,
+        "per_ch_qbias" : 309
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv4_1_1x1_proj\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_norm_25",
+      "K" : 512,
+      "blob_biases" : 313,
+      "stride_x" : 2,
+      "name" : "vggface_senet50\/conv4_1_1x1_proj\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "stride_y" : 2,
+      "has_biases" : 1,
+      "C" : 1024,
+      "bottom" : "vggface_senet50\/activation_35\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 319,
+        "W_U4" : 315,
+        "per_ch_qbias" : 317
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv4_1_3x3\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_37\/Relu",
+      "K" : 256,
+      "blob_biases" : 321,
+      "name" : "vggface_senet50\/conv4_1_3x3\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "vggface_senet50\/activation_36\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 327,
+        "W_U4" : 323,
+        "per_ch_qbias" : 325
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv4_1_1x1_increase\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_norm_27",
+      "K" : 256,
+      "blob_biases" : 329,
+      "name" : "vggface_senet50\/conv4_1_1x1_increase\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 1024,
+      "bottom" : "vggface_senet50\/activation_37\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 335,
+        "W_U4" : 331,
+        "per_ch_qbias" : 333
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "axis_h" : 0,
+      "axis_w" : 2,
+      "bottom" : "batch_norm_27",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_232",
+      "top" : "transpose_232",
+      "type" : "transpose",
+      "name" : "transpose_232"
+    },
+    {
+      "axis_mode" : 4,
+      "bottom" : "transpose_232",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 1,
+      "nd_mode" : true,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_7\/Mean",
+      "use_version" : 1,
+      "top" : "transpose_2321",
+      "type" : "reduce",
+      "name" : "vggface_senet50\/global_average_pooling2d_7\/Mean0"
+    },
+    {
+      "axis_mode" : 2,
+      "bottom" : "transpose_2321",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 2,
+      "nd_mode" : true,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_7\/Mean",
+      "use_version" : 1,
+      "top" : "vggface_senet50\/global_average_pooling2d_7\/Mean_squeeze",
+      "type" : "reduce",
+      "name" : "vggface_senet50\/global_average_pooling2d_7\/Mean"
+    },
+    {
+      "size_of_axes" : 2,
+      "bottom" : "vggface_senet50\/global_average_pooling2d_7\/Mean_squeeze",
+      "axes_0" : 1,
+      "axes_1" : 2,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_7\/Mean",
+      "version" : 1,
+      "top" : "vggface_senet50\/global_average_pooling2d_7\/Mean",
+      "type" : "squeeze",
+      "name" : "vggface_senet50\/global_average_pooling2d_7\/Mean"
+    },
+    {
+      "name" : "vggface_senet50\/reshape_7\/Reshape",
+      "weights" : {
+
+      },
+      "dst_w" : 1024,
+      "version" : 1,
+      "dst_n" : -1,
+      "dst_nd_rank" : 4,
+      "type" : "reshape",
+      "dst_h" : 1,
+      "mode" : 0,
+      "dynamic_shape" : false,
+      "bottom" : "vggface_senet50\/global_average_pooling2d_7\/Mean",
+      "debug_info" : "vggface_senet50\/reshape_7\/Reshape",
+      "dst_seq" : 1,
+      "dst_k" : 1,
+      "top" : "vggface_senet50\/reshape_7\/Reshape"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 1,
+      "bottom" : "vggface_senet50\/reshape_7\/Reshape",
+      "axis_k" : 0,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_114",
+      "top" : "transpose_114",
+      "type" : "transpose",
+      "name" : "transpose_114"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv4_1_1x1_down\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_38\/Relu",
+      "K" : 1024,
+      "blob_biases" : 337,
+      "name" : "vggface_senet50\/conv4_1_1x1_down\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 64,
+      "bottom" : "transpose_114",
+      "weights" : {
+        "per_ch_qscale" : 343,
+        "W_U4" : 339,
+        "per_ch_qbias" : 341
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv4_1_1x1_up\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/conv4_1_1x1_up\/BiasAdd",
+      "K" : 64,
+      "blob_biases" : 345,
+      "name" : "vggface_senet50\/conv4_1_1x1_up\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 1024,
+      "bottom" : "vggface_senet50\/activation_38\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 351,
+        "W_U4" : 347,
+        "per_ch_qbias" : 349
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "vggface_senet50\/conv4_1_1x1_up\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "vggface_senet50\/activation_39\/Sigmoid",
+      "top" : "vggface_senet50\/activation_39\/Sigmoid",
+      "type" : "activation",
+      "name" : "vggface_senet50\/activation_39\/Sigmoid"
+    },
+    {
+      "bottom" : "batch_norm_27,vggface_senet50\/activation_39\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "vggface_senet50\/multiply_7\/mul",
+      "nd_mode" : true,
+      "top" : "vggface_senet50\/multiply_7\/mul",
+      "type" : "elementwise",
+      "name" : "vggface_senet50\/multiply_7\/mul",
+      "beta" : 0
+    },
+    {
+      "bottom" : "vggface_senet50\/multiply_7\/mul,batch_norm_25",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "vggface_senet50\/add_7\/add",
+      "nd_mode" : true,
+      "top" : "vggface_senet50\/add_7\/add",
+      "type" : "elementwise",
+      "name" : "vggface_senet50\/add_7\/add",
+      "beta" : 0
+    },
+    {
+      "bottom" : "vggface_senet50\/add_7\/add",
+      "weights" : {
+
+      },
+      "mode" : 0,
+      "debug_info" : "vggface_senet50\/activation_40\/Relu",
+      "top" : "vggface_senet50\/activation_40\/Relu",
+      "type" : "activation",
+      "name" : "vggface_senet50\/activation_40\/Relu"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv4_2_1x1_reduce\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_41\/Relu",
+      "K" : 1024,
+      "blob_biases" : 353,
+      "name" : "vggface_senet50\/conv4_2_1x1_reduce\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "vggface_senet50\/activation_40\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 359,
+        "W_U4" : 355,
+        "per_ch_qbias" : 357
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv4_2_3x3\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_42\/Relu",
+      "K" : 256,
+      "blob_biases" : 361,
+      "name" : "vggface_senet50\/conv4_2_3x3\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "vggface_senet50\/activation_41\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 367,
+        "W_U4" : 363,
+        "per_ch_qbias" : 365
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv4_2_1x1_increase\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_norm_30",
+      "K" : 256,
+      "blob_biases" : 369,
+      "name" : "vggface_senet50\/conv4_2_1x1_increase\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 1024,
+      "bottom" : "vggface_senet50\/activation_42\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 375,
+        "W_U4" : 371,
+        "per_ch_qbias" : 373
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "axis_h" : 0,
+      "axis_w" : 2,
+      "bottom" : "batch_norm_30",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_233",
+      "top" : "transpose_233",
+      "type" : "transpose",
+      "name" : "transpose_233"
+    },
+    {
+      "axis_mode" : 4,
+      "bottom" : "transpose_233",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 1,
+      "nd_mode" : true,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_8\/Mean",
+      "use_version" : 1,
+      "top" : "transpose_2331",
+      "type" : "reduce",
+      "name" : "vggface_senet50\/global_average_pooling2d_8\/Mean0"
+    },
+    {
+      "axis_mode" : 2,
+      "bottom" : "transpose_2331",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 2,
+      "nd_mode" : true,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_8\/Mean",
+      "use_version" : 1,
+      "top" : "vggface_senet50\/global_average_pooling2d_8\/Mean_squeeze",
+      "type" : "reduce",
+      "name" : "vggface_senet50\/global_average_pooling2d_8\/Mean"
+    },
+    {
+      "size_of_axes" : 2,
+      "bottom" : "vggface_senet50\/global_average_pooling2d_8\/Mean_squeeze",
+      "axes_0" : 1,
+      "axes_1" : 2,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_8\/Mean",
+      "version" : 1,
+      "top" : "vggface_senet50\/global_average_pooling2d_8\/Mean",
+      "type" : "squeeze",
+      "name" : "vggface_senet50\/global_average_pooling2d_8\/Mean"
+    },
+    {
+      "name" : "vggface_senet50\/reshape_8\/Reshape",
+      "weights" : {
+
+      },
+      "dst_w" : 1024,
+      "version" : 1,
+      "dst_n" : -1,
+      "dst_nd_rank" : 4,
+      "type" : "reshape",
+      "dst_h" : 1,
+      "mode" : 0,
+      "dynamic_shape" : false,
+      "bottom" : "vggface_senet50\/global_average_pooling2d_8\/Mean",
+      "debug_info" : "vggface_senet50\/reshape_8\/Reshape",
+      "dst_seq" : 1,
+      "dst_k" : 1,
+      "top" : "vggface_senet50\/reshape_8\/Reshape"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 1,
+      "bottom" : "vggface_senet50\/reshape_8\/Reshape",
+      "axis_k" : 0,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_127",
+      "top" : "transpose_127",
+      "type" : "transpose",
+      "name" : "transpose_127"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv4_2_1x1_down\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_43\/Relu",
+      "K" : 1024,
+      "blob_biases" : 377,
+      "name" : "vggface_senet50\/conv4_2_1x1_down\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 64,
+      "bottom" : "transpose_127",
+      "weights" : {
+        "per_ch_qscale" : 383,
+        "W_U4" : 379,
+        "per_ch_qbias" : 381
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv4_2_1x1_up\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/conv4_2_1x1_up\/BiasAdd",
+      "K" : 64,
+      "blob_biases" : 385,
+      "name" : "vggface_senet50\/conv4_2_1x1_up\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 1024,
+      "bottom" : "vggface_senet50\/activation_43\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 391,
+        "W_U4" : 387,
+        "per_ch_qbias" : 389
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "vggface_senet50\/conv4_2_1x1_up\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "vggface_senet50\/activation_44\/Sigmoid",
+      "top" : "vggface_senet50\/activation_44\/Sigmoid",
+      "type" : "activation",
+      "name" : "vggface_senet50\/activation_44\/Sigmoid"
+    },
+    {
+      "bottom" : "batch_norm_30,vggface_senet50\/activation_44\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "vggface_senet50\/multiply_8\/mul",
+      "nd_mode" : true,
+      "top" : "vggface_senet50\/multiply_8\/mul",
+      "type" : "elementwise",
+      "name" : "vggface_senet50\/multiply_8\/mul",
+      "beta" : 0
+    },
+    {
+      "bottom" : "vggface_senet50\/multiply_8\/mul,vggface_senet50\/activation_40\/Relu",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "vggface_senet50\/add_8\/add",
+      "nd_mode" : true,
+      "top" : "vggface_senet50\/add_8\/add",
+      "type" : "elementwise",
+      "name" : "vggface_senet50\/add_8\/add",
+      "beta" : 0
+    },
+    {
+      "bottom" : "vggface_senet50\/add_8\/add",
+      "weights" : {
+
+      },
+      "mode" : 0,
+      "debug_info" : "vggface_senet50\/activation_45\/Relu",
+      "top" : "vggface_senet50\/activation_45\/Relu",
+      "type" : "activation",
+      "name" : "vggface_senet50\/activation_45\/Relu"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv4_3_1x1_reduce\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_46\/Relu",
+      "K" : 1024,
+      "blob_biases" : 393,
+      "name" : "vggface_senet50\/conv4_3_1x1_reduce\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "vggface_senet50\/activation_45\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 399,
+        "W_U4" : 395,
+        "per_ch_qbias" : 397
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv4_3_3x3\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_47\/Relu",
+      "K" : 256,
+      "blob_biases" : 401,
+      "name" : "vggface_senet50\/conv4_3_3x3\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "vggface_senet50\/activation_46\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 407,
+        "W_U4" : 403,
+        "per_ch_qbias" : 405
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv4_3_1x1_increase\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_norm_33",
+      "K" : 256,
+      "blob_biases" : 409,
+      "name" : "vggface_senet50\/conv4_3_1x1_increase\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 1024,
+      "bottom" : "vggface_senet50\/activation_47\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 415,
+        "W_U4" : 411,
+        "per_ch_qbias" : 413
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "axis_h" : 0,
+      "axis_w" : 2,
+      "bottom" : "batch_norm_33",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_234",
+      "top" : "transpose_234",
+      "type" : "transpose",
+      "name" : "transpose_234"
+    },
+    {
+      "axis_mode" : 4,
+      "bottom" : "transpose_234",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 1,
+      "nd_mode" : true,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_9\/Mean",
+      "use_version" : 1,
+      "top" : "transpose_2341",
+      "type" : "reduce",
+      "name" : "vggface_senet50\/global_average_pooling2d_9\/Mean0"
+    },
+    {
+      "axis_mode" : 2,
+      "bottom" : "transpose_2341",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 2,
+      "nd_mode" : true,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_9\/Mean",
+      "use_version" : 1,
+      "top" : "vggface_senet50\/global_average_pooling2d_9\/Mean_squeeze",
+      "type" : "reduce",
+      "name" : "vggface_senet50\/global_average_pooling2d_9\/Mean"
+    },
+    {
+      "size_of_axes" : 2,
+      "bottom" : "vggface_senet50\/global_average_pooling2d_9\/Mean_squeeze",
+      "axes_0" : 1,
+      "axes_1" : 2,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_9\/Mean",
+      "version" : 1,
+      "top" : "vggface_senet50\/global_average_pooling2d_9\/Mean",
+      "type" : "squeeze",
+      "name" : "vggface_senet50\/global_average_pooling2d_9\/Mean"
+    },
+    {
+      "name" : "vggface_senet50\/reshape_9\/Reshape",
+      "weights" : {
+
+      },
+      "dst_w" : 1024,
+      "version" : 1,
+      "dst_n" : -1,
+      "dst_nd_rank" : 4,
+      "type" : "reshape",
+      "dst_h" : 1,
+      "mode" : 0,
+      "dynamic_shape" : false,
+      "bottom" : "vggface_senet50\/global_average_pooling2d_9\/Mean",
+      "debug_info" : "vggface_senet50\/reshape_9\/Reshape",
+      "dst_seq" : 1,
+      "dst_k" : 1,
+      "top" : "vggface_senet50\/reshape_9\/Reshape"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 1,
+      "bottom" : "vggface_senet50\/reshape_9\/Reshape",
+      "axis_k" : 0,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_140",
+      "top" : "transpose_140",
+      "type" : "transpose",
+      "name" : "transpose_140"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv4_3_1x1_down\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_48\/Relu",
+      "K" : 1024,
+      "blob_biases" : 417,
+      "name" : "vggface_senet50\/conv4_3_1x1_down\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 64,
+      "bottom" : "transpose_140",
+      "weights" : {
+        "per_ch_qscale" : 423,
+        "W_U4" : 419,
+        "per_ch_qbias" : 421
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv4_3_1x1_up\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/conv4_3_1x1_up\/BiasAdd",
+      "K" : 64,
+      "blob_biases" : 425,
+      "name" : "vggface_senet50\/conv4_3_1x1_up\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 1024,
+      "bottom" : "vggface_senet50\/activation_48\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 431,
+        "W_U4" : 427,
+        "per_ch_qbias" : 429
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "vggface_senet50\/conv4_3_1x1_up\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "vggface_senet50\/activation_49\/Sigmoid",
+      "top" : "vggface_senet50\/activation_49\/Sigmoid",
+      "type" : "activation",
+      "name" : "vggface_senet50\/activation_49\/Sigmoid"
+    },
+    {
+      "bottom" : "batch_norm_33,vggface_senet50\/activation_49\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "vggface_senet50\/multiply_9\/mul",
+      "nd_mode" : true,
+      "top" : "vggface_senet50\/multiply_9\/mul",
+      "type" : "elementwise",
+      "name" : "vggface_senet50\/multiply_9\/mul",
+      "beta" : 0
+    },
+    {
+      "bottom" : "vggface_senet50\/multiply_9\/mul,vggface_senet50\/activation_45\/Relu",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "vggface_senet50\/add_9\/add",
+      "nd_mode" : true,
+      "top" : "vggface_senet50\/add_9\/add",
+      "type" : "elementwise",
+      "name" : "vggface_senet50\/add_9\/add",
+      "beta" : 0
+    },
+    {
+      "bottom" : "vggface_senet50\/add_9\/add",
+      "weights" : {
+
+      },
+      "mode" : 0,
+      "debug_info" : "vggface_senet50\/activation_50\/Relu",
+      "top" : "vggface_senet50\/activation_50\/Relu",
+      "type" : "activation",
+      "name" : "vggface_senet50\/activation_50\/Relu"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv4_4_1x1_reduce\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_51\/Relu",
+      "K" : 1024,
+      "blob_biases" : 433,
+      "name" : "vggface_senet50\/conv4_4_1x1_reduce\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "vggface_senet50\/activation_50\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 439,
+        "W_U4" : 435,
+        "per_ch_qbias" : 437
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv4_4_3x3\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_52\/Relu",
+      "K" : 256,
+      "blob_biases" : 441,
+      "name" : "vggface_senet50\/conv4_4_3x3\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "vggface_senet50\/activation_51\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 447,
+        "W_U4" : 443,
+        "per_ch_qbias" : 445
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv4_4_1x1_increase\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_norm_36",
+      "K" : 256,
+      "blob_biases" : 449,
+      "name" : "vggface_senet50\/conv4_4_1x1_increase\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 1024,
+      "bottom" : "vggface_senet50\/activation_52\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 455,
+        "W_U4" : 451,
+        "per_ch_qbias" : 453
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "axis_h" : 0,
+      "axis_w" : 2,
+      "bottom" : "batch_norm_36",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_235",
+      "top" : "transpose_235",
+      "type" : "transpose",
+      "name" : "transpose_235"
+    },
+    {
+      "axis_mode" : 4,
+      "bottom" : "transpose_235",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 1,
+      "nd_mode" : true,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_10\/Mean",
+      "use_version" : 1,
+      "top" : "transpose_2351",
+      "type" : "reduce",
+      "name" : "vggface_senet50\/global_average_pooling2d_10\/Mean0"
+    },
+    {
+      "axis_mode" : 2,
+      "bottom" : "transpose_2351",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 2,
+      "nd_mode" : true,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_10\/Mean",
+      "use_version" : 1,
+      "top" : "vggface_senet50\/global_average_pooling2d_10\/Mean_squeeze",
+      "type" : "reduce",
+      "name" : "vggface_senet50\/global_average_pooling2d_10\/Mean"
+    },
+    {
+      "size_of_axes" : 2,
+      "bottom" : "vggface_senet50\/global_average_pooling2d_10\/Mean_squeeze",
+      "axes_0" : 1,
+      "axes_1" : 2,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_10\/Mean",
+      "version" : 1,
+      "top" : "vggface_senet50\/global_average_pooling2d_10\/Mean",
+      "type" : "squeeze",
+      "name" : "vggface_senet50\/global_average_pooling2d_10\/Mean"
+    },
+    {
+      "name" : "vggface_senet50\/reshape_10\/Reshape",
+      "weights" : {
+
+      },
+      "dst_w" : 1024,
+      "version" : 1,
+      "dst_n" : -1,
+      "dst_nd_rank" : 4,
+      "type" : "reshape",
+      "dst_h" : 1,
+      "mode" : 0,
+      "dynamic_shape" : false,
+      "bottom" : "vggface_senet50\/global_average_pooling2d_10\/Mean",
+      "debug_info" : "vggface_senet50\/reshape_10\/Reshape",
+      "dst_seq" : 1,
+      "dst_k" : 1,
+      "top" : "vggface_senet50\/reshape_10\/Reshape"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 1,
+      "bottom" : "vggface_senet50\/reshape_10\/Reshape",
+      "axis_k" : 0,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_153",
+      "top" : "transpose_153",
+      "type" : "transpose",
+      "name" : "transpose_153"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv4_4_1x1_down\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_53\/Relu",
+      "K" : 1024,
+      "blob_biases" : 457,
+      "name" : "vggface_senet50\/conv4_4_1x1_down\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 64,
+      "bottom" : "transpose_153",
+      "weights" : {
+        "per_ch_qscale" : 463,
+        "W_U4" : 459,
+        "per_ch_qbias" : 461
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv4_4_1x1_up\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/conv4_4_1x1_up\/BiasAdd",
+      "K" : 64,
+      "blob_biases" : 465,
+      "name" : "vggface_senet50\/conv4_4_1x1_up\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 1024,
+      "bottom" : "vggface_senet50\/activation_53\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 471,
+        "W_U4" : 467,
+        "per_ch_qbias" : 469
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "vggface_senet50\/conv4_4_1x1_up\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "vggface_senet50\/activation_54\/Sigmoid",
+      "top" : "vggface_senet50\/activation_54\/Sigmoid",
+      "type" : "activation",
+      "name" : "vggface_senet50\/activation_54\/Sigmoid"
+    },
+    {
+      "bottom" : "batch_norm_36,vggface_senet50\/activation_54\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "vggface_senet50\/multiply_10\/mul",
+      "nd_mode" : true,
+      "top" : "vggface_senet50\/multiply_10\/mul",
+      "type" : "elementwise",
+      "name" : "vggface_senet50\/multiply_10\/mul",
+      "beta" : 0
+    },
+    {
+      "bottom" : "vggface_senet50\/multiply_10\/mul,vggface_senet50\/activation_50\/Relu",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "vggface_senet50\/add_10\/add",
+      "nd_mode" : true,
+      "top" : "vggface_senet50\/add_10\/add",
+      "type" : "elementwise",
+      "name" : "vggface_senet50\/add_10\/add",
+      "beta" : 0
+    },
+    {
+      "bottom" : "vggface_senet50\/add_10\/add",
+      "weights" : {
+
+      },
+      "mode" : 0,
+      "debug_info" : "vggface_senet50\/activation_55\/Relu",
+      "top" : "vggface_senet50\/activation_55\/Relu",
+      "type" : "activation",
+      "name" : "vggface_senet50\/activation_55\/Relu"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv4_5_1x1_reduce\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_56\/Relu",
+      "K" : 1024,
+      "blob_biases" : 473,
+      "name" : "vggface_senet50\/conv4_5_1x1_reduce\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "vggface_senet50\/activation_55\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 479,
+        "W_U4" : 475,
+        "per_ch_qbias" : 477
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv4_5_3x3\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_57\/Relu",
+      "K" : 256,
+      "blob_biases" : 481,
+      "name" : "vggface_senet50\/conv4_5_3x3\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "vggface_senet50\/activation_56\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 487,
+        "W_U4" : 483,
+        "per_ch_qbias" : 485
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv4_5_1x1_increase\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_norm_39",
+      "K" : 256,
+      "blob_biases" : 489,
+      "name" : "vggface_senet50\/conv4_5_1x1_increase\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 1024,
+      "bottom" : "vggface_senet50\/activation_57\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 495,
+        "W_U4" : 491,
+        "per_ch_qbias" : 493
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "axis_h" : 0,
+      "axis_w" : 2,
+      "bottom" : "batch_norm_39",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_236",
+      "top" : "transpose_236",
+      "type" : "transpose",
+      "name" : "transpose_236"
+    },
+    {
+      "axis_mode" : 4,
+      "bottom" : "transpose_236",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 1,
+      "nd_mode" : true,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_11\/Mean",
+      "use_version" : 1,
+      "top" : "transpose_2361",
+      "type" : "reduce",
+      "name" : "vggface_senet50\/global_average_pooling2d_11\/Mean0"
+    },
+    {
+      "axis_mode" : 2,
+      "bottom" : "transpose_2361",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 2,
+      "nd_mode" : true,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_11\/Mean",
+      "use_version" : 1,
+      "top" : "vggface_senet50\/global_average_pooling2d_11\/Mean_squeeze",
+      "type" : "reduce",
+      "name" : "vggface_senet50\/global_average_pooling2d_11\/Mean"
+    },
+    {
+      "size_of_axes" : 2,
+      "bottom" : "vggface_senet50\/global_average_pooling2d_11\/Mean_squeeze",
+      "axes_0" : 1,
+      "axes_1" : 2,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_11\/Mean",
+      "version" : 1,
+      "top" : "vggface_senet50\/global_average_pooling2d_11\/Mean",
+      "type" : "squeeze",
+      "name" : "vggface_senet50\/global_average_pooling2d_11\/Mean"
+    },
+    {
+      "name" : "vggface_senet50\/reshape_11\/Reshape",
+      "weights" : {
+
+      },
+      "dst_w" : 1024,
+      "version" : 1,
+      "dst_n" : -1,
+      "dst_nd_rank" : 4,
+      "type" : "reshape",
+      "dst_h" : 1,
+      "mode" : 0,
+      "dynamic_shape" : false,
+      "bottom" : "vggface_senet50\/global_average_pooling2d_11\/Mean",
+      "debug_info" : "vggface_senet50\/reshape_11\/Reshape",
+      "dst_seq" : 1,
+      "dst_k" : 1,
+      "top" : "vggface_senet50\/reshape_11\/Reshape"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 1,
+      "bottom" : "vggface_senet50\/reshape_11\/Reshape",
+      "axis_k" : 0,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_166",
+      "top" : "transpose_166",
+      "type" : "transpose",
+      "name" : "transpose_166"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv4_5_1x1_down\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_58\/Relu",
+      "K" : 1024,
+      "blob_biases" : 497,
+      "name" : "vggface_senet50\/conv4_5_1x1_down\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 64,
+      "bottom" : "transpose_166",
+      "weights" : {
+        "per_ch_qscale" : 503,
+        "W_U4" : 499,
+        "per_ch_qbias" : 501
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv4_5_1x1_up\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/conv4_5_1x1_up\/BiasAdd",
+      "K" : 64,
+      "blob_biases" : 505,
+      "name" : "vggface_senet50\/conv4_5_1x1_up\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 1024,
+      "bottom" : "vggface_senet50\/activation_58\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 511,
+        "W_U4" : 507,
+        "per_ch_qbias" : 509
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "vggface_senet50\/conv4_5_1x1_up\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "vggface_senet50\/activation_59\/Sigmoid",
+      "top" : "vggface_senet50\/activation_59\/Sigmoid",
+      "type" : "activation",
+      "name" : "vggface_senet50\/activation_59\/Sigmoid"
+    },
+    {
+      "bottom" : "batch_norm_39,vggface_senet50\/activation_59\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "vggface_senet50\/multiply_11\/mul",
+      "nd_mode" : true,
+      "top" : "vggface_senet50\/multiply_11\/mul",
+      "type" : "elementwise",
+      "name" : "vggface_senet50\/multiply_11\/mul",
+      "beta" : 0
+    },
+    {
+      "bottom" : "vggface_senet50\/multiply_11\/mul,vggface_senet50\/activation_55\/Relu",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "vggface_senet50\/add_11\/add",
+      "nd_mode" : true,
+      "top" : "vggface_senet50\/add_11\/add",
+      "type" : "elementwise",
+      "name" : "vggface_senet50\/add_11\/add",
+      "beta" : 0
+    },
+    {
+      "bottom" : "vggface_senet50\/add_11\/add",
+      "weights" : {
+
+      },
+      "mode" : 0,
+      "debug_info" : "vggface_senet50\/activation_60\/Relu",
+      "top" : "vggface_senet50\/activation_60\/Relu",
+      "type" : "activation",
+      "name" : "vggface_senet50\/activation_60\/Relu"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv4_6_1x1_reduce\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_61\/Relu",
+      "K" : 1024,
+      "blob_biases" : 513,
+      "name" : "vggface_senet50\/conv4_6_1x1_reduce\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "vggface_senet50\/activation_60\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 519,
+        "W_U4" : 515,
+        "per_ch_qbias" : 517
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv4_6_3x3\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_62\/Relu",
+      "K" : 256,
+      "blob_biases" : 521,
+      "name" : "vggface_senet50\/conv4_6_3x3\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "vggface_senet50\/activation_61\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 527,
+        "W_U4" : 523,
+        "per_ch_qbias" : 525
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv4_6_1x1_increase\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_norm_42",
+      "K" : 256,
+      "blob_biases" : 529,
+      "name" : "vggface_senet50\/conv4_6_1x1_increase\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 1024,
+      "bottom" : "vggface_senet50\/activation_62\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 535,
+        "W_U4" : 531,
+        "per_ch_qbias" : 533
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "axis_h" : 0,
+      "axis_w" : 2,
+      "bottom" : "batch_norm_42",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_237",
+      "top" : "transpose_237",
+      "type" : "transpose",
+      "name" : "transpose_237"
+    },
+    {
+      "axis_mode" : 4,
+      "bottom" : "transpose_237",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 1,
+      "nd_mode" : true,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_12\/Mean",
+      "use_version" : 1,
+      "top" : "transpose_2371",
+      "type" : "reduce",
+      "name" : "vggface_senet50\/global_average_pooling2d_12\/Mean0"
+    },
+    {
+      "axis_mode" : 2,
+      "bottom" : "transpose_2371",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 2,
+      "nd_mode" : true,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_12\/Mean",
+      "use_version" : 1,
+      "top" : "vggface_senet50\/global_average_pooling2d_12\/Mean_squeeze",
+      "type" : "reduce",
+      "name" : "vggface_senet50\/global_average_pooling2d_12\/Mean"
+    },
+    {
+      "size_of_axes" : 2,
+      "bottom" : "vggface_senet50\/global_average_pooling2d_12\/Mean_squeeze",
+      "axes_0" : 1,
+      "axes_1" : 2,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_12\/Mean",
+      "version" : 1,
+      "top" : "vggface_senet50\/global_average_pooling2d_12\/Mean",
+      "type" : "squeeze",
+      "name" : "vggface_senet50\/global_average_pooling2d_12\/Mean"
+    },
+    {
+      "name" : "vggface_senet50\/reshape_12\/Reshape",
+      "weights" : {
+
+      },
+      "dst_w" : 1024,
+      "version" : 1,
+      "dst_n" : -1,
+      "dst_nd_rank" : 4,
+      "type" : "reshape",
+      "dst_h" : 1,
+      "mode" : 0,
+      "dynamic_shape" : false,
+      "bottom" : "vggface_senet50\/global_average_pooling2d_12\/Mean",
+      "debug_info" : "vggface_senet50\/reshape_12\/Reshape",
+      "dst_seq" : 1,
+      "dst_k" : 1,
+      "top" : "vggface_senet50\/reshape_12\/Reshape"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 1,
+      "bottom" : "vggface_senet50\/reshape_12\/Reshape",
+      "axis_k" : 0,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_179",
+      "top" : "transpose_179",
+      "type" : "transpose",
+      "name" : "transpose_179"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv4_6_1x1_down\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_63\/Relu",
+      "K" : 1024,
+      "blob_biases" : 537,
+      "name" : "vggface_senet50\/conv4_6_1x1_down\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 64,
+      "bottom" : "transpose_179",
+      "weights" : {
+        "per_ch_qscale" : 543,
+        "W_U4" : 539,
+        "per_ch_qbias" : 541
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv4_6_1x1_up\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/conv4_6_1x1_up\/BiasAdd",
+      "K" : 64,
+      "blob_biases" : 545,
+      "name" : "vggface_senet50\/conv4_6_1x1_up\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 1024,
+      "bottom" : "vggface_senet50\/activation_63\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 551,
+        "W_U4" : 547,
+        "per_ch_qbias" : 549
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "vggface_senet50\/conv4_6_1x1_up\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "vggface_senet50\/activation_64\/Sigmoid",
+      "top" : "vggface_senet50\/activation_64\/Sigmoid",
+      "type" : "activation",
+      "name" : "vggface_senet50\/activation_64\/Sigmoid"
+    },
+    {
+      "bottom" : "batch_norm_42,vggface_senet50\/activation_64\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "vggface_senet50\/multiply_12\/mul",
+      "nd_mode" : true,
+      "top" : "vggface_senet50\/multiply_12\/mul",
+      "type" : "elementwise",
+      "name" : "vggface_senet50\/multiply_12\/mul",
+      "beta" : 0
+    },
+    {
+      "bottom" : "vggface_senet50\/multiply_12\/mul,vggface_senet50\/activation_60\/Relu",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "vggface_senet50\/add_12\/add",
+      "nd_mode" : true,
+      "top" : "vggface_senet50\/add_12\/add",
+      "type" : "elementwise",
+      "name" : "vggface_senet50\/add_12\/add",
+      "beta" : 0
+    },
+    {
+      "bottom" : "vggface_senet50\/add_12\/add",
+      "weights" : {
+
+      },
+      "mode" : 0,
+      "debug_info" : "vggface_senet50\/activation_65\/Relu",
+      "top" : "vggface_senet50\/activation_65\/Relu",
+      "type" : "activation",
+      "name" : "vggface_senet50\/activation_65\/Relu"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv5_1_1x1_reduce\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_66\/Relu",
+      "K" : 1024,
+      "blob_biases" : 553,
+      "stride_x" : 2,
+      "name" : "vggface_senet50\/conv5_1_1x1_reduce\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "stride_y" : 2,
+      "has_biases" : 1,
+      "C" : 512,
+      "bottom" : "vggface_senet50\/activation_65\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 559,
+        "W_U4" : 555,
+        "per_ch_qbias" : 557
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv5_1_1x1_proj\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_norm_44",
+      "K" : 1024,
+      "blob_biases" : 561,
+      "stride_x" : 2,
+      "name" : "vggface_senet50\/conv5_1_1x1_proj\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "stride_y" : 2,
+      "has_biases" : 1,
+      "C" : 2048,
+      "bottom" : "vggface_senet50\/activation_65\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 567,
+        "W_U4" : 563,
+        "per_ch_qbias" : 565
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv5_1_3x3\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_67\/Relu",
+      "K" : 512,
+      "blob_biases" : 569,
+      "name" : "vggface_senet50\/conv5_1_3x3\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 512,
+      "bottom" : "vggface_senet50\/activation_66\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 575,
+        "W_U4" : 571,
+        "per_ch_qbias" : 573
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv5_1_1x1_increase\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_norm_46",
+      "K" : 512,
+      "blob_biases" : 577,
+      "name" : "vggface_senet50\/conv5_1_1x1_increase\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 2048,
+      "bottom" : "vggface_senet50\/activation_67\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 583,
+        "W_U4" : 579,
+        "per_ch_qbias" : 581
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "axis_h" : 0,
+      "axis_w" : 2,
+      "bottom" : "batch_norm_46",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_238",
+      "top" : "transpose_238",
+      "type" : "transpose",
+      "name" : "transpose_238"
+    },
+    {
+      "axis_mode" : 4,
+      "bottom" : "transpose_238",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 1,
+      "nd_mode" : true,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_13\/Mean",
+      "use_version" : 1,
+      "top" : "transpose_2381",
+      "type" : "reduce",
+      "name" : "vggface_senet50\/global_average_pooling2d_13\/Mean0"
+    },
+    {
+      "axis_mode" : 2,
+      "bottom" : "transpose_2381",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 2,
+      "nd_mode" : true,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_13\/Mean",
+      "use_version" : 1,
+      "top" : "vggface_senet50\/global_average_pooling2d_13\/Mean_squeeze",
+      "type" : "reduce",
+      "name" : "vggface_senet50\/global_average_pooling2d_13\/Mean"
+    },
+    {
+      "size_of_axes" : 2,
+      "bottom" : "vggface_senet50\/global_average_pooling2d_13\/Mean_squeeze",
+      "axes_0" : 1,
+      "axes_1" : 2,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_13\/Mean",
+      "version" : 1,
+      "top" : "vggface_senet50\/global_average_pooling2d_13\/Mean",
+      "type" : "squeeze",
+      "name" : "vggface_senet50\/global_average_pooling2d_13\/Mean"
+    },
+    {
+      "name" : "vggface_senet50\/reshape_13\/Reshape",
+      "weights" : {
+
+      },
+      "dst_w" : 2048,
+      "version" : 1,
+      "dst_n" : -1,
+      "dst_nd_rank" : 4,
+      "type" : "reshape",
+      "dst_h" : 1,
+      "mode" : 0,
+      "dynamic_shape" : false,
+      "bottom" : "vggface_senet50\/global_average_pooling2d_13\/Mean",
+      "debug_info" : "vggface_senet50\/reshape_13\/Reshape",
+      "dst_seq" : 1,
+      "dst_k" : 1,
+      "top" : "vggface_senet50\/reshape_13\/Reshape"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 1,
+      "bottom" : "vggface_senet50\/reshape_13\/Reshape",
+      "axis_k" : 0,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_195",
+      "top" : "transpose_195",
+      "type" : "transpose",
+      "name" : "transpose_195"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv5_1_1x1_down\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_68\/Relu",
+      "K" : 2048,
+      "blob_biases" : 585,
+      "name" : "vggface_senet50\/conv5_1_1x1_down\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 128,
+      "bottom" : "transpose_195",
+      "weights" : {
+        "per_ch_qscale" : 591,
+        "W_U4" : 587,
+        "per_ch_qbias" : 589
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv5_1_1x1_up\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/conv5_1_1x1_up\/BiasAdd",
+      "K" : 128,
+      "blob_biases" : 593,
+      "name" : "vggface_senet50\/conv5_1_1x1_up\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 2048,
+      "bottom" : "vggface_senet50\/activation_68\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 599,
+        "W_U4" : 595,
+        "per_ch_qbias" : 597
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "vggface_senet50\/conv5_1_1x1_up\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "vggface_senet50\/activation_69\/Sigmoid",
+      "top" : "vggface_senet50\/activation_69\/Sigmoid",
+      "type" : "activation",
+      "name" : "vggface_senet50\/activation_69\/Sigmoid"
+    },
+    {
+      "bottom" : "batch_norm_46,vggface_senet50\/activation_69\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "vggface_senet50\/multiply_13\/mul",
+      "nd_mode" : true,
+      "top" : "vggface_senet50\/multiply_13\/mul",
+      "type" : "elementwise",
+      "name" : "vggface_senet50\/multiply_13\/mul",
+      "beta" : 0
+    },
+    {
+      "bottom" : "vggface_senet50\/multiply_13\/mul,batch_norm_44",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "vggface_senet50\/add_13\/add",
+      "nd_mode" : true,
+      "top" : "vggface_senet50\/add_13\/add",
+      "type" : "elementwise",
+      "name" : "vggface_senet50\/add_13\/add",
+      "beta" : 0
+    },
+    {
+      "bottom" : "vggface_senet50\/add_13\/add",
+      "weights" : {
+
+      },
+      "mode" : 0,
+      "debug_info" : "vggface_senet50\/activation_70\/Relu",
+      "top" : "vggface_senet50\/activation_70\/Relu",
+      "type" : "activation",
+      "name" : "vggface_senet50\/activation_70\/Relu"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv5_2_1x1_reduce\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_71\/Relu",
+      "K" : 2048,
+      "blob_biases" : 601,
+      "name" : "vggface_senet50\/conv5_2_1x1_reduce\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 512,
+      "bottom" : "vggface_senet50\/activation_70\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 607,
+        "W_U4" : 603,
+        "per_ch_qbias" : 605
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv5_2_3x3\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_72\/Relu",
+      "K" : 512,
+      "blob_biases" : 609,
+      "name" : "vggface_senet50\/conv5_2_3x3\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 512,
+      "bottom" : "vggface_senet50\/activation_71\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 615,
+        "W_U4" : 611,
+        "per_ch_qbias" : 613
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv5_2_1x1_increase\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_norm_49",
+      "K" : 512,
+      "blob_biases" : 617,
+      "name" : "vggface_senet50\/conv5_2_1x1_increase\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 2048,
+      "bottom" : "vggface_senet50\/activation_72\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 623,
+        "W_U4" : 619,
+        "per_ch_qbias" : 621
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "axis_h" : 0,
+      "axis_w" : 2,
+      "bottom" : "batch_norm_49",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_239",
+      "top" : "transpose_239",
+      "type" : "transpose",
+      "name" : "transpose_239"
+    },
+    {
+      "axis_mode" : 4,
+      "bottom" : "transpose_239",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 1,
+      "nd_mode" : true,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_14\/Mean",
+      "use_version" : 1,
+      "top" : "transpose_2391",
+      "type" : "reduce",
+      "name" : "vggface_senet50\/global_average_pooling2d_14\/Mean0"
+    },
+    {
+      "axis_mode" : 2,
+      "bottom" : "transpose_2391",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 2,
+      "nd_mode" : true,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_14\/Mean",
+      "use_version" : 1,
+      "top" : "vggface_senet50\/global_average_pooling2d_14\/Mean_squeeze",
+      "type" : "reduce",
+      "name" : "vggface_senet50\/global_average_pooling2d_14\/Mean"
+    },
+    {
+      "size_of_axes" : 2,
+      "bottom" : "vggface_senet50\/global_average_pooling2d_14\/Mean_squeeze",
+      "axes_0" : 1,
+      "axes_1" : 2,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_14\/Mean",
+      "version" : 1,
+      "top" : "vggface_senet50\/global_average_pooling2d_14\/Mean",
+      "type" : "squeeze",
+      "name" : "vggface_senet50\/global_average_pooling2d_14\/Mean"
+    },
+    {
+      "name" : "vggface_senet50\/reshape_14\/Reshape",
+      "weights" : {
+
+      },
+      "dst_w" : 2048,
+      "version" : 1,
+      "dst_n" : -1,
+      "dst_nd_rank" : 4,
+      "type" : "reshape",
+      "dst_h" : 1,
+      "mode" : 0,
+      "dynamic_shape" : false,
+      "bottom" : "vggface_senet50\/global_average_pooling2d_14\/Mean",
+      "debug_info" : "vggface_senet50\/reshape_14\/Reshape",
+      "dst_seq" : 1,
+      "dst_k" : 1,
+      "top" : "vggface_senet50\/reshape_14\/Reshape"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 1,
+      "bottom" : "vggface_senet50\/reshape_14\/Reshape",
+      "axis_k" : 0,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_208",
+      "top" : "transpose_208",
+      "type" : "transpose",
+      "name" : "transpose_208"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv5_2_1x1_down\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_73\/Relu",
+      "K" : 2048,
+      "blob_biases" : 625,
+      "name" : "vggface_senet50\/conv5_2_1x1_down\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 128,
+      "bottom" : "transpose_208",
+      "weights" : {
+        "per_ch_qscale" : 631,
+        "W_U4" : 627,
+        "per_ch_qbias" : 629
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv5_2_1x1_up\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/conv5_2_1x1_up\/BiasAdd",
+      "K" : 128,
+      "blob_biases" : 633,
+      "name" : "vggface_senet50\/conv5_2_1x1_up\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 2048,
+      "bottom" : "vggface_senet50\/activation_73\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 639,
+        "W_U4" : 635,
+        "per_ch_qbias" : 637
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "vggface_senet50\/conv5_2_1x1_up\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "vggface_senet50\/activation_74\/Sigmoid",
+      "top" : "vggface_senet50\/activation_74\/Sigmoid",
+      "type" : "activation",
+      "name" : "vggface_senet50\/activation_74\/Sigmoid"
+    },
+    {
+      "bottom" : "batch_norm_49,vggface_senet50\/activation_74\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "vggface_senet50\/multiply_14\/mul",
+      "nd_mode" : true,
+      "top" : "vggface_senet50\/multiply_14\/mul",
+      "type" : "elementwise",
+      "name" : "vggface_senet50\/multiply_14\/mul",
+      "beta" : 0
+    },
+    {
+      "bottom" : "vggface_senet50\/multiply_14\/mul,vggface_senet50\/activation_70\/Relu",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "vggface_senet50\/add_14\/add",
+      "nd_mode" : true,
+      "top" : "vggface_senet50\/add_14\/add",
+      "type" : "elementwise",
+      "name" : "vggface_senet50\/add_14\/add",
+      "beta" : 0
+    },
+    {
+      "bottom" : "vggface_senet50\/add_14\/add",
+      "weights" : {
+
+      },
+      "mode" : 0,
+      "debug_info" : "vggface_senet50\/activation_75\/Relu",
+      "top" : "vggface_senet50\/activation_75\/Relu",
+      "type" : "activation",
+      "name" : "vggface_senet50\/activation_75\/Relu"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv5_3_1x1_reduce\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_76\/Relu",
+      "K" : 2048,
+      "blob_biases" : 641,
+      "name" : "vggface_senet50\/conv5_3_1x1_reduce\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 512,
+      "bottom" : "vggface_senet50\/activation_75\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 647,
+        "W_U4" : 643,
+        "per_ch_qbias" : 645
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv5_3_3x3\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_77\/Relu",
+      "K" : 512,
+      "blob_biases" : 649,
+      "name" : "vggface_senet50\/conv5_3_3x3\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 512,
+      "bottom" : "vggface_senet50\/activation_76\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 655,
+        "W_U4" : 651,
+        "per_ch_qbias" : 653
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv5_3_1x1_increase\/Conv2Dx",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "batch_norm_52",
+      "K" : 512,
+      "blob_biases" : 657,
+      "name" : "vggface_senet50\/conv5_3_1x1_increase\/Conv2Dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 2048,
+      "bottom" : "vggface_senet50\/activation_77\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 663,
+        "W_U4" : 659,
+        "per_ch_qbias" : 661
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "axis_h" : 0,
+      "axis_w" : 2,
+      "bottom" : "batch_norm_52",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_240",
+      "top" : "transpose_240",
+      "type" : "transpose",
+      "name" : "transpose_240"
+    },
+    {
+      "axis_mode" : 4,
+      "bottom" : "transpose_240",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 1,
+      "nd_mode" : true,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_15\/Mean",
+      "use_version" : 1,
+      "top" : "transpose_2401",
+      "type" : "reduce",
+      "name" : "vggface_senet50\/global_average_pooling2d_15\/Mean0"
+    },
+    {
+      "axis_mode" : 2,
+      "bottom" : "transpose_2401",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 2,
+      "nd_mode" : true,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_15\/Mean",
+      "use_version" : 1,
+      "top" : "vggface_senet50\/global_average_pooling2d_15\/Mean_squeeze",
+      "type" : "reduce",
+      "name" : "vggface_senet50\/global_average_pooling2d_15\/Mean"
+    },
+    {
+      "size_of_axes" : 2,
+      "bottom" : "vggface_senet50\/global_average_pooling2d_15\/Mean_squeeze",
+      "axes_0" : 1,
+      "axes_1" : 2,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_15\/Mean",
+      "version" : 1,
+      "top" : "vggface_senet50\/global_average_pooling2d_15\/Mean",
+      "type" : "squeeze",
+      "name" : "vggface_senet50\/global_average_pooling2d_15\/Mean"
+    },
+    {
+      "name" : "vggface_senet50\/reshape_15\/Reshape",
+      "weights" : {
+
+      },
+      "dst_w" : 2048,
+      "version" : 1,
+      "dst_n" : -1,
+      "dst_nd_rank" : 4,
+      "type" : "reshape",
+      "dst_h" : 1,
+      "mode" : 0,
+      "dynamic_shape" : false,
+      "bottom" : "vggface_senet50\/global_average_pooling2d_15\/Mean",
+      "debug_info" : "vggface_senet50\/reshape_15\/Reshape",
+      "dst_seq" : 1,
+      "dst_k" : 1,
+      "top" : "vggface_senet50\/reshape_15\/Reshape"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 1,
+      "bottom" : "vggface_senet50\/reshape_15\/Reshape",
+      "axis_k" : 0,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "transpose_221",
+      "top" : "transpose_221",
+      "type" : "transpose",
+      "name" : "transpose_221"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv5_3_1x1_down\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/activation_78\/Relu",
+      "K" : 2048,
+      "blob_biases" : 665,
+      "name" : "vggface_senet50\/conv5_3_1x1_down\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 128,
+      "bottom" : "transpose_221",
+      "weights" : {
+        "per_ch_qscale" : 671,
+        "W_U4" : 667,
+        "per_ch_qbias" : 669
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "vggface_senet50\/conv5_3_1x1_up\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "vggface_senet50\/conv5_3_1x1_up\/BiasAdd",
+      "K" : 128,
+      "blob_biases" : 673,
+      "name" : "vggface_senet50\/conv5_3_1x1_up\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 2048,
+      "bottom" : "vggface_senet50\/activation_78\/Relu",
+      "weights" : {
+        "per_ch_qscale" : 679,
+        "W_U4" : 675,
+        "per_ch_qbias" : 677
+      },
+      "Nx" : 1,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "bottom" : "vggface_senet50\/conv5_3_1x1_up\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "vggface_senet50\/activation_79\/Sigmoid",
+      "top" : "vggface_senet50\/activation_79\/Sigmoid",
+      "type" : "activation",
+      "name" : "vggface_senet50\/activation_79\/Sigmoid"
+    },
+    {
+      "bottom" : "batch_norm_52,vggface_senet50\/activation_79\/Sigmoid",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "vggface_senet50\/multiply_15\/mul",
+      "nd_mode" : true,
+      "top" : "vggface_senet50\/multiply_15\/mul",
+      "type" : "elementwise",
+      "name" : "vggface_senet50\/multiply_15\/mul",
+      "beta" : 0
+    },
+    {
+      "bottom" : "vggface_senet50\/multiply_15\/mul,vggface_senet50\/activation_75\/Relu",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "vggface_senet50\/add_15\/add",
+      "nd_mode" : true,
+      "top" : "vggface_senet50\/add_15\/add",
+      "type" : "elementwise",
+      "name" : "vggface_senet50\/add_15\/add",
+      "beta" : 0
+    },
+    {
+      "bottom" : "vggface_senet50\/add_15\/add",
+      "weights" : {
+
+      },
+      "mode" : 0,
+      "debug_info" : "vggface_senet50\/activation_80\/Relu",
+      "top" : "vggface_senet50\/activation_80\/Relu",
+      "type" : "activation",
+      "name" : "vggface_senet50\/activation_80\/Relu"
+    },
+    {
+      "pad_r" : 0,
+      "debug_info" : "avg_pool_0",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "size_x" : 7,
+      "top" : "avg_pool_0",
+      "top_shape_style" : 0,
+      "stride_x" : 7,
+      "avg_or_max" : 0,
+      "average_count_exclude_padding" : 1,
+      "type" : "pool",
+      "name" : "avg_pool_0",
+      "pad_t" : 0,
+      "stride_y" : 7,
+      "bottom" : "vggface_senet50\/activation_80\/Relu",
+      "weights" : {
+
+      },
+      "pad_mode" : 2,
+      "size_y" : 7,
+      "pad_value" : 0
+    },
+    {
+      "axis_h" : 0,
+      "axis_w" : 2,
+      "bottom" : "avg_pool_0",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "vggface_senet50\/avg_pool\/AvgPool",
+      "top" : "vggface_senet50\/avg_pool\/AvgPool",
+      "type" : "transpose",
+      "name" : "vggface_senet50\/avg_pool\/AvgPool"
+    },
+    {
+      "axis_mode" : 4,
+      "bottom" : "vggface_senet50\/avg_pool\/AvgPool",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 1,
+      "nd_mode" : true,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_16\/Mean",
+      "use_version" : 1,
+      "top" : "vggface_senet50\/avg_pool\/AvgPool1",
+      "type" : "reduce",
+      "name" : "vggface_senet50\/global_average_pooling2d_16\/Mean0"
+    },
+    {
+      "axis_mode" : 2,
+      "bottom" : "vggface_senet50\/avg_pool\/AvgPool1",
+      "weights" : {
+
+      },
+      "mode" : 1,
+      "nd_axis" : 2,
+      "nd_mode" : true,
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_16\/Mean",
+      "use_version" : 1,
+      "top" : "vggface_senet50\/global_average_pooling2d_16\/Mean_squeeze",
+      "type" : "reduce",
+      "name" : "vggface_senet50\/global_average_pooling2d_16\/Mean"
+    },
+    {
+      "name" : "vggface_senet50\/global_average_pooling2d_16\/Mean",
+      "version" : 1,
+      "axes_1" : 2,
+      "type" : "squeeze",
+      "axes_0" : 1,
+      "attributes" : {
+        "is_output" : 1
+      },
+      "nd_axis" : 0,
+      "bottom" : "vggface_senet50\/global_average_pooling2d_16\/Mean_squeeze",
+      "debug_info" : "vggface_senet50\/global_average_pooling2d_16\/Mean",
+      "size_of_axes" : 2,
+      "weights" : {
+
+      },
+      "top" : "Identity"
+    }
+  ]
+}

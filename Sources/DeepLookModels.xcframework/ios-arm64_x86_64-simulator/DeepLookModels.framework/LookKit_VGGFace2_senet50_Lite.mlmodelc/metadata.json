@@ -1,0 +1,70 @@
+[
+  {
+    "shortDescription" : "Face Encoding based on senet",
+    "metadataOutputVersion" : "3.0",
+    "outputSchema" : [
+      {
+        "hasShapeFlexibility" : "0",
+        "isOptional" : "0",
+        "dataType" : "Float32",
+        "formattedType" : "MultiArray (Float32)",
+        "shortDescription" : "",
+        "shape" : "[]",
+        "name" : "Identity",
+        "type" : "MultiArray"
+      }
+    ],
+    "version" : "1.0",
+    "modelParameters" : [
+
+    ],
+    "author" : "La-Labs",
+    "specificationVersion" : 4,
+    "license" : "Copyright © 2021 La-Labs. All rights reserved.",
+    "isUpdatable" : "0",
+    "availability" : {
+      "macOS" : "10.15",
+      "tvOS" : "13.0",
+      "watchOS" : "6.0",
+      "iOS" : "13.0",
+      "macCatalyst" : "13.0"
+    },
+    "modelType" : {
+      "name" : "MLModelType_neuralNetwork"
+    },
+    "inputSchema" : [
+      {
+        "formattedType" : "Image (Color 224 × 224)",
+        "hasSizeFlexibility" : "1",
+        "shortDescription" : "",
+        "sizeRange" : "[[224, 224], [224, 224]]",
+        "width" : "224",
+        "type" : "Image",
+        "isColor" : "1",
+        "height" : "224",
+        "sizeFlexibility" : "224 × 224",
+        "colorspace" : "RGB",
+        "name" : "input_1",
+        "isOptional" : "0"
+      }
+    ],
+    "userDefinedMetadata" : {
+      "com.github.apple.coremltools.version" : "4.1",
+      "com.github.apple.coremltools.source" : "tensorflow==2.4.1"
+    },
+    "generatedClassName" : "LookKit_VGGFace2_senet50_Lite",
+    "neuralNetworkLayerTypeHistogram" : {
+      "MultiplyBroadcastable" : 16,
+      "PoolingMax" : 1,
+      "ReduceMean" : 17,
+      "ActivationReLU" : 65,
+      "ReshapeStatic" : 16,
+      "PoolingAverage" : 1,
+      "Transpose" : 33,
+      "Convolution" : 85,
+      "ActivationSigmoid" : 16,
+      "AddBroadcastable" : 16
+    },
+    "method" : "predict"
+  }
+]

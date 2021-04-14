@@ -1,0 +1,1564 @@
+{
+  "layer_shapes" : {
+    "Block17_3_Branch_1_Conv2d_0a_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "lambda_11_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_4_Branch_2_Conv2d_0a_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_1_Branch_1_Conv2d_0c_3x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_5_Conv2d_1x1_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "lambda_21_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_3_Branch_1_Conv2d_0a_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_5_Branch_2_Conv2d_0c_3x3_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "add_19_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_6_Branch_1_Conv2d_0b_1x7_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_5_Branch_1_Conv2d_0a_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_4_Branch_1_Conv2d_0c_3x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_3_Branch_0_Conv2d_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Mixed_6a_Branch_2_MaxPool_1a_3x3_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_10_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_3_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_5_Branch_1_Conv2d_0a_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_7_Branch_1_Conv2d_0c_7x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_4_Branch_2_Conv2d_0b_3x3_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_8_Branch_1_Conv2d_0b_1x7_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_7_Branch_0_Conv2d_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_1_Branch_1_Conv2d_0a_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_6_Conv2d_1x1_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_1_Concatenate_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_1_Conv2d_1x1_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "add_2_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_2_Branch_1_Conv2d_0b_1x3_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Mixed_7a_Branch_0_Conv2d_0a_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_3_Conv2d_1x1_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_5_Branch_1_Conv2d_0b_3x3_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_4_Branch_1_Conv2d_0a_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_2_Conv2d_1x1_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "add_13_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_5_Branch_0_Conv2d_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_1_Branch_2_Conv2d_0a_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "lambda_10_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_5_Branch_1_Conv2d_0b_1x3_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_4_Concatenate_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_2_Branch_2_Conv2d_0c_3x3_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "lambda_16_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_5_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_2_Branch_1_Conv2d_0a_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_3_Branch_2_Conv2d_0a_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_10_Branch_1_Conv2d_0a_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_2_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Mixed_7a_Branch_0_Conv2d_1a_3x3_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_6_Conv2d_1x1_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_4_Branch_2_Conv2d_0c_3x3_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_4_Branch_1_Conv2d_0c_7x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_2_Branch_1_Conv2d_0a_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_5_Branch_1_Conv2d_0b_1x7_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_2_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_4_Branch_0_Conv2d_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "add_18_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_3_Concatenate_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_8_Branch_0_Conv2d_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_4_Branch_1_Conv2d_0a_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "lambda_12_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_6_Branch_1_Conv2d_0c_7x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_7_Branch_1_Conv2d_0b_1x7_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_3_Branch_2_Conv2d_0b_3x3_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_5_Branch_0_Conv2d_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_6_Concatenate_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Conv2d_1a_3x3_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "add_6_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_5_Branch_2_Conv2d_0b_3x3_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_1_Concatenate_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_6_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Conv2d_2a_3x3_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_2_Conv2d_1x1_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "add_12_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_6_Concatenate_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_4_Branch_1_Conv2d_0b_3x3_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "lambda_8_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "lambda_5_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_10_Conv2d_1x1_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_3_Conv2d_1x1_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "add_21_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "lambda_2_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Mixed_7a_Branch_1_Conv2d_0a_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Conv2d_4b_3x3_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_6_Branch_0_Conv2d_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_1_Branch_2_Conv2d_0c_3x3_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_1_Branch_1_Conv2d_0a_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_3_Concatenate_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_2_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_9_Branch_1_Conv2d_0a_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_3_Branch_1_Conv2d_0c_3x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_1_Branch_1_Conv2d_0a_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_7_Conv2d_1x1_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_3_Branch_1_Conv2d_0c_7x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_4_Branch_1_Conv2d_0b_1x7_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_3_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_9_Branch_0_Conv2d_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_5_Branch_0_Conv2d_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "add_4_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Mixed_7a_Branch_1_Conv2d_1a_3x3_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "lambda_17_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_2_Branch_2_Conv2d_0b_3x3_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_5_Branch_1_Conv2d_0c_7x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_6_Branch_1_Conv2d_0c_3x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_2_Concatenate_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "add_15_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_1_Branch_1_Conv2d_0b_1x3_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_3_Branch_1_Conv2d_0a_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_7_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_3_Conv2d_1x1_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_3_Branch_1_Conv2d_0b_3x3_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Conv2d_3b_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_4_Branch_1_Conv2d_0b_1x3_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "lambda_13_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "add_20_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_5_Concatenate_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_6_Branch_1_Conv2d_0a_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_1_Branch_0_Conv2d_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_1_Branch_0_Conv2d_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Mixed_7a_Branch_2_Conv2d_0a_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_1_Branch_1_Conv2d_0b_1x7_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "add_8_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_8_Branch_1_Conv2d_0a_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_3_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_2_Concatenate_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_8_Concatenate_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Mixed_7a_Branch_2_Conv2d_0b_3x3_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_2_Branch_1_Conv2d_0c_7x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_8_Conv2d_1x1_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_3_Branch_1_Conv2d_0b_1x7_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_4_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_10_Branch_1_Conv2d_0c_7x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_1_Branch_2_Conv2d_0b_3x3_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "add_14_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Mixed_7a_Branch_2_Conv2d_1a_3x3_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_2_Branch_0_Conv2d_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_5_Concatenate_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_1_Concatenate_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Mixed_6a_Branch_0_Conv2d_1a_3x3_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "lambda_9_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_8_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "lambda_6_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_4_Conv2d_1x1_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_2_Branch_1_Conv2d_0b_3x3_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "add_5_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "lambda_18_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "lambda_3_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_2_Branch_0_Conv2d_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_4_Concatenate_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Conv2d_4a_3x3_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Mixed_6a_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_3_Branch_0_Conv2d_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_5_Concatenate_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_2_Branch_1_Conv2d_0c_3x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_7_Branch_1_Conv2d_0a_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "lambda_14_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_4_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_1_Branch_1_Conv2d_0c_7x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_2_Branch_1_Conv2d_0b_1x7_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_9_Conv2d_1x1_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_5_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_9_Branch_1_Conv2d_0c_7x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Mixed_6a_Branch_1_Conv2d_0a_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_10_Branch_0_Conv2d_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_1_Branch_0_Conv2d_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_10_Concatenate_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "add_3_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_7_Concatenate_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "add_17_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_4_Concatenate_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_5_Branch_1_Conv2d_0c_3x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Mixed_6a_Branch_1_Conv2d_0b_3x3_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_2_Branch_1_Conv2d_0a_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "image" : {
+      "k" : 3,
+      "w" : 160,
+      "n" : 1,
+      "h" : 160
+    },
+    "Block8_4_Branch_0_Conv2d_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "add_9_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_3_Branch_1_Conv2d_0b_1x3_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_3_Concatenate_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "lambda_20_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_9_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_1_Branch_1_Conv2d_0b_3x3_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_5_Conv2d_1x1_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Mixed_6a_Branch_1_Conv2d_1a_3x3_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_5_Branch_1_Conv2d_0a_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_3_Branch_0_Conv2d_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "add_11_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_6_Branch_1_Conv2d_0b_1x3_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "MaxPool_3a_3x3_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_4_Branch_1_Conv2d_0a_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_5_Branch_2_Conv2d_0a_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_2_Concatenate_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_4_Conv2d_1x1_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "add_1_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_5_Conv2d_1x1_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "lambda_19_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Mixed_7a_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_6_Branch_1_Conv2d_0a_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_2_Conv2d_1x1_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_10_Branch_1_Conv2d_0b_1x7_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "AvgPool_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_5_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "add_16_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_2_Branch_0_Conv2d_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "add_7_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_8_Branch_1_Conv2d_0c_7x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_9_Branch_1_Conv2d_0b_1x7_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_6_Branch_0_Conv2d_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Conv2d_2b_3x3_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_4_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "lambda_15_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_1_Conv2d_1x1_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "lambda_7_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "lambda_4_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Bottleneck_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block17_9_Concatenate_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_2_Branch_2_Conv2d_0a_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_4_Branch_0_Conv2d_1x1_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "lambda_1_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "add_10_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Mixed_7a_Branch_3_MaxPool_1a_3x3_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_4_Conv2d_1x1_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block35_3_Branch_2_Conv2d_0c_3x3_Activation_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    },
+    "Block8_1_Conv2d_1x1_output" : {
+      "k" : 0,
+      "w" : 0,
+      "n" : 0,
+      "seq" : 0,
+      "h" : 0
+    }
+  }
+}

@@ -1,0 +1,238 @@
+[
+  {
+    "shortDescription" : "Face Encoding based on facenet",
+    "metadataOutputVersion" : "3.0",
+    "outputSchema" : [
+      {
+        "hasShapeFlexibility" : "0",
+        "isOptional" : "0",
+        "dataType" : "Double",
+        "formattedType" : "MultiArray (Double 128)",
+        "shortDescription" : "",
+        "shape" : "[128]",
+        "name" : "output",
+        "type" : "MultiArray"
+      }
+    ],
+    "version" : "1.0",
+    "customLayers" : [
+      {
+        "className" : "scaling",
+        "description" : ""
+      },
+      {
+        "className" : "scaling",
+        "description" : ""
+      },
+      {
+        "className" : "scaling",
+        "description" : ""
+      },
+      {
+        "className" : "scaling",
+        "description" : ""
+      },
+      {
+        "className" : "scaling",
+        "description" : ""
+      },
+      {
+        "className" : "scaling",
+        "description" : ""
+      },
+      {
+        "className" : "scaling",
+        "description" : ""
+      },
+      {
+        "className" : "scaling",
+        "description" : ""
+      },
+      {
+        "className" : "scaling",
+        "description" : ""
+      },
+      {
+        "className" : "scaling",
+        "description" : ""
+      },
+      {
+        "className" : "scaling",
+        "description" : ""
+      },
+      {
+        "className" : "scaling",
+        "description" : ""
+      },
+      {
+        "className" : "scaling",
+        "description" : ""
+      },
+      {
+        "className" : "scaling",
+        "description" : ""
+      },
+      {
+        "className" : "scaling",
+        "description" : ""
+      },
+      {
+        "className" : "scaling",
+        "description" : ""
+      },
+      {
+        "className" : "scaling",
+        "description" : ""
+      },
+      {
+        "className" : "scaling",
+        "description" : ""
+      },
+      {
+        "className" : "scaling",
+        "description" : ""
+      },
+      {
+        "className" : "scaling",
+        "description" : ""
+      },
+      {
+        "className" : "scaling",
+        "description" : ""
+      }
+    ],
+    "author" : "La-Labs",
+    "specificationVersion" : 2,
+    "modelParameters" : [
+
+    ],
+    "license" : "Copyright © 2021 La-Labs. All rights reserved.",
+    "isUpdatable" : "0",
+    "availability" : {
+      "macOS" : "10.13.2",
+      "tvOS" : "11.2",
+      "watchOS" : "4.2",
+      "iOS" : "11.2",
+      "macCatalyst" : "11.2"
+    },
+    "modelType" : {
+      "name" : "MLModelType_neuralNetwork"
+    },
+    "dependencies" : [
+      {
+        "className" : "scaling",
+        "layerDescription" : ""
+      },
+      {
+        "className" : "scaling",
+        "layerDescription" : ""
+      },
+      {
+        "className" : "scaling",
+        "layerDescription" : ""
+      },
+      {
+        "className" : "scaling",
+        "layerDescription" : ""
+      },
+      {
+        "className" : "scaling",
+        "layerDescription" : ""
+      },
+      {
+        "className" : "scaling",
+        "layerDescription" : ""
+      },
+      {
+        "className" : "scaling",
+        "layerDescription" : ""
+      },
+      {
+        "className" : "scaling",
+        "layerDescription" : ""
+      },
+      {
+        "className" : "scaling",
+        "layerDescription" : ""
+      },
+      {
+        "className" : "scaling",
+        "layerDescription" : ""
+      },
+      {
+        "className" : "scaling",
+        "layerDescription" : ""
+      },
+      {
+        "className" : "scaling",
+        "layerDescription" : ""
+      },
+      {
+        "className" : "scaling",
+        "layerDescription" : ""
+      },
+      {
+        "className" : "scaling",
+        "layerDescription" : ""
+      },
+      {
+        "className" : "scaling",
+        "layerDescription" : ""
+      },
+      {
+        "className" : "scaling",
+        "layerDescription" : ""
+      },
+      {
+        "className" : "scaling",
+        "layerDescription" : ""
+      },
+      {
+        "className" : "scaling",
+        "layerDescription" : ""
+      },
+      {
+        "className" : "scaling",
+        "layerDescription" : ""
+      },
+      {
+        "className" : "scaling",
+        "layerDescription" : ""
+      },
+      {
+        "className" : "scaling",
+        "layerDescription" : ""
+      }
+    ],
+    "inputSchema" : [
+      {
+        "height" : "160",
+        "colorspace" : "RGB",
+        "isOptional" : "0",
+        "width" : "160",
+        "isColor" : "1",
+        "formattedType" : "Image (Color 160 × 160)",
+        "hasSizeFlexibility" : "0",
+        "type" : "Image",
+        "shortDescription" : "",
+        "name" : "image"
+      }
+    ],
+    "generatedClassName" : "LookKit_FaceNet",
+    "userDefinedMetadata" : {
+
+    },
+    "neuralNetworkLayerTypeHistogram" : {
+      "Concat" : 23,
+      "Custom" : 21,
+      "ActivationReLU" : 131,
+      "Add" : 21,
+      "PoolingAverage" : 1,
+      "BatchNorm" : 112,
+      "Convolution" : 132,
+      "InnerProduct" : 1,
+      "PoolingMax" : 3
+    },
+    "method" : "predict"
+  }
+]

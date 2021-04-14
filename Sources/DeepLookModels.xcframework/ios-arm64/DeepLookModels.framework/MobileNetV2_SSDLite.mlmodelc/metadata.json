@@ -1,0 +1,195 @@
+[
+  {
+    "shortDescription" : "MobileNetV2 + SSDLite, trained on COCO",
+    "metadataOutputVersion" : "3.0",
+    "outputSchema" : [
+      {
+        "dataType" : "Double",
+        "hasShapeFlexibility" : "1",
+        "isOptional" : "0",
+        "shapeFlexibility" : "0... × 90",
+        "shapeRange" : "[[0, -1], [90, 90]]",
+        "formattedType" : "MultiArray (Double 0 × 90)",
+        "type" : "MultiArray",
+        "shape" : "[0, 90]",
+        "name" : "confidence",
+        "shortDescription" : "Boxes × Class confidence"
+      },
+      {
+        "dataType" : "Double",
+        "hasShapeFlexibility" : "1",
+        "isOptional" : "0",
+        "shapeFlexibility" : "0... × 4",
+        "shapeRange" : "[[0, -1], [4, 4]]",
+        "formattedType" : "MultiArray (Double 0 × 4)",
+        "type" : "MultiArray",
+        "shape" : "[0, 4]",
+        "name" : "coordinates",
+        "shortDescription" : "Boxes × [x, y, width, height] (relative to image size)"
+      }
+    ],
+    "version" : "ssdlite_mobilenet_v2_coco_2018_05_09",
+    "modelParameters" : [
+
+    ],
+    "author" : "Converted to Core ML by Matthijs Hollemans",
+    "specificationVersion" : 3,
+    "license" : "https:\/\/github.com\/tensorflow\/models\/blob\/master\/research\/object_detection",
+    "isUpdatable" : "0",
+    "availability" : {
+      "macOS" : "10.14",
+      "tvOS" : "12.0",
+      "watchOS" : "5.0",
+      "iOS" : "12.0",
+      "macCatalyst" : "12.0"
+    },
+    "modelType" : {
+      "name" : "MLModelType_pipeline",
+      "structure" : [
+        {
+          "name" : "MLModelType_neuralNetwork"
+        },
+        {
+          "name" : "MLModelType_neuralNetwork"
+        },
+        {
+          "name" : "MLModelType_nonMaximumSuppression"
+        }
+      ]
+    },
+    "inputSchema" : [
+      {
+        "height" : "300",
+        "colorspace" : "RGB",
+        "isOptional" : "0",
+        "width" : "300",
+        "isColor" : "1",
+        "formattedType" : "Image (Color 300 × 300)",
+        "hasSizeFlexibility" : "0",
+        "type" : "Image",
+        "shortDescription" : "Input image",
+        "name" : "image"
+      },
+      {
+        "isOptional" : "0",
+        "formattedType" : "Double",
+        "type" : "Double",
+        "name" : "iouThreshold",
+        "shortDescription" : "(optional) IOU Threshold override"
+      },
+      {
+        "isOptional" : "0",
+        "formattedType" : "Double",
+        "type" : "Double",
+        "name" : "confidenceThreshold",
+        "shortDescription" : "(optional) Confidence Threshold override"
+      }
+    ],
+    "classLabels" : [
+      "person",
+      "bicycle",
+      "car",
+      "motorcycle",
+      "airplane",
+      "bus",
+      "train",
+      "truck",
+      "boat",
+      "traffic light",
+      "fire hydrant",
+      "?",
+      "stop sign",
+      "parking meter",
+      "bench",
+      "bird",
+      "cat",
+      "dog",
+      "horse",
+      "sheep",
+      "cow",
+      "elephant",
+      "bear",
+      "zebra",
+      "giraffe",
+      "backpack",
+      "umbrella",
+      "handbag",
+      "tie",
+      "suitcase",
+      "frisbee",
+      "skis",
+      "snowboard",
+      "sports ball",
+      "kite",
+      "baseball bat",
+      "baseball glove",
+      "skateboard",
+      "surfboard",
+      "tennis racket",
+      "bottle",
+      "wine glass",
+      "cup",
+      "fork",
+      "knife",
+      "spoon",
+      "bowl",
+      "banana",
+      "apple",
+      "sandwich",
+      "orange",
+      "broccoli",
+      "carrot",
+      "hot dog",
+      "pizza",
+      "donut",
+      "cake",
+      "chair",
+      "couch",
+      "potted plant",
+      "bed",
+      "dining table",
+      "toilet",
+      "tv",
+      "laptop",
+      "mouse",
+      "remote",
+      "keyboard",
+      "cell phone",
+      "microwave",
+      "oven",
+      "toaster",
+      "sink",
+      "refrigerator",
+      "book",
+      "clock",
+      "vase",
+      "scissors",
+      "teddy bear",
+      "hair drier",
+      "toothbrush"
+    ],
+    "generatedClassName" : "MobileNetV2_SSDLite",
+    "userDefinedMetadata" : {
+      "confidence_threshold" : "0.4",
+      "iou_threshold" : "0.6",
+      "classes" : "person,bicycle,car,motorcycle,airplane,bus,train,truck,boat,traffic light,fire hydrant,?,stop sign,parking meter,bench,bird,cat,dog,horse,sheep,cow,elephant,bear,zebra,giraffe,?,backpack,umbrella,?,?,handbag,tie,suitcase,frisbee,skis,snowboard,sports ball,kite,baseball bat,baseball glove,skateboard,surfboard,tennis racket,bottle,?,wine glass,cup,fork,knife,spoon,bowl,banana,apple,sandwich,orange,broccoli,carrot,hot dog,pizza,donut,cake,chair,couch,potted plant,bed,?,dining table,?,?,toilet,?,tv,laptop,mouse,remote,keyboard,cell phone,microwave,oven,toaster,sink,refrigerator,?,book,clock,vase,scissors,teddy bear,hair drier,toothbrush"
+    },
+    "neuralNetworkLayerTypeHistogram" : {
+      "Slice" : 7,
+      "Concat" : 3,
+      "UnaryExp" : 1,
+      "UnaryThreshold" : 59,
+      "Convolution" : 88,
+      "ActivationSigmoid" : 1,
+      "Reshape" : 12,
+      "Permute" : 16,
+      "Add" : 11,
+      "BatchNorm" : 88,
+      "Multiply" : 5,
+      "ActivationLinear" : 118,
+      "ActivationReLU" : 59,
+      "LoadConstant" : 2
+    },
+    "method" : "predict"
+  }
+]

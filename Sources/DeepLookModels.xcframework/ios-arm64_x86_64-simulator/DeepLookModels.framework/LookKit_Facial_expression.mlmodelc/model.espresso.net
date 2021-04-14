@@ -1,0 +1,342 @@
+{
+  "transform_params" : {
+    "conv2d_5_input" : {
+      "bias_a" : 0,
+      "bias_g" : 0,
+      "bias_r" : 0,
+      "bias_b" : 0,
+      "center_mean" : 0,
+      "is_network_bgr" : 0,
+      "scale" : 1
+    }
+  },
+  "properties" : {
+
+  },
+  "analyses" : {
+
+  },
+  "format_version" : 200,
+  "storage" : "model.espresso.weights",
+  "layers" : [
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "sequential_1\/conv2d_5\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "sequential_1\/conv2d_5\/Relu",
+      "blob_weights" : 3,
+      "K" : 1,
+      "blob_biases" : 1,
+      "name" : "sequential_1\/conv2d_5\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 64,
+      "bottom" : "conv2d_5_input",
+      "weights" : {
+
+      },
+      "Nx" : 5,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 5,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "debug_info" : "max_pool_0",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "size_x" : 5,
+      "top" : "max_pool_0",
+      "top_shape_style" : 0,
+      "stride_x" : 2,
+      "avg_or_max" : 1,
+      "average_count_exclude_padding" : 1,
+      "type" : "pool",
+      "name" : "max_pool_0",
+      "pad_t" : 0,
+      "stride_y" : 2,
+      "bottom" : "sequential_1\/conv2d_5\/Relu",
+      "weights" : {
+
+      },
+      "pad_mode" : 2,
+      "size_y" : 5,
+      "pad_value" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "sequential_1\/conv2d_6\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "sequential_1\/conv2d_6\/Relu",
+      "blob_weights" : 7,
+      "K" : 64,
+      "blob_biases" : 5,
+      "name" : "sequential_1\/conv2d_6\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 64,
+      "bottom" : "max_pool_0",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "sequential_1\/conv2d_7\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "sequential_1\/conv2d_7\/Relu",
+      "blob_weights" : 11,
+      "K" : 64,
+      "blob_biases" : 9,
+      "name" : "sequential_1\/conv2d_7\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 64,
+      "bottom" : "sequential_1\/conv2d_6\/Relu",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "debug_info" : "avg_pool_0",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "size_x" : 3,
+      "top" : "avg_pool_0",
+      "top_shape_style" : 0,
+      "stride_x" : 2,
+      "avg_or_max" : 0,
+      "average_count_exclude_padding" : 1,
+      "type" : "pool",
+      "name" : "avg_pool_0",
+      "pad_t" : 0,
+      "stride_y" : 2,
+      "bottom" : "sequential_1\/conv2d_7\/Relu",
+      "weights" : {
+
+      },
+      "pad_mode" : 2,
+      "size_y" : 3,
+      "pad_value" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "sequential_1\/conv2d_8\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "sequential_1\/conv2d_8\/Relu",
+      "blob_weights" : 15,
+      "K" : 64,
+      "blob_biases" : 13,
+      "name" : "sequential_1\/conv2d_8\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 128,
+      "bottom" : "avg_pool_0",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 1,
+      "fused_tanh" : 0,
+      "debug_info" : "sequential_1\/conv2d_9\/BiasAdd",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "sequential_1\/conv2d_9\/Relu",
+      "blob_weights" : 19,
+      "K" : 128,
+      "blob_biases" : 17,
+      "name" : "sequential_1\/conv2d_9\/BiasAdd",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 128,
+      "bottom" : "sequential_1\/conv2d_8\/Relu",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 3,
+      "n_parallel" : 1
+    },
+    {
+      "pad_r" : 0,
+      "debug_info" : "avg_pool_1",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "size_x" : 3,
+      "top" : "avg_pool_1",
+      "top_shape_style" : 0,
+      "stride_x" : 2,
+      "avg_or_max" : 0,
+      "average_count_exclude_padding" : 1,
+      "type" : "pool",
+      "name" : "avg_pool_1",
+      "pad_t" : 0,
+      "stride_y" : 2,
+      "bottom" : "sequential_1\/conv2d_9\/Relu",
+      "weights" : {
+
+      },
+      "pad_mode" : 2,
+      "size_y" : 3,
+      "pad_value" : 0
+    },
+    {
+      "axis_h" : 0,
+      "axis_w" : 2,
+      "bottom" : "avg_pool_1",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "sequential_1\/average_pooling2d_3\/AvgPool",
+      "top" : "sequential_1\/average_pooling2d_3\/AvgPool",
+      "type" : "transpose",
+      "name" : "sequential_1\/average_pooling2d_3\/AvgPool"
+    },
+    {
+      "name" : "sequential_1\/flatten_1\/Reshape",
+      "weights" : {
+
+      },
+      "dst_w" : 128,
+      "version" : 1,
+      "dst_n" : 1,
+      "dst_nd_rank" : 2,
+      "type" : "reshape",
+      "dst_h" : -1,
+      "mode" : 0,
+      "dynamic_shape" : false,
+      "bottom" : "sequential_1\/average_pooling2d_3\/AvgPool",
+      "debug_info" : "sequential_1\/flatten_1\/Reshape",
+      "dst_seq" : 1,
+      "dst_k" : 1,
+      "top" : "sequential_1\/flatten_1\/Reshape"
+    },
+    {
+      "nB" : 128,
+      "top" : "sequential_1\/dense_2\/Relu",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 1024,
+      "blob_weights" : 23,
+      "type" : "inner_product",
+      "has_relu" : 1,
+      "bottom" : "sequential_1\/flatten_1\/Reshape",
+      "blob_biases" : 21,
+      "has_tanh" : 0,
+      "debug_info" : "sequential_1\/dense_2\/BiasAdd",
+      "name" : "sequential_1\/dense_2\/BiasAdd",
+      "has_prelu" : 0
+    },
+    {
+      "nB" : 1024,
+      "top" : "sequential_1\/dense_3\/Relu",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 1024,
+      "blob_weights" : 27,
+      "type" : "inner_product",
+      "has_relu" : 1,
+      "bottom" : "sequential_1\/dense_2\/Relu",
+      "blob_biases" : 25,
+      "has_tanh" : 0,
+      "debug_info" : "sequential_1\/dense_3\/BiasAdd",
+      "name" : "sequential_1\/dense_3\/BiasAdd",
+      "has_prelu" : 0
+    },
+    {
+      "nB" : 1024,
+      "top" : "sequential_1\/dense_4\/BiasAdd",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 7,
+      "blob_weights" : 31,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "sequential_1\/dense_3\/Relu",
+      "blob_biases" : 29,
+      "has_tanh" : 0,
+      "debug_info" : "sequential_1\/dense_4\/BiasAdd",
+      "name" : "sequential_1\/dense_4\/BiasAdd",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "sequential_1\/dense_4\/BiasAdd",
+      "weights" : {
+
+      },
+      "nd_axis" : -1,
+      "debug_info" : "sequential_1\/dense_4\/Softmax",
+      "top" : "Identity",
+      "type" : "softmax_nd",
+      "name" : "sequential_1\/dense_4\/Softmax",
+      "attributes" : {
+        "is_output" : 1
+      }
+    }
+  ]
+}

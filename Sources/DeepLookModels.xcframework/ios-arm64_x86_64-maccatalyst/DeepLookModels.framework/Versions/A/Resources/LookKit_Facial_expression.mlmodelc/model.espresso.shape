@@ -1,0 +1,109 @@
+{
+  "layer_shapes" : {
+    "sequential_1\/flatten_1\/Reshape" : {
+      "k" : 1,
+      "w" : 128,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "sequential_1\/conv2d_8\/Relu" : {
+      "k" : 128,
+      "w" : 5,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 5
+    },
+    "sequential_1\/dense_4\/BiasAdd" : {
+      "k" : 1,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "Identity" : {
+      "k" : 1,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "sequential_1\/conv2d_7\/Relu" : {
+      "k" : 64,
+      "w" : 16,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 16
+    },
+    "avg_pool_0" : {
+      "k" : 64,
+      "w" : 7,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 7
+    },
+    "sequential_1\/average_pooling2d_3\/AvgPool" : {
+      "k" : 1,
+      "w" : 128,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "max_pool_0" : {
+      "k" : 64,
+      "w" : 20,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 20
+    },
+    "sequential_1\/conv2d_6\/Relu" : {
+      "k" : 64,
+      "w" : 18,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 18
+    },
+    "sequential_1\/dense_3\/Relu" : {
+      "k" : 1,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "sequential_1\/conv2d_5\/Relu" : {
+      "k" : 64,
+      "w" : 44,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 44
+    },
+    "conv2d_5_input" : {
+      "k" : 1,
+      "w" : 48,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 48
+    },
+    "sequential_1\/dense_2\/Relu" : {
+      "k" : 1,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "avg_pool_1" : {
+      "k" : 128,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "sequential_1\/conv2d_9\/Relu" : {
+      "k" : 128,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 3
+    }
+  }
+}

@@ -1,0 +1,263 @@
+{
+  "storage" : "model.espresso.weights",
+  "analyses" : {
+
+  },
+  "properties" : {
+
+  },
+  "format_version" : 200,
+  "layers" : [
+    {
+      "axis_h" : 1,
+      "axis_w" : 2,
+      "bottom" : "scores",
+      "axis_k" : 0,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "permute_scores",
+      "top" : "permute_scores_output",
+      "type" : "transpose",
+      "name" : "permute_scores"
+    },
+    {
+      "bottom" : "permute_scores_output",
+      "end" : 91,
+      "start" : 1,
+      "weights" : {
+
+      },
+      "debug_info" : "slice_scores",
+      "axis" : 0,
+      "top" : "raw_confidence",
+      "type" : "slice",
+      "name" : "slice_scores",
+      "attributes" : {
+        "is_output" : 1
+      }
+    },
+    {
+      "bottom" : "boxes",
+      "end" : 2,
+      "start" : 0,
+      "weights" : {
+
+      },
+      "axis" : 2,
+      "debug_info" : "slice_yx",
+      "top" : "slice_yx_output",
+      "type" : "slice",
+      "name" : "slice_yx"
+    },
+    {
+      "bottom" : "slice_yx_output",
+      "alpha" : 0.10000000149011612,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "scale_yx",
+      "top" : "scale_yx_output",
+      "type" : "elementwise",
+      "name" : "scale_yx",
+      "beta" : 0
+    },
+    {
+      "bottom" : "",
+      "k" : 2,
+      "n" : 1,
+      "weights" : {
+
+      },
+      "h" : 1917,
+      "debug_info" : "anchors_yx",
+      "constant_blob" : 1,
+      "top" : "anchors_yx",
+      "w" : 1,
+      "type" : "load_constant",
+      "name" : "anchors_yx"
+    },
+    {
+      "bottom" : "",
+      "k" : 2,
+      "n" : 1,
+      "weights" : {
+
+      },
+      "h" : 1917,
+      "debug_info" : "anchors_hw",
+      "constant_blob" : 3,
+      "top" : "anchors_hw",
+      "w" : 1,
+      "type" : "load_constant",
+      "name" : "anchors_hw"
+    },
+    {
+      "bottom" : "scale_yx_output,anchors_hw",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "yw_times_hw",
+      "top" : "yw_times_hw_output",
+      "type" : "elementwise",
+      "name" : "yw_times_hw",
+      "beta" : 0
+    },
+    {
+      "bottom" : "yw_times_hw_output,anchors_yx",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "decoded_yx",
+      "top" : "decoded_yx_output",
+      "type" : "elementwise",
+      "name" : "decoded_yx",
+      "beta" : 0
+    },
+    {
+      "bottom" : "boxes",
+      "end" : 4,
+      "start" : 2,
+      "weights" : {
+
+      },
+      "axis" : 2,
+      "debug_info" : "slice_hw",
+      "top" : "slice_hw_output",
+      "type" : "slice",
+      "name" : "slice_hw"
+    },
+    {
+      "bottom" : "slice_hw_output",
+      "alpha" : 0.20000000298023224,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "scale_hw",
+      "top" : "scale_hw_output",
+      "type" : "elementwise",
+      "name" : "scale_hw",
+      "beta" : 0
+    },
+    {
+      "bottom" : "scale_hw_output",
+      "alpha" : 1,
+      "operation" : 27,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "exp_hw",
+      "top" : "exp_hw_output",
+      "type" : "elementwise",
+      "name" : "exp_hw",
+      "beta" : 0
+    },
+    {
+      "bottom" : "exp_hw_output,anchors_hw",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "decoded_hw",
+      "top" : "decoded_hw_output",
+      "type" : "elementwise",
+      "name" : "decoded_hw",
+      "beta" : 0
+    },
+    {
+      "bottom" : "decoded_yx_output",
+      "end" : 1,
+      "start" : 0,
+      "weights" : {
+
+      },
+      "axis" : 2,
+      "debug_info" : "slice_y",
+      "top" : "slice_y_output",
+      "type" : "slice",
+      "name" : "slice_y"
+    },
+    {
+      "bottom" : "decoded_yx_output",
+      "end" : 2,
+      "start" : 1,
+      "weights" : {
+
+      },
+      "axis" : 2,
+      "debug_info" : "slice_x",
+      "top" : "slice_x_output",
+      "type" : "slice",
+      "name" : "slice_x"
+    },
+    {
+      "bottom" : "decoded_hw_output",
+      "end" : 1,
+      "start" : 0,
+      "weights" : {
+
+      },
+      "axis" : 2,
+      "debug_info" : "slice_h",
+      "top" : "slice_h_output",
+      "type" : "slice",
+      "name" : "slice_h"
+    },
+    {
+      "bottom" : "decoded_hw_output",
+      "end" : 2,
+      "start" : 1,
+      "weights" : {
+
+      },
+      "axis" : 2,
+      "debug_info" : "slice_w",
+      "top" : "slice_w_output",
+      "type" : "slice",
+      "name" : "slice_w"
+    },
+    {
+      "weights" : {
+
+      },
+      "debug_info" : "concat",
+      "top" : "concat_output",
+      "type" : "concat",
+      "name" : "concat",
+      "bottom" : "slice_x_output,slice_y_output,slice_w_output,slice_h_output"
+    },
+    {
+      "axis_seq" : 4,
+      "name" : "permute_output",
+      "axis_n" : 3,
+      "axis_h" : 1,
+      "type" : "transpose",
+      "attributes" : {
+        "is_output" : 1
+      },
+      "bottom" : "concat_output",
+      "axis_w" : 2,
+      "axis_k" : 0,
+      "debug_info" : "permute_output",
+      "weights" : {
+
+      },
+      "top" : "raw_coordinates"
+    }
+  ]
+}

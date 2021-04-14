@@ -1,0 +1,11 @@
+framework module DeepLookModels {
+  umbrella header "DeepLookModels.h"
+
+  export *
+  module * { export * }
+}
+
+module DeepLookModels.Swift {
+    header "DeepLookModels-Swift.h"
+    requires objc
+}
