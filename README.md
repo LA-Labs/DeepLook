@@ -11,7 +11,7 @@ DeepLook is a very lightweight framework aim to make using Computer Vision as si
 It uses 2 main concepts. First, We create IAP (Image Analyzing Pipeline) and then We process multiple IAPs over a batch of photos keeping low memory footprints.
 
 It has 4 main API's:
-1. [```DeepLook```](#DeepLook) = For fast simple analyzing actions over single photo.
+1. [```DeepLook```](#DeepLook) - For fast simple analyzing actions over single photo.
 1. [```Recognition```](#Recognition) - For face Recognition/Identification/Grouping.
 2. [```Detector```](#Detector) - For using many available image deep looking operations over batch of photos.
 3.  ```ImageProcessor``` - For Image Processing like align, crop, and rotate faces.
