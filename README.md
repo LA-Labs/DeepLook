@@ -6,7 +6,7 @@
 [![Pod License](http://img.shields.io/cocoapods/l/LookKit.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 When dealing with user data privacy should be your first concern. 
-LookKit is a very lightweight framework aim to make using Computer Vision as simple as possible for iOS and macOS developers. It is a hybrid framework wrapping state-of-the-art models: VGG-Face2, Google FaceNet, and Apple Vision. LookKit contains no external dependency and was written in 100% pure Swift and run locally on the end user device.
+DeepLook is a very lightweight framework aim to make using Computer Vision as simple as possible for iOS and macOS developers. It is a hybrid framework wrapping state-of-the-art models: VGG-Face2, Google FaceNet, and Apple Vision. DeepLook contains no external dependency and was written in 100% pure Swift and run locally on the end user device.
 
 It uses 2 main concepts. First, We create IAP (Image Analyzing Pipeline) and then We process multiple IAPs over a batch of photos keeping low memory footprints.
 
@@ -38,19 +38,19 @@ It has 4 main API's:
 ```swift 
 dependencies: [
   .package(
-      url:  "https://github.com/LA-Labs/LookKit_Package.git",
+      url:  "https://github.com/LA-Labs/DeepLook.git",
       .branch("master")
   )
 ]
 ```
 ## Cocoapod:
-CocoaPods is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate LookKit into your Xcode project using CocoaPods, specify it in your Podfile:
+CocoaPods is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate DeepLook into your Xcode project using CocoaPods, specify it in your Podfile:
 ```ruby
-pod 'LookKit' 
+pod 'DeepLook' 
 ```
 ## Import
 ```swift 
-import LookKit
+import DeepLook
 ```
 # Usage
 ## Basic Usege
@@ -288,7 +288,7 @@ Recognition.cluster(fetchOptions: options,
 ### ```Detector```
 
 ### Create Action
-Firstly, LookKit provides useful initializers to create face location request with ```Actions```. 
+Firstly, DeepLook provides useful initializers to create face location request with ```Actions```. 
 ```swift 
 // Create face location request (Action)
 let faceLocation = Actions.faceLocation
@@ -372,7 +372,7 @@ Detector.detect(faceLocation,
                 sourceImages: images) { (result) in
 ```
 But this is not recommand for large amount of photos due to high memory allocation.
-LookKit provice usful fetch options to work with user photo gallery and let you focus on your user experience.
+DeepLook provice usful fetch options to work with user photo gallery and let you focus on your user experience.
 It's start with creation of asset fetching options using ```AssetFetchingOptions```
 ```swift 
 // Create default fetch options
@@ -410,4 +410,4 @@ https://github.com/LA-Labs/LookKit_Demo
 We don't have any contributing guidelines at the moment, but feel free to submit pull requests & file issues within GitHub!
 
 # License
-LookKit is released under the MIT license. [See License](https://github.com/LA-Labs/LookKit/blob/main/Sources/LICENSE) for details.
+DeepLook is released under the MIT license. [See License](https://github.com/LA-Labs/DeepLook/blob/main/LICENSE) for details.
