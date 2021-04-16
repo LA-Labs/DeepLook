@@ -400,16 +400,16 @@ public enum AssetCollection {
 ```
 
 
-# Demo Project - [```Demo```](https://github.com/LA-Labs/DeepLook_Demo) 
+## Demo Project - [```Demo```](https://github.com/LA-Labs/DeepLook_Demo) 
 Just plug and play.
 Make sure you have enough photos with faces before running the project on iDevice/Simulator.
 
 
 
-# Contributing
+## Contributing
 We don't have any contributing guidelines at the moment, but feel free to submit pull requests & file issues within GitHub!
 
-# Buy me a beer 🍺
+## Buy me a beer 🍺
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate?hosted_button_id=KTQZY5A3FJPSL)
 
