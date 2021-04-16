@@ -409,5 +409,9 @@ https://github.com/LA-Labs/LookKit_Demo
 # Contributing
 We don't have any contributing guidelines at the moment, but feel free to submit pull requests & file issues within GitHub!
 
+# Donate
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate?hosted_button_id=KTQZY5A3FJPSL)
+
 # License
 DeepLook is released under the MIT license. [See License](https://github.com/LA-Labs/DeepLook/blob/main/LICENSE) for details.
