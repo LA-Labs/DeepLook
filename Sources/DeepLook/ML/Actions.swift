@@ -20,55 +20,68 @@ typealias Pipeline = (ProcessInput) throws -> ProcessOutput
 public typealias Action = (ProcessInput) throws -> ProcessInput
 typealias CustomFilter<T> = (ProcessInput) throws -> T
 
+/// Reference to `LKActions.default` for quick bootstrapping and examples.
+public let Actions = LKActions.default
 
-public class Actions {
+public class LKActions {
+
+    /// Models
+    let faceNet: VNCoreMLModel? = try? Models.getModel(by: .faceNet)
+    let vggResnet: VNCoreMLModel? = try? Models.getModel(by: .VGGFace2_resnet)
+    let vggSenet: VNCoreMLModel? = try? Models.getModel(by: .VGGFace2_senet)
     
+    
+    /// shared instance
+    public static let `default` = LKActions()
+    
+    // initiate only once.
+    private init() { }
     //MARK: Public
     
     /// An image analysis request that finds faces within an image.
-    public static var faceLocation: Action {
+    public var faceLocation: Action {
         faceRectangle
     }
     
     /// A request to locate objects in an image.
     /// Objects include 100 different classes.
-    public static var objectLocation: Action {
+    public var objectLocation: Action {
         objectLocationDetection
     }
     
     /// A request to classify an image.
     /// Objects include 1000 different classes.
-    public static var objectDetecting: Action {
+    public var objectDetecting: Action {
         tagPhoto
     }
     
     /// A request that produces a floating-point number representing the capture quality of a given face in a photo.
-    public static var faceQuality: Action {
+    public var faceQuality: Action {
         imageQuality
     }
     
     /// An image analysis request that finds facial features (such as the eyes and mouth) in an image.
-    public static var faceLandmarks: Action {
+    public var faceLandmarks: Action {
         featureDetection
     }
     
     /// An image analysis request that finds facial features crop and align the face in an image.
-    public static var cropAndAlignFaces: Action {
+    public var cropAndAlignFaces: Action {
         featureDetection --> cropChipFaces
     }
     
     /// An image encoding request that encode facial features to floating-point vector.
-    public static var faceEncoding: Action {
+    public var faceEncoding: Action {
         faceQuality --> cropAndAlignFaces --> encodeFaces
     }
     
     /// An image analysis request that finds facial emotion (such as happy and angry) in an image.
-    public static var faceEmotion: Action {
+    public var faceEmotion: Action {
         cropAndAlignFaces --> faceEmotionProcess
     }
     
     //MARK: Internal
-    static func fetchAsset() -> Action {
+    func fetchAsset() -> Action {
         fetchAsset
     }
     
@@ -77,7 +90,7 @@ public class Actions {
     /// - Parameter asset: User image
     ///
     /// - Returns: ImageObservation struct include vision bounding rect, original image, and image size
-    private static func faceRectangle(input: ProcessInput) throws -> ProcessInput {
+    private func faceRectangle(input: ProcessInput) throws -> ProcessInput {
         return try autoreleasepool { () -> ProcessInput in
             
             precondition(input.asset.image.cgImage != nil, "must provide cgImage \(input.asset.identifier)")
@@ -97,7 +110,7 @@ public class Actions {
         }
     }
     
-    private static func featureDetection(input: ProcessInput) throws -> ProcessInput {
+    private func featureDetection(input: ProcessInput) throws -> ProcessInput {
         return try autoreleasepool { () -> ProcessInput in
             precondition(input.asset.image.cgImage != nil, "must provide cgImage \(input.asset.identifier)")
             let requestHandler = VNImageRequestHandler(cgImage: (input.asset.image.cgImage!), options: [:])
@@ -156,21 +169,22 @@ public class Actions {
         }
     }
     
-    private static func encodeFaces(input: ProcessInput) throws -> ProcessInput {
+    private func encodeFaces(input: ProcessInput) throws -> ProcessInput {
         return try autoreleasepool { () -> ProcessInput in
             var model: VNCoreMLModel?
             switch input.configuration.faceEncoderModel {
             case .facenet:
-                model = try? Models.getModel(by: .faceNet)
+                model = faceNet
             case .VGGFace2_resnet_Lite:
-                model = try? Models.getModel(by: .VGGFace2_resnet)
+                model = vggResnet
             case .VGGFace2_senet_Lite:
-                model = try? Models.getModel(by: .VGGFace2_senet)
+                model = vggSenet
             }
             
-            precondition(model != nil, "Can't load encoder model: \(input.configuration.faceEncoderModel)")
-            
-            let request = VNCoreMLRequest(model: model!)
+            guard let mlModel = model else {
+                return input
+            }
+            let request = VNCoreMLRequest(model: mlModel)
             let faces = try input.asset.faces.compactMap({ (face) -> Face? in
                 guard let cgImage = face.faceCroppedImage.cgImage else {
                     return nil
@@ -192,7 +206,7 @@ public class Actions {
         }
     }
     
-    private static func imageQuality(input: ProcessInput) throws -> ProcessInput {
+    private func imageQuality(input: ProcessInput) throws -> ProcessInput {
         return try autoreleasepool { () -> ProcessInput in
             guard input.configuration.minimumQualityFilter != .none else {
                 return input
@@ -251,7 +265,7 @@ public class Actions {
         }
     }
     
-    private static func tagPhoto(input: ProcessInput) throws -> ProcessInput {
+    private func tagPhoto(input: ProcessInput) throws -> ProcessInput {
         return try autoreleasepool { () -> ProcessInput in
             let requestHandler = VNImageRequestHandler(cgImage: (input.asset.image.cgImage!), options: [:])
             let request = VNClassifyImageRequest()
@@ -272,7 +286,7 @@ public class Actions {
         }
     }
     
-    private static func objectLocationDetection(input: ProcessInput) throws -> ProcessInput {
+    private func objectLocationDetection(input: ProcessInput) throws -> ProcessInput {
         return try autoreleasepool { () -> ProcessInput in
             precondition(input.asset.image.cgImage != nil, "must provide cgImage \(input.asset.identifier)")
             
@@ -303,7 +317,7 @@ public class Actions {
         }
     }
     
-    private static func faceEmotionProcess(input: ProcessInput) throws -> ProcessInput {
+    private func faceEmotionProcess(input: ProcessInput) throws -> ProcessInput {
         return try autoreleasepool { () -> ProcessInput in
             precondition(input.asset.image.cgImage != nil, "must provide cgImage \(input.asset.identifier)")
             
@@ -334,7 +348,7 @@ public class Actions {
         }
     }
     
-    static func custom<T>(model: MLModel) -> CustomFilter<T> {
+    func custom<T>(model: MLModel) -> CustomFilter<T> {
         return { input in
             return try autoreleasepool { () -> T in
                 guard let model = try? VNCoreMLModel(for: model) else {
@@ -353,7 +367,7 @@ public class Actions {
     }
     
     // Fetch image from PHAsset
-    private static func fetchAsset(input: ProcessInput) throws -> ProcessInput {
+    private func fetchAsset(input: ProcessInput) throws -> ProcessInput {
         return autoreleasepool { () -> ProcessInput in
             let fetchingOptions = ImageFetcherOptions(downsampleImageSize: input.configuration.fetchImageSize)
             let imageFetcher = ImageFetcherService(options: fetchingOptions)
@@ -371,7 +385,7 @@ public class Actions {
         }
     }
     
-    private static func cropChipFaces(input: ProcessInput) throws -> ProcessInput {
+    private func cropChipFaces(input: ProcessInput) throws -> ProcessInput {
         return autoreleasepool { () -> ProcessInput in
             let faces = input.asset.faces.map({ extractChip(face: $0,
                                                             image: input.asset.image,
@@ -387,24 +401,24 @@ public class Actions {
         }
     }
     
-    // Convert PocessAsset To ProcessedAsset
+    // Convert ProcessAsset To ProcessedAsset
     // Remove main image to reduce ram foot print
-    static func clean(input: ProcessInput) throws -> ProcessOutput {
+    func clean(input: ProcessInput) throws -> ProcessOutput {
         ProcessOutput(asset: input.asset)
     }
 }
 
-private extension Actions {
+private extension LKActions {
     
-    static func boundingBoxToRects(observation: [VNFaceObservation]) -> [CGRect] {
+    func boundingBoxToRects(observation: [VNFaceObservation]) -> [CGRect] {
         observation.map(convertRect)
     }
     
-    static func convertRect(face: VNFaceObservation) -> CGRect {
+    func convertRect(face: VNFaceObservation) -> CGRect {
         return face.boundingBox
     }
     
-    static func hasMinimumLandmarkRequirement(observation: VNFaceObservation,
+    func hasMinimumLandmarkRequirement(observation: VNFaceObservation,
                                               input: ProcessInput) -> Bool {
         let area = observation.boundingBox.size.scale(imageSize: input.asset.image.size).area
         if observation.yaw?.doubleValue ?? 0 < -1.5 || observation.yaw?.doubleValue ?? 0 > 1.5 {
@@ -417,7 +431,7 @@ private extension Actions {
         return true
     }
     
-    static func embeddingsHandler(face: Face,
+    func embeddingsHandler(face: Face,
                                   request: VNRequest,
                                   configuration: ProcessConfiguration) -> Face {
         guard let observations = request.results as? [VNCoreMLFeatureValueObservation] ,
@@ -451,7 +465,7 @@ private extension Actions {
 
     }
     
-    static func emotionHandler(face: Face,
+    func emotionHandler(face: Face,
                                   request: VNRequest,
                                   configuration: ProcessConfiguration) -> Face {
         guard let observations = request.results as? [VNCoreMLFeatureValueObservation] ,
@@ -473,13 +487,13 @@ private extension Actions {
     
     }
         
-    static func buffer2Array<T>(length: Int, data: UnsafeMutableRawPointer, _: T.Type) -> [T] {
+    func buffer2Array<T>(length: Int, data: UnsafeMutableRawPointer, _: T.Type) -> [T] {
         let ptr = data.bindMemory(to: T.self, capacity: length)
         let buffer = UnsafeBufferPointer(start: ptr, count: length)
         return Array(buffer)
     }
     
-    static func norm_l2(emb: [Double]) -> [Double] {
+    func norm_l2(emb: [Double]) -> [Double] {
         let sum: Double = emb.reduce(0) { (result, next) in
             return result + next * next
         }
@@ -487,7 +501,7 @@ private extension Actions {
         return emb
     }
     
-    static func norm_l1(emb: [Double]) -> [Double] {
+    func norm_l1(emb: [Double]) -> [Double] {
         let sum: Double = emb.reduce(0) { (result, next) in
             return result + next * next
         }
@@ -495,7 +509,7 @@ private extension Actions {
         return emb
     }
     
-    static func average(arrays: [[Double]] ) -> [Double] {
+    func average(arrays: [[Double]] ) -> [Double] {
         var average:[Double] = []
         if !(arrays.count > 0) {
             return arrays.first!
@@ -510,9 +524,9 @@ private extension Actions {
         return average
     }
     
-    static func extractChip(face: Face,
-                            image: UIImage,
-                            processConfiguration: ProcessConfiguration) -> Face {
+    func extractChip(face: Face,
+                     image: UIImage,
+                     processConfiguration: ProcessConfiguration) -> Face {
         let chipImage = Interpolation.extractImageChip(image,
                                                        chipDetail: Interpolation
                                                         .getFaceChipDetails(det: face.faceObservation,
