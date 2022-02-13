@@ -396,9 +396,9 @@ public enum AssetCollection {
 ```
 
 
-## Demo Project - [```Demo```](https://github.com/LA-Labs/DeepLook_Demo) 
+<!-- ## Demo Project - [```Demo```](https://github.com/LA-Labs/DeepLook_Demo) 
 Just plug and play.
-Make sure you have enough photos with faces before running the project on iDevice/Simulator.
+Make sure you have enough photos with faces before running the project on iDevice/Simulator. -->
 
 
 
