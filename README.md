@@ -72,7 +72,7 @@ let faceLocations = DeepLook.faceLocation(image) // Normalized rect. [CGRect]
 ```
 ```faceLocation(image)``` return an array of normalized vision bounding box. to convert it to ```CGRect``` in UIKit coordinate system you can use apple func ```VNImageRectForNormalizedRect```.
 
-To crop face chips out of the image. - [```Demo```](https://github.com/LA-Labs/LookKit_Demo/blob/main/LookKit_Demo/Deeplook%20Demo/Crop_faces.swift)
+To crop face chips out of the image. - [```Demo```](https://github.com/LA-Labs/DeepLook_Demo/blob/main/DeepLook_Demo/Deeplook%20Demo/Crop_faces.swift)
 ```swift
 // get list of face chips images.
 let corppedFaces = DeepLook.cropFaces(image,
