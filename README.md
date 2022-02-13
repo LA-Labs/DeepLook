@@ -144,7 +144,7 @@ if you want to have more control on the result you can call ```faceDistance``` a
 
 ```swift
 // get array of double represent the l2 norm euclidean distance.
-let results = DeepLook.faceDistance([angelina_encoding], faceToCompare: unknown_encoding) // [Double]
+let results = DeepLook.faceDistance([unknown_encoding], faceToCompare: angelina_encoding) // [Double]
 ```
 
 
