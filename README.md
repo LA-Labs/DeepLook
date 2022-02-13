@@ -22,7 +22,6 @@ It has 4 main API's:
  - [x] Chainable Request for faster performance.
  - [x] Image processing, Crop and align faces for creating a faces database.
  - [x] Fully integrated to work with user photo library out of the box.
- - [x] Supported both iDevices and macOS.
 
 ## Requirements
 
