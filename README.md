@@ -80,7 +80,7 @@ let corppedFaces = DeepLook.cropFaces(image,
 ```
 
 
-### Find facial features in pictures. - [```Demo```](https://github.com/LA-Labs/LookKit_Demo/blob/main/LookKit_Demo/Deeplook%20Demo/Faces_landmarks.swift)
+### Find facial features in pictures. - [```Demo```](https://github.com/LA-Labs/DeepLook_Demo/blob/main/DeepLook_Demo/Deeplook%20Demo/Faces_landmarks.swift)
 
 
 Get the locations and outlines of each person's eyes, nose, mouth and chin.
