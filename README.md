@@ -59,7 +59,7 @@ import DeepLook
 
 ```DeepLook``` provide the most simple API for computer vision analysis. Unlike other API in this package ```DeepLook``` is not using a background thread. It is your responsibility to call it from any background thread you like, like ```DispatchQueue.global().async``` to not block the ```main``` thread. 
 
-### Find faces in pictures - [```Demo```](https://github.com/LA-Labs/LookKit_Demo/blob/main/LookKit_Demo/Deeplook%20Demo/Face_location.swift)
+### Find faces in pictures - [```Demo```](https://github.com/LA-Labs/DeepLook_Demo/blob/main/DeepLook_Demo/Deeplook%20Demo/Face_location.swift)
 ![Screenshot](https://github.com/LA-Labs/LookKit_Demo/blob/main/face_locations_demo.png)
 
 Find all the faces that appear in a picture:
