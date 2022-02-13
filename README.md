@@ -137,7 +137,7 @@ let unknown_encoding = DeepLook.faceEncodings(unknown_image)[0] // array of enco
 
 // return result for each faces in the source image.
 // treshold default is set to 0.6.
-let result = DeepLook.compareFaces([angelina_encoding], faceToCompare: unknown_encoding) // [Bool]
+let result = DeepLook.compareFaces([unknown_encoding], faceToCompare: angelina_encoding) // [Bool]
 ```
 
 if you want to have more control on the result you can call ```faceDistance``` and mange the distance by yourself.
