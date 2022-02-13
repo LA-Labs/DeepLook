@@ -1,9 +1,6 @@
 
 # DeepLook SDK
-[![Platform](https://img.shields.io/cocoapods/p/LookKit.svg?style=flat)](https://github.com/LA-Labs/LookKit_Pod)
 [![SwiftPM compatible](https://img.shields.io/badge/SwiftPM-compatible-brightgreen.svg)](https://swift.org/package-manager/)
-[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/LookKit.svg)](https://img.shields.io/cocoapods/v/LookKit.svg)
-[![Pod License](http://img.shields.io/cocoapods/l/LookKit.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 When dealing with user data privacy should be your first concern. 
 DeepLook is a very lightweight framework aim to make using Computer Vision as simple as possible for iOS and macOS developers. It is a hybrid framework wrapping state-of-the-art models: VGG-Face2, Google FaceNet, and Apple Vision. DeepLook contains no external dependency and was written in 100% pure Swift and run locally on the end user device.
