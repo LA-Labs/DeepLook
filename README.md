@@ -158,7 +158,7 @@ let emotions = DeepLook.faceEmotion(image)
 ## Advance Usege
 ### ```Recognition```
 
-A modern face recognition pipeline consists of 4 common stages: detect, align, represent and verify. LookKit handles all these common stages in the background. You can just call its verification, find or cluster function in its interface with a single line of code.
+A modern face recognition pipeline consists of 4 common stages: detect, align, represent and verify. DeepLook handles all these common stages in the background. You can just call its verification, find or cluster function in its interface with a single line of code.
 
 ## Face Verification
 Verification function offers to verify face pairs as same person or different persons. 
