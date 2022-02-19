@@ -39,11 +39,11 @@ dependencies: [
   )
 ]
 ```
-## Cocoapod:
+<!-- ## Cocoapod:
 CocoaPods is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate DeepLook into your Xcode project using CocoaPods, specify it in your Podfile:
 ```ruby
 pod 'DeepLook' 
-```
+``` -->
 ## Import
 ```swift 
 import DeepLook
