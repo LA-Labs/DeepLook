@@ -145,7 +145,7 @@ let results = DeepLook.faceDistance([unknown_encoding], faceToCompare: angelina_
 
 
 
-### Find facial attribute in picture [```Demo```](https://github.com/LA-Labs/LookKit_Demo/blob/main/LookKit_Demo/Deeplook%20Demo/Face_emotion.swift)
+### Find facial attribute in picture [```Demo```](https://github.com/LA-Labs/DeepLook_Demo/blob/main/DeepLook_Demo/Deeplook%20Demo/Face_emotion.swift)
 ![Screenshot](https://github.com/LA-Labs/LookKit_Demo/blob/main/emotion_demo.png)
 
 
