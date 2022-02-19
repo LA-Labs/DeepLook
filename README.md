@@ -206,7 +206,7 @@ But this is not recommand for large amount of photos due to high memory allocati
 
 ### Face Identification
 
-Face identification requires to apply face verification several times. Lookit offers an out-of-the-box find function to handle this action for you.
+Face identification requires to apply face verification several times. DeepLook offers an out-of-the-box find function to handle this action for you.
 We start with fatching user photos using ```AssetFetchingOptions```.
 ```swift
 // source image must contian at least one face. 
