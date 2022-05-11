@@ -333,13 +333,13 @@ let objectDetection = Actions.objectDetecting
 
 // Combine 2 requests to one pipeline.
 // Every photo will go through the pipeline. both actions will be processed
-let pipelineProcess = faceLocation --> objectDetecting
+let pipelineProcess = faceLocation >>> objectDetecting
 
 // Start detecting
 Detector.detect(pipelineProcess, 
                 sourceImage: UIImage(named: "image1.jpg")) { (result) in
 // You can path it as a function 
-// Detector.detect(faceLocation --> objectDetecting, with: options) { (result) in
+// Detector.detect(faceLocation >>> objectDetecting, with: options) { (result) in
            switch result {
               case .success(let result):
                   // The result type is ProcessOutput
@@ -398,7 +398,7 @@ public enum AssetCollection {
 
 <!-- ## Demo Project - [```Demo```](https://github.com/LA-Labs/DeepLook_Demo) 
 Just plug and play.
-Make sure you have enough photos with faces before running the project on iDevice/Simulator. -->
+Make sure you have enough photos with faces before running the project on iDevice/Simulator. >>>
 
 
 

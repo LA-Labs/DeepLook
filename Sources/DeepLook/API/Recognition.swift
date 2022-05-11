@@ -40,7 +40,7 @@ public class LKRecognition {
                                                      processConfiguration: processConfiguration)
         
         precondition(!assets.isEmpty(), "Asset fetched must not be empty")
-        let embedding = Actions.faceQuality --> Actions.faceEncoding
+        let embedding = Actions.faceQuality >>> Actions.faceEncoding
         let startDate = Date()
         
         Vision.detect(objects: assets, process: embedding, completion: { [weak self] result in
@@ -103,7 +103,7 @@ public class LKRecognition {
                        similarityThreshold: Double,
                        processConfiguration: ProcessConfiguration = ProcessConfiguration(),
                        completion: @escaping (Result<[Match] , FaceComparisonError>) -> Void) {
-        let faceEncoding =  Actions.faceQuality --> Actions.faceEncoding
+        let faceEncoding =  Actions.faceQuality >>> Actions.faceEncoding
         let sourceImageAsset = ProcessAsset(identifier: "lhs",
                                             image: sourceImage)
         let sourceInput = ProcessInput(asset: sourceImageAsset,
@@ -165,7 +165,7 @@ public class LKRecognition {
                      similarityThreshold: Double,
                      processConfiguration: ProcessConfiguration = ProcessConfiguration(),
                      completion: @escaping (Result<[Match] , FaceComparisonError>) -> Void) {
-        let faceEncoding =  Actions.faceQuality --> Actions.faceEncoding
+        let faceEncoding =  Actions.faceQuality >>> Actions.faceEncoding
         let sourceImageAsset = ProcessAsset(identifier: "lhs",
                                             image: sourceImage)
         let sourceInput = ProcessInput(asset: sourceImageAsset,
@@ -217,7 +217,7 @@ public class LKRecognition {
                      similarityThreshold: Double,
                      processConfiguration: ProcessConfiguration = ProcessConfiguration(),
                      completion: @escaping (Result<[Match] , FaceComparisonError>) -> Void) {
-        let faceEncoding =  Actions.faceQuality --> Actions.faceEncoding
+        let faceEncoding =  Actions.faceQuality >>> Actions.faceEncoding
         let sourceImageAsset = ProcessAsset(identifier: phAssetLocalIdentifier,
                                             image: UIImage())
         let sourceInput = ProcessInput(asset: sourceImageAsset,
@@ -247,7 +247,7 @@ public class LKRecognition {
     public func facesEncoding(_ sourceImages: UIImage...,
                               processConfiguration: ProcessConfiguration = ProcessConfiguration(),
                               completion: @escaping (Result<[Face], VisionProcessError>) -> Void) {
-        let faceEncoding = Actions.faceQuality --> Actions.faceEncoding
+        let faceEncoding = Actions.faceQuality >>> Actions.faceEncoding
         let input = sourceImages.map { (sourceImage) in
             ProcessAsset(identifier: "sourceImage", image: sourceImage)
         }.map { (processAsset) -> ProcessInput in
@@ -276,7 +276,7 @@ public class LKRecognition {
     public func facesEncoding(fetchOptions: AssetFetchingOptions,
                               processConfiguration: ProcessConfiguration = ProcessConfiguration(),
                               completion: @escaping (Result<[Face], VisionProcessError>) -> Void) {
-        let faceEncoding = Actions.faceQuality --> Actions.faceEncoding
+        let faceEncoding = Actions.faceQuality >>> Actions.faceEncoding
         let assets = Vision.assetService.stackInputs(with: fetchOptions,
                                                      processConfiguration: processConfiguration)
         Vision.detect(objects: assets, process: faceEncoding, completion: { result in

@@ -23,7 +23,7 @@ extension Vision {
     static func detect(objects stack: Stack<[ProcessInput]>,
                        process: @escaping Action,
                        completion: @escaping(Result<[ProcessOutput], VisionProcessError>) -> Void) {
-        let pipe = Actions.fetchAsset() --> process --> Actions.clean
+        let pipe = Actions.fetchAsset() >>> process >>> Actions.clean
         perform(on: stack, process: pipe, completion: completion)
     }
     
