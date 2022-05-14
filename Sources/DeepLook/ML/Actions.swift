@@ -97,6 +97,10 @@ public class LKActions {
 
       let requestHandler = VNImageRequestHandler(cgImage: (input.asset.image.cgImage!), options: [:])
       let request = VNDetectFaceRectanglesRequest()
+
+      #if targetEnvironment(simulator)
+        request.usesCPUOnly = true
+      #endif
       try requestHandler.perform([request])
       guard let observations = request.results else {
         throw VisionProcessError.facesDetecting
@@ -115,6 +119,9 @@ public class LKActions {
       precondition(input.asset.image.cgImage != nil, "must provide cgImage \(input.asset.identifier)")
       let requestHandler = VNImageRequestHandler(cgImage: (input.asset.image.cgImage!), options: [:])
       let request = VNDetectFaceLandmarksRequest()
+      #if targetEnvironment(simulator)
+        request.usesCPUOnly = true
+      #endif
       if !input.asset.faces.isEmpty {
         request.inputFaceObservations = input.asset.faces.map({ $0.faceObservation  })
       }
@@ -185,6 +192,9 @@ public class LKActions {
         return input
       }
       let request = VNCoreMLRequest(model: mlModel)
+      #if targetEnvironment(simulator)
+        request.usesCPUOnly = true
+      #endif
       let faces = try input.asset.faces.compactMap({ (face) -> Face? in
         guard let cgImage = face.faceCroppedImage.cgImage else {
           return nil
@@ -215,6 +225,9 @@ public class LKActions {
 
       let requestHandler = VNImageRequestHandler(cgImage: input.asset.image.cgImage!, options: [:])
       let request = VNDetectFaceCaptureQualityRequest()
+      #if targetEnvironment(simulator)
+        request.usesCPUOnly = true
+      #endif
       if !input.asset.faces.isEmpty {
         request.inputFaceObservations = input.asset.faces.map({ $0.faceObservation })
       }
@@ -269,6 +282,9 @@ public class LKActions {
     return try autoreleasepool { () -> ProcessInput in
       let requestHandler = VNImageRequestHandler(cgImage: (input.asset.image.cgImage!), options: [:])
       let request = VNClassifyImageRequest()
+      #if targetEnvironment(simulator)
+        request.usesCPUOnly = true
+      #endif
       try requestHandler.perform([request])
       var categories: [DetectedObject] = []
 
@@ -293,6 +309,9 @@ public class LKActions {
       let model = try Models.getModel(by: .mobileNet_SSD)
       let request = VNCoreMLRequest(model: model)
       request.imageCropAndScaleOption = .scaleFill
+      #if targetEnvironment(simulator)
+        request.usesCPUOnly = true
+      #endif
       let requestHandler = VNImageRequestHandler(cgImage: (input.asset.image.cgImage!), options: [:])
       try requestHandler.perform([request])
 
@@ -324,7 +343,9 @@ public class LKActions {
       let model = try Models.getModel(by: .faceExpression)
       let request = VNCoreMLRequest(model: model)
       request.imageCropAndScaleOption = .scaleFill
-
+      #if targetEnvironment(simulator)
+        request.usesCPUOnly = true
+      #endif
       let requestHandler = VNImageRequestHandler(cgImage: (input.asset.image.cgImage!), options: [:])
       try requestHandler.perform([request])
 
@@ -355,6 +376,9 @@ public class LKActions {
           throw VisionProcessError.unknown
         }
         let request =  VNCoreMLRequest(model:model)
+        #if targetEnvironment(simulator)
+          request.usesCPUOnly = true
+        #endif
         request.imageCropAndScaleOption = .centerCrop
         let requestHandler = VNImageRequestHandler(cgImage: (input.asset.image.cgImage!), options: [:])
         try requestHandler.perform([request])
