@@ -26,7 +26,7 @@ public class LKDetector {
     //MARK: Public API
     /// Apply vision actions on user gallery photos.
     /// Action can be chained to preform multiple request
-    /// Like Action.objectDetection >>> Action.facelocation.
+    /// Like Action.objectDetection >>> Action.faceLocation.
     /// - Parameters:
     ///   - actions: Action request like face location, object detection, face landmarks
     ///   - options: options for fetch asset from user galley.
@@ -53,7 +53,7 @@ public class LKDetector {
     
     /// Apply vision actions on an image.
     /// Action can be chained to preform multiple request
-    /// Like `Action.objectDetection` >>> `Action.facelocation`.
+    /// Like `Action.objectDetection` >>> `Action.faceLocation`.
     /// - Parameters:
     ///   - actions: Action request like face location, object detection, face landmarks
     ///   - sourceImage: Source image to perform on.
@@ -74,7 +74,7 @@ public class LKDetector {
     
     /// Apply computer vision actions on multiple provided images.
     /// Action can be chained to preform multiple request
-    /// Like `Action.objectDetection` >>> `Action.facelocation`.
+    /// Like `Action.objectDetection` >>> `Action.faceLocation`.
     /// - Parameters:
     ///   - actions: Action request like face location, object detection, face landmarks
     ///   - sourceImages: Source images to perform on.
