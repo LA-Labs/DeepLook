@@ -82,7 +82,7 @@ public class LKActions {
 
   //MARK: Internal
   internal func fetchAsset() -> Action {
-    fetchAsset()
+    fetchAsset
   }
 
   /// Detect bounding box around faces in image
