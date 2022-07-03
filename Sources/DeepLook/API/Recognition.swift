@@ -1,16 +1,12 @@
 //
 //  Recognition.swift
-//  LookKit
+//  DeepLook
 //
 //  Created by Amir Lahav on 27/02/2021.
 //  Copyright © 2019 la-labs. All rights reserved.
 
 import Foundation
-#if os(OSX)
-import AppKit
-#elseif os(iOS)
 import UIKit
-#endif
 
 /// Reference to `LKRecognition.default` for quick bootstrapping and examples.
 public let Recognition = LKRecognition.default

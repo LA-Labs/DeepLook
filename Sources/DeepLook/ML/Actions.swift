@@ -16,8 +16,8 @@ import UIKit
 #endif
 
 
-public typealias Action = (ProcessInput) throws -> ProcessInput
-typealias Pipeline = (ProcessInput) throws -> ProcessOutput
+public typealias Action = (ProcessInput) async throws -> ProcessInput
+typealias JobPipeline = (ProcessInput) async throws -> ProcessOutput
 typealias CustomFilter<T> = (ProcessInput) throws -> T
 
 /// Reference to `LKActions.default` for quick bootstrapping and examples.
@@ -26,9 +26,9 @@ public let Actions = LKActions.default
 public class LKActions {
 
   /// Models
-  let faceNet: VNCoreMLModel? = try? Models.getModel(by: .faceNet)
-  let vggResnet: VNCoreMLModel? = try? Models.getModel(by: .VGGFace2_resnet)
-  let vggSenet: VNCoreMLModel? = try? Models.getModel(by: .VGGFace2_senet)
+  lazy var faceNet: VNCoreMLModel? = try? Models.getModel(by: .faceNet)
+  lazy var vggResnet: VNCoreMLModel? = try? Models.getModel(by: .VGGFace2_resnet)
+  lazy var vggSenet: VNCoreMLModel? = try? Models.getModel(by: .VGGFace2_senet)
 
 
   /// shared instance
@@ -90,7 +90,7 @@ public class LKActions {
   /// - Parameter asset: User image
   ///
   /// - Returns: ImageObservation struct include vision bounding rect, original image, and image size
-  private func faceRectangle(input: ProcessInput) throws -> ProcessInput {
+  private func faceRectangle(input: ProcessInput) async throws -> ProcessInput {
     return try autoreleasepool { () -> ProcessInput in
 
       precondition(input.asset.image.cgImage != nil, "must provide cgImage \(input.asset.identifier)")
@@ -114,7 +114,7 @@ public class LKActions {
     }
   }
 
-  private func featureDetection(input: ProcessInput) throws -> ProcessInput {
+  private func featureDetection(input: ProcessInput) async throws -> ProcessInput {
     return try autoreleasepool { () -> ProcessInput in
       precondition(input.asset.image.cgImage != nil, "must provide cgImage \(input.asset.identifier)")
       let requestHandler = VNImageRequestHandler(cgImage: (input.asset.image.cgImage!), options: [:])
@@ -176,7 +176,7 @@ public class LKActions {
     }
   }
 
-  private func encodeFaces(input: ProcessInput) throws -> ProcessInput {
+  private func encodeFaces(input: ProcessInput) async throws -> ProcessInput {
     return try autoreleasepool { () -> ProcessInput in
       var model: VNCoreMLModel?
       switch input.configuration.faceEncoderModel {
@@ -216,7 +216,7 @@ public class LKActions {
     }
   }
 
-  private func imageQuality(input: ProcessInput) throws -> ProcessInput {
+  private func imageQuality(input: ProcessInput) async throws -> ProcessInput {
     return try autoreleasepool { () -> ProcessInput in
       guard input.configuration.minimumQualityFilter != .none else {
         return input
@@ -278,7 +278,7 @@ public class LKActions {
     }
   }
 
-  private func tagPhoto(input: ProcessInput) throws -> ProcessInput {
+  private func tagPhoto(input: ProcessInput) async throws -> ProcessInput {
     return try autoreleasepool { () -> ProcessInput in
       let requestHandler = VNImageRequestHandler(cgImage: (input.asset.image.cgImage!), options: [:])
       let request = VNClassifyImageRequest()
@@ -302,7 +302,7 @@ public class LKActions {
     }
   }
 
-  private func objectLocationDetection(input: ProcessInput) throws -> ProcessInput {
+  private func objectLocationDetection(input: ProcessInput) async throws -> ProcessInput {
     return try autoreleasepool { () -> ProcessInput in
       precondition(input.asset.image.cgImage != nil, "must provide cgImage \(input.asset.identifier)")
 
@@ -336,7 +336,7 @@ public class LKActions {
     }
   }
 
-  private func faceEmotionProcess(input: ProcessInput) throws -> ProcessInput {
+  private func faceEmotionProcess(input: ProcessInput) async throws -> ProcessInput {
     return try autoreleasepool { () -> ProcessInput in
       precondition(input.asset.image.cgImage != nil, "must provide cgImage \(input.asset.identifier)")
 
@@ -391,7 +391,7 @@ public class LKActions {
   }
 
   // Fetch image from PHAsset
-  private func fetchAsset(input: ProcessInput) throws -> ProcessInput {
+  private func fetchAsset(input: ProcessInput) async throws -> ProcessInput {
     return autoreleasepool { () -> ProcessInput in
       let fetchingOptions = ImageFetcherOptions(downsampleImageSize: input.configuration.fetchImageSize)
       let imageFetcher = ImageFetcherService(options: fetchingOptions)
@@ -409,7 +409,7 @@ public class LKActions {
     }
   }
 
-  private func cropChipFaces(input: ProcessInput) throws -> ProcessInput {
+  private func cropChipFaces(input: ProcessInput) async throws -> ProcessInput {
     return autoreleasepool { () -> ProcessInput in
       let faces = input.asset.faces.map({ extractChip(face: $0,
                                                       image: input.asset.image,
@@ -427,7 +427,7 @@ public class LKActions {
 
   // Convert ProcessAsset To ProcessedAsset
   // Remove main image to reduce ram foot print
-  func clean(input: ProcessInput) throws -> ProcessOutput {
+  func clean(input: ProcessInput) async throws -> ProcessOutput {
     ProcessOutput(asset: input.asset)
   }
 }
