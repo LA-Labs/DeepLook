@@ -1,16 +1,12 @@
 //
 //  Recognition.swift
-//  LookKit
+//  DeepLook
 //
 //  Created by Amir Lahav on 27/02/2021.
 //  Copyright © 2019 la-labs. All rights reserved.
 
 import Foundation
-#if os(OSX)
-import AppKit
-#elseif os(iOS)
 import UIKit
-#endif
 
 /// Reference to `LKRecognition.default` for quick bootstrapping and examples.
 public let Recognition = LKRecognition.default
@@ -34,35 +30,34 @@ public class LKRecognition {
     ///   - completion: Return 2d array of faces. Each array describes a face group.
     public func cluster(fetchOptions: AssetFetchingOptions,
                         clusterOptions: ClusterOptions,
-                        processConfiguration: ProcessConfiguration = ProcessConfiguration(),
-                        completion: @escaping (Result<[[Face]], VisionProcessError>) -> Void) {
-        let assets = Vision.assetService.stackInputs(with: fetchOptions,
-                                                     processConfiguration: processConfiguration)
-        
-        precondition(!assets.isEmpty(), "Asset fetched must not be empty")
-        let embedding = Actions.faceQuality >>> Actions.faceEncoding
-        let startDate = Date()
-        
-        Vision.detect(objects: assets, process: embedding, completion: { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let photos):
-                let faces = photos.flatMap { (asset) -> [Face] in
-                    asset.faces
-                }
-                let groupedFaces = self.groupFaces(faces: faces,
-                                                   clusterOptions: clusterOptions)
-                
-                if Defaults.shared.print {
-                    print("\n============************===============")
-                    print("Finish clustering in: \(startDate.timeIntervalSinceNow * -1) second\nTotal number of faces: \(faces.count)\nTotal number of clusters: \(groupedFaces.count)")
-                    print("============************===============")
-                }
-                completion(.success(groupedFaces))
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        })
+                        processConfiguration: ProcessConfiguration = ProcessConfiguration()
+    ) async throws -> [[Face]] {
+      let assets = Vision.assetService.stackInputs(with: fetchOptions,
+                                                   processConfiguration: processConfiguration)
+
+      precondition(!assets.isEmpty(), "Asset fetched must not be empty")
+      let embedding = .faceQuality + .faceEncoding
+      let startDate = Date()
+
+      let photos = try await Vision.detect(
+        objects: assets, process: embedding.process
+      )
+
+      let faces = photos.flatMap { (asset) -> [Face] in
+        asset.faces
+      }
+
+      let groupedFaces = self.groupFaces(faces: faces,
+                                         clusterOptions: clusterOptions)
+
+      if Defaults.shared.print {
+        defer {
+          print("\n============************===============")
+          print("Finish clustering in: \(startDate.timeIntervalSinceNow * -1) second\nTotal number of faces: \(faces.count)\nTotal number of clusters: \(groupedFaces.count)")
+          print("============************===============")
+        }
+      }
+      return groupedFaces
     }
     
     
@@ -101,9 +96,9 @@ public class LKRecognition {
     public func verify(sourceImage: UIImage,
                        targetImages: UIImage...,
                        similarityThreshold: Double,
-                       processConfiguration: ProcessConfiguration = ProcessConfiguration(),
-                       completion: @escaping (Result<[Match] , FaceComparisonError>) -> Void) {
-        let faceEncoding =  Actions.faceQuality >>> Actions.faceEncoding
+                       processConfiguration: ProcessConfiguration = ProcessConfiguration()
+    ) async throws -> [Match] {
+        let faceEncoding =  .faceQuality + .faceEncoding
         let sourceImageAsset = ProcessAsset(identifier: "lhs",
                                             image: sourceImage)
         let sourceInput = ProcessInput(asset: sourceImageAsset,
@@ -119,10 +114,8 @@ public class LKRecognition {
         targetsInput.forEach { (inputs) in
             objects.push(inputs)
         }
-        verify(stack: objects,
-               process: faceEncoding,
-               similarityThreshold: similarityThreshold,
-               completion: completion)
+      return try await verify(stack: objects, process: faceEncoding.process,
+                              similarityThreshold: similarityThreshold)
     }
     
     
@@ -163,20 +156,19 @@ public class LKRecognition {
     public func find(sourceImage: UIImage,
                      galleyFetchOptions: AssetFetchingOptions,
                      similarityThreshold: Double,
-                     processConfiguration: ProcessConfiguration = ProcessConfiguration(),
-                     completion: @escaping (Result<[Match] , FaceComparisonError>) -> Void) {
-        let faceEncoding =  Actions.faceQuality >>> Actions.faceEncoding
-        let sourceImageAsset = ProcessAsset(identifier: "lhs",
-                                            image: sourceImage)
-        let sourceInput = ProcessInput(asset: sourceImageAsset,
-                                       configuration: processConfiguration)
-        var objects = Vision.assetService.stackInputs(with: galleyFetchOptions,
-                                                      processConfiguration: processConfiguration)
-        objects.push([sourceInput])
-        verify(stack: objects,
-               process: faceEncoding,
-               similarityThreshold: similarityThreshold,
-               completion: completion)
+                     processConfiguration: ProcessConfiguration = ProcessConfiguration()
+    ) async throws -> [Match] {
+      let faceEncoding =  .faceQuality + .faceEncoding
+      let sourceImageAsset = ProcessAsset(identifier: "lhs",
+                                          image: sourceImage)
+      let sourceInput = ProcessInput(asset: sourceImageAsset,
+                                     configuration: processConfiguration)
+      var objects = Vision.assetService.stackInputs(with: galleyFetchOptions,
+                                                    processConfiguration: processConfiguration)
+      objects.push([sourceInput])
+      return try await verify(stack: objects,
+                              process: faceEncoding.process,
+                              similarityThreshold: similarityThreshold)
     }
     
     
@@ -215,38 +207,30 @@ public class LKRecognition {
     public func find(phAssetLocalIdentifier: String,
                      galleyFetchOptions: AssetFetchingOptions,
                      similarityThreshold: Double,
-                     processConfiguration: ProcessConfiguration = ProcessConfiguration(),
-                     completion: @escaping (Result<[Match] , FaceComparisonError>) -> Void) {
-        let faceEncoding =  Actions.faceQuality >>> Actions.faceEncoding
-        let sourceImageAsset = ProcessAsset(identifier: phAssetLocalIdentifier,
-                                            image: UIImage())
-        let sourceInput = ProcessInput(asset: sourceImageAsset,
-                                       configuration: processConfiguration)
-        var objects = Vision.assetService.stackInputs(with: galleyFetchOptions,
-                                                      processConfiguration: processConfiguration)
-        objects.push([sourceInput])
-        Vision.detect(objects: objects, process: faceEncoding, completion: { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let assets):
-                let (sourceFace, targetFace) = assets.flatMap { (asset) -> [Face] in
-                    asset.faces
-                }.stablePartition(by: { $0.localIdentifier == phAssetLocalIdentifier })
-                let matches = self.findMatches(sourceFaces: sourceFace,
-                                               targetFaces: targetFace,
-                                               similarityDistance: similarityThreshold)
-                completion(.success(matches))
-            case .failure(let error):
-                completion(.failure(.error(error)))
-            }
-        })
+                     processConfiguration: ProcessConfiguration = ProcessConfiguration()
+    ) async throws -> [Match] {
+      let faceEncoding =  Actions.faceQuality >>> Actions.faceEncoding
+      let sourceImageAsset = ProcessAsset(identifier: phAssetLocalIdentifier,
+                                          image: UIImage())
+      let sourceInput = ProcessInput(asset: sourceImageAsset,
+                                     configuration: processConfiguration)
+      var objects = Vision.assetService.stackInputs(with: galleyFetchOptions,
+                                                    processConfiguration: processConfiguration)
+      objects.push([sourceInput])
+      let assets = try await Vision.detect(objects: objects, process: faceEncoding)
+      let (sourceFace, targetFace) = assets.flatMap { (asset) -> [Face] in
+        asset.faces
+      }.stablePartition(by: { $0.localIdentifier == "lhs" })
+      return self.findMatches(sourceFaces: sourceFace,
+                              targetFaces: targetFace,
+                              similarityDistance: similarityThreshold)
     }
     
     
     
     public func facesEncoding(_ sourceImages: UIImage...,
-                              processConfiguration: ProcessConfiguration = ProcessConfiguration(),
-                              completion: @escaping (Result<[Face], VisionProcessError>) -> Void) {
+                              processConfiguration: ProcessConfiguration = ProcessConfiguration()
+    ) async throws -> [Face] {
         let faceEncoding = Actions.faceQuality >>> Actions.faceEncoding
         let input = sourceImages.map { (sourceImage) in
             ProcessAsset(identifier: "sourceImage", image: sourceImage)
@@ -258,113 +242,90 @@ public class LKRecognition {
         input.forEach { (inputs) in
             objects.push(inputs)
         }
-        Vision.detect(objects: objects, process: faceEncoding, completion: { result in
-            switch result {
-            case .success(let photos):
-                let faces = photos.flatMap { (asset) -> [Face] in
-                    asset.faces
-                }
-                completion(.success(faces))
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        })
+      return try await Vision.detect(objects: objects, process: faceEncoding)
+        .flatMap({ $0.faces })
     }
     
     
     
     public func facesEncoding(fetchOptions: AssetFetchingOptions,
-                              processConfiguration: ProcessConfiguration = ProcessConfiguration(),
-                              completion: @escaping (Result<[Face], VisionProcessError>) -> Void) {
+                              processConfiguration: ProcessConfiguration = ProcessConfiguration()
+     ) async throws -> [Face] {
         let faceEncoding = Actions.faceQuality >>> Actions.faceEncoding
         let assets = Vision.assetService.stackInputs(with: fetchOptions,
                                                      processConfiguration: processConfiguration)
-        Vision.detect(objects: assets, process: faceEncoding, completion: { result in
-            switch result {
-            case .success(let photos):
-                let faces = photos.flatMap { (asset) -> [Face] in
-                    asset.faces
-                }
-                completion(.success(faces))
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        })
+      return try await Vision.detect(objects: assets, process: faceEncoding)
+        .flatMap({ $0.faces })
     }
 }
 
 private extension LKRecognition {
-    func groupFaces(faces: [Face], clusterOptions: ClusterOptions) -> [[Face]] {
-        switch clusterOptions.clusterType {
-        case .DBSCAN:
-            return Cluster._DBSCAN.cluster(values: faces,
-                                          epsilon: clusterOptions.threshold,
-                                          minimumNumberOfPoints: 1,
-                                          distanceFunction: { (a, b) -> Double in
-                                            if a.localIdentifier != b.localIdentifier {
-                                                return a.distance(to: b)
-                                            }else {
-                                                return Double.greatestFiniteMagnitude
-                                            }
-                                          })
-        case .ChineseWhispers:
-            let labels = Cluster.ChineseWhispers.cluster(objects: faces, distanceFunction: { (a, b) -> Double in
-                a.distance(to: b)
-            }, eps: clusterOptions.threshold,
-            numIterations: clusterOptions.numberIterations)
-            return Cluster.ChineseWhispers.group(objects: faces,
-                                                 labels: labels).filter { (faces) -> Bool in
-                                                    faces.count > clusterOptions.minimumClusterSize
-                                                 }
+  func groupFaces(faces: [Face], clusterOptions: ClusterOptions) -> [[Face]] {
+    switch clusterOptions.clusterType {
+    case .DBSCAN:
+      return Cluster._DBSCAN.cluster(values: faces,
+                                     epsilon: clusterOptions.threshold,
+                                     minimumNumberOfPoints: 1,
+                                     distanceFunction: { (a, b) -> Double in
+        if a.localIdentifier != b.localIdentifier {
+          return a.distance(to: b)
+        }else {
+          return Double.greatestFiniteMagnitude
         }
+      })
+    case .ChineseWhispers:
+      let labels = Cluster
+        .ChineseWhispers
+        .cluster(objects: faces,
+                 distanceFunction: { (a, b) -> Double in
+          a.distance(to: b)
+        },
+                 eps: clusterOptions.threshold,
+                 numIterations: clusterOptions.numberIterations)
+      return Cluster.ChineseWhispers.group(objects: faces,
+                                           labels: labels).filter { (faces) -> Bool in
+        faces.count > clusterOptions.minimumClusterSize
+      }
     }
-    
-    func findMatches(sourceFaces: [Face],
-                            targetFaces: [Face],
-                            similarityDistance: Double) -> [Match] {
-        filterZipVerifiedFaces(sourceFaces: sourceFaces,
-                               targetFaces: targetFaces,
-                               similarityDistance: similarityDistance)
-            .map { (faces) -> Match in
-                Match(sourceFace: faces.0,
-                      targetFace: faces.1,
-                      distance: faces.0.distance(to: faces.1),
-                      threshold: similarityDistance)
-        }
+  }
+
+  func findMatches(sourceFaces: [Face],
+                   targetFaces: [Face],
+                   similarityDistance: Double) -> [Match] {
+    filterZipVerifiedFaces(sourceFaces: sourceFaces,
+                           targetFaces: targetFaces,
+                           similarityDistance: similarityDistance)
+    .map { (faces) -> Match in
+      Match(sourceFace: faces.0,
+            targetFace: faces.1,
+            distance: faces.0.distance(to: faces.1),
+            threshold: similarityDistance)
     }
-    
-    func filterVerifiedFaces(sourceFaces: [Face],
-                             targetFaces: [Face],
-                             similarityDistance: Double) -> [Face] {
-        sourceFaces.commonElements(targetFaces) { (a, b) -> Bool in
-            a.distance(to: b) <= similarityDistance
-        }
+  }
+
+  func filterVerifiedFaces(sourceFaces: [Face],
+                           targetFaces: [Face],
+                           similarityDistance: Double) -> [Face] {
+    sourceFaces.commonElements(targetFaces) { (a, b) -> Bool in
+      a.distance(to: b) <= similarityDistance
     }
-    
-    func filterZipVerifiedFaces(sourceFaces: [Face], targetFaces: [Face], similarityDistance: Double) -> [(Face, Face)] {
-        sourceFaces.commonZipElements(targetFaces) { (a, b) -> Bool in
-            a.distance(to: b) <= similarityDistance
-        }
+  }
+
+  func filterZipVerifiedFaces(sourceFaces: [Face], targetFaces: [Face], similarityDistance: Double) -> [(Face, Face)] {
+    sourceFaces.commonZipElements(targetFaces) { (a, b) -> Bool in
+      a.distance(to: b) <= similarityDistance
     }
-    
-    func verify(stack: Stack<[ProcessInput]>,
-                               process: @escaping Action,
-                               similarityThreshold: Double,
-                               completion: @escaping (Result<[Match] , FaceComparisonError>) -> Void) {
-        Vision.detect(objects: stack, process: process, completion: { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let assets):
-                let (sourceFace, targetFace) = assets.flatMap { (asset) -> [Face] in
-                    asset.faces
-                }.stablePartition(by: { $0.localIdentifier == "lhs" })
-                let matches = self.findMatches(sourceFaces: sourceFace,
-                                          targetFaces: targetFace,
-                                          similarityDistance: similarityThreshold)
-                completion(.success(matches))
-            case .failure(let error):
-                completion(.failure(.error(error)))
-            }
-        })
-    }
+  }
+
+  func verify(stack: Stack<[ProcessInput]>,
+              process: @escaping Action,
+              similarityThreshold: Double) async throws -> [Match] {
+    let assets = try await Vision.detect(objects: stack, process: process)
+    let (sourceFace, targetFace) = assets.flatMap { (asset) -> [Face] in
+      asset.faces
+    }.stablePartition(by: { $0.localIdentifier == "lhs" })
+    return self.findMatches(sourceFaces: sourceFace,
+                            targetFaces: targetFace,
+                            similarityDistance: similarityThreshold)
+  }
 }

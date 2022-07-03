@@ -1,6 +1,6 @@
 //
 //  DeepLook.swift
-//  LookKit
+//  DeepLook
 //
 //  Created by Amir Lahav on 31/03/2021.
 //
@@ -32,10 +32,10 @@ public class LKDeepLook {
     _ faceImage: UIImage,
     knownFaceLocations: [CGRect] = [],
     model: ProcessConfiguration.FaceEncoderModel = .facenet
-  ) -> [[Double]] {
-    let action = Actions.faceEncoding
+  ) async -> [[Double]] {
     let config = ProcessConfiguration()
     config.faceEncoderModel = model
+
     switch model {
     case .facenet:
       config.faceChipSize = 160
@@ -43,6 +43,7 @@ public class LKDeepLook {
         .VGGFace2_senet_Lite:
       config.faceChipSize = 224
     }
+
     let faces = knownFaceLocations.map { (location) -> Face in
       Face(localIdentifier: "id", faceCroppedImage: UIImage(),
            faceObservation: VNFaceObservation(boundingBox: location),
@@ -51,14 +52,15 @@ public class LKDeepLook {
            faceEncoding: [],
            faceEmotion: .none)
     }
+
     let asset = ProcessAsset(identifier: "id",
                              image: faceImage,
                              faces: faces)
 
     let input = ProcessInput(asset: asset,
                              configuration: config)
-    let encoding = Processor
-      .singleInputProcessor(element: input, preformOn: action)
+    let encoding = await Processor
+      .singleInputProcessor(element: input, preformOn: ActionType.faceEncoding.process)
       .asset.faces
       .map { (face) -> [Double] in
         face.faceEncoding
@@ -76,9 +78,10 @@ public class LKDeepLook {
   public func faceLandmarks(
     _ faceImage: UIImage,
     knownFaceLocations: [CGRect] = []
-  ) -> [VNFaceLandmarkRegion2D] {
+  ) async -> [VNFaceLandmarkRegion2D] {
     let config = ProcessConfiguration()
     config.minimumFaceArea = 0
+
     let faces = knownFaceLocations.map { (location) -> Face in
       Face(localIdentifier: "id",
            faceCroppedImage: UIImage(),
@@ -96,8 +99,8 @@ public class LKDeepLook {
     let input = ProcessInput(asset: asset,
                              configuration: config)
 
-    let landmarks = Processor
-      .singleInputProcessor(element: input, preformOn: Actions.faceEncoding)
+    let landmarks = await Processor
+      .singleInputProcessor(element: input, preformOn: ActionType.faceEncoding.process)
       .asset.faces
       .compactMap { $0.landmarks?.allPoints }
     return landmarks
@@ -107,13 +110,14 @@ public class LKDeepLook {
   ///
   /// - Parameter faceImage: The image that contains one or more faces.
   /// - Returns: A list of found face normalized locations. Bottom - Left coordinate system.
-  public func faceLocation(_ faceImage: UIImage) -> [CGRect] {
+  public func faceLocation(_ faceImage: UIImage) async -> [CGRect] {
     let input = ProcessInput(
       asset: ProcessAsset(identifier: "id",
                           image: faceImage),
       configuration: ProcessConfiguration()
     )
-    return Processor
+
+    return await Processor
       .singleInputProcessor(element: input, preformOn: Actions.faceLocation)
       .asset.normalizedBoundingBoxes
   }
@@ -162,7 +166,7 @@ public class LKDeepLook {
   ///   - locations: Optional - the bounding boxes of each face if you already know them.
   /// - Returns: List of crop chip faces.
   public func cropFaces(_ faceImage: UIImage, locations: [CGRect]) -> [UIImage] {
-    return locations.compactMap { (boundingBox) in
+    locations.compactMap { (boundingBox) in
 
       guard let cgImage = faceImage.cgImage else {
         return nil
@@ -190,9 +194,9 @@ public class LKDeepLook {
   public func faceEmotion(
     _ faceImage: UIImage,
     knownFaceLocations: [CGRect] = []
-  ) -> [Face.FaceEmotion] {
+  ) async -> [Face.FaceEmotion] {
 
-    let action = Actions.faceEmotion
+    let action = ActionType.faceEmotion.process
     let config = ProcessConfiguration()
     config.minimumFaceArea = 0
     let faces = knownFaceLocations.map { (location) -> Face in
@@ -210,7 +214,7 @@ public class LKDeepLook {
     let input = ProcessInput(asset: asset,
                              configuration: config)
 
-    let landmarks = Processor
+    let landmarks = await Processor
       .singleInputProcessor(element: input,
                             preformOn: action)
       .asset.faces

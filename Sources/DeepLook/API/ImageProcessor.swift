@@ -1,16 +1,12 @@
 //
 //  ImageProcessor.swift
-//  LookKit
+//  DeepLook
 //
 //  Created by Amir Lahav on 27/02/2021.
 //  Copyright © 2019 la-labs. All rights reserved.
 
 import Foundation
-#if os(OSX)
-import AppKit
-#elseif os(iOS)
 import UIKit
-#endif
 
 /// Reference to `LKImageProcessor.default` for quick bootstrapping and examples.
 public let ImageProcessor = LKImageProcessor.default
@@ -24,18 +20,16 @@ public class LKImageProcessor {
   private init() { }
 
   public func alignFaces(in sourceImages: UIImage...,
-                         processConfiguration: ProcessConfiguration = ProcessConfiguration(),
-                         completion: @escaping (Result<[Face], VisionProcessError>) -> Void) {
-    alignFaces(
+                         processConfiguration: ProcessConfiguration = ProcessConfiguration()
+  ) async throws -> [Face] {
+    try await alignFaces(
       sourceImages: sourceImages,
-      processConfiguration: processConfiguration,
-      completion: completion
-    )
+      processConfiguration: processConfiguration)
   }
 
   public func alignFaces(sourceImages: [UIImage],
-                         processConfiguration: ProcessConfiguration = ProcessConfiguration(),
-                         completion: @escaping (Result<[Face], VisionProcessError>) -> Void) {
+                         processConfiguration: ProcessConfiguration = ProcessConfiguration()
+  ) async throws -> [Face] {
     precondition(!sourceImages.isEmpty, "sourceImages must not be empty")
     let featureDetecting = Actions.cropAndAlignFaces
     let input = sourceImages.map { (sourceImage) in
@@ -47,36 +41,27 @@ public class LKImageProcessor {
     input.forEach { (inputs) in
       objects.push(inputs)
     }
-    Vision.detect(objects: objects, process: featureDetecting) { (result) in
-      switch result {
-      case .success(let photos):
-        let faces = photos.map { (asset) -> [Face] in
-          asset.faces
-        }.flatMap({$0})
-        completion(.success(faces))
-      case .failure(let error):
-        print(error)
-      }
-    }
+    let photos = try await Vision.detect(objects: objects, process: featureDetecting)
+    let faces = photos.map { (asset) -> [Face] in
+      asset.faces
+    }.flatMap({$0})
+    return faces
   }
 
 
   public func alignFaces(fetchOptions: AssetFetchingOptions,
-                         processConfiguration: ProcessConfiguration,
-                         completion: @escaping (Result<[Face], VisionProcessError>) -> Void) {
+                         processConfiguration: ProcessConfiguration
+  ) async throws -> [Face] {
     let featureDetecting = Actions.cropAndAlignFaces
     let assets = Vision.assetService.stackInputs(with: fetchOptions,
                                                  processConfiguration: processConfiguration)
-    Vision.detect(objects: assets, process: featureDetecting) { (result) in
-      switch result {
-      case .success(let photos):
-        let faces = photos.map { (asset) -> [Face] in
-          asset.faces
-        }.flatMap({$0})
-        completion(.success(faces))
-      case .failure(let error):
-        print(error)
-      }
-    }
+    let photos = try await Vision.detect(
+      objects: assets,
+      process: featureDetecting
+    )
+    let faces = photos.map { (asset) -> [Face] in
+      asset.faces
+    }.flatMap({$0})
+    return faces
   }
 }
