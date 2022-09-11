@@ -1,7 +1,3 @@
-//
-//  Face.swift
-//  
-//
 //  Created by Amir Lahav on 14/02/2021.
 //  Copyright © 2019 la-labs. All rights reserved.
 
@@ -10,53 +6,92 @@ import Vision
 
 /// Data model for a given face in a photo.
 public struct Face: Equatable {
-        
-    /// PHAsset local Identifier or pre defined id for local UIImage.
-    public let localIdentifier: String
+  
+  /// PHAsset local Identifier or pre defined id for local UIImage.
+  public let localIdentifier: String
+  
+  /// Cropped and align image of a given face in a photo.
+  ///
+  /// The default value is empty image.
+  public let faceCroppedImage: UIImage
+  
+  /// Face observation. contain info as requested
+  public let faceObservation: VNFaceObservation
+  
+  /// Finds facial features (such as the eyes and mouth) in an image.
+  public var landmarks: VNFaceLandmarks2D? {
+    faceObservation.landmarks
+  }
+  
+  /// Floating-point number representing the capture quality of a given face in a photo.
+  ///
+  /// The default value is 0.
+  public let quality: Float
+  
+  /// Floating-point number representing the roll angle in radian of a given face in a photo.
+  ///
+  /// The default value is 0.
+  public let roll: Double
+  
+  /// Floating array numbers representing the capture of a given face in a photo.
+  ///
+  /// The default value is empty array.
+  public let faceEncoding: [Double]
+  
+  /// Facial emotion (such as happy and angry) in an image.
+  ///
+  /// The default value is none.
+  public let faceEmotion: FaceEmotion 
+
+  init(
+    localIdentifier: String = UUID().uuidString,
+    faceCroppedImage: UIImage = UIImage(),
+    faceObservation: VNFaceObservation = VNFaceObservation(boundingBox: .zero),
+    quality: Float = 0,
+    roll: Double = 0,
+    faceEncoding: [Double] = [],
+    faceEmotion: FaceEmotion = .none
+  ) {
+    self.localIdentifier = localIdentifier
+    self.faceCroppedImage = faceCroppedImage
+    self.faceObservation = faceObservation
+    self.quality = quality
+    self.roll = roll
+    self.faceEncoding = faceEncoding
+    self.faceEmotion = faceEmotion
+  }
+
+  public enum FaceEmotion: CaseIterable, CustomStringConvertible {
+    case angry
+    case disgust
+    case fear
+    case happy
+    case sad
+    case surprise
+    case neutral
+    case none
     
-    /// Cropped and align image of a given face in a photo.
-    ///
-    /// The default value is empty image.
-    public let faceCroppedImage: UIImage
-    
-    /// Face observation. contain info as requested
-    public let faceObservation: VNFaceObservation
-    
-    /// Finds facial features (such as the eyes and mouth) in an image.
-    public var landmarks: VNFaceLandmarks2D? {
-        faceObservation.landmarks
+    public var description: String {
+      switch self {
+      case .angry:
+        return "angry"
+      case .disgust:
+        return "disgust"
+      case .fear:
+        return "fear"
+      case .happy:
+        return "happy"
+      case .sad:
+        return "sad"
+      case .surprise:
+        return "surprise"
+      case .neutral:
+        return "neutral"
+      case .none:
+        return "none"
+      }
     }
-    
-    /// Floating-point number representing the capture quality of a given face in a photo.
-    ///
-    /// The default value is 0.
-    public let quality: Float
-    
-    /// Floating-point number representing the roll angle in radian of a given face in a photo.
-    ///
-    /// The default value is 0.
-    public let roll: Double
-    
-    /// Floating array numbers representing the capture of a given face in a photo.
-    ///
-    /// The default value is empty array.
-    public let faceEncoding: [Double]
-    
-    /// Facial emotion (such as happy and angry) in an image.
-    ///
-    /// The default value is none.
-    public let faceEmotion: FaceEmotion 
-    
-    public enum FaceEmotion: CaseIterable {
-        case angry
-        case disgust
-        case fear
-        case happy
-        case sad
-        case surprise
-        case neutral
-        case none
-    }
+  }
 }
 
 public extension Face {

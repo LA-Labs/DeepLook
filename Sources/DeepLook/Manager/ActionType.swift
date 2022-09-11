@@ -1,14 +1,10 @@
-//
-//  ActionType.swift
-//  
-//
 //  Created by Amir Lahav on 30/06/2022.
-//
+//  Copyright © 2019 la-labs. All rights reserved.
 
 import Foundation
 
 public struct ActionType {
-  public var process: (ProcessInput) async throws -> ProcessInput
+  public var process: (ProcessInput) throws -> ProcessInput
 }
 
 public extension ActionType {

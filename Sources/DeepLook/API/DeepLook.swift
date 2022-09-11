@@ -1,9 +1,4 @@
-//
-//  DeepLook.swift
-//  DeepLook
-//
-//  Created by Amir Lahav on 31/03/2021.
-//
+//  Copyright © 2019 la-labs. All rights reserved.
 
 import Foundation
 import UIKit
@@ -26,40 +21,41 @@ public class LKDeepLook {
   /// - Parameters:
   ///   - faceImage: The image that contains one or more faces.
   ///   - knownFaceLocations: Optional - the bounding boxes of each face if you already know them.
-  ///   - model: which model to use.
+  ///   - model: Which model to use.
+  ///   - processConfiguration: Allow fine tuning process configuration.
   /// - Returns: A list of Multi-dimensional face encodings (one for each face in the image).
   public func faceEncodings(
     _ faceImage: UIImage,
     knownFaceLocations: [CGRect] = [],
-    model: ProcessConfiguration.FaceEncoderModel = .facenet
-  ) async -> [[Double]] {
-    let config = ProcessConfiguration()
-    config.faceEncoderModel = model
+    model: ProcessConfiguration.FaceEncoderModel = .facenet,
+    processConfiguration: ProcessConfiguration = ProcessConfiguration()
+  ) -> [[Double]] {
+    processConfiguration.faceEncoderModel = model
 
     switch model {
     case .facenet:
-      config.faceChipSize = 160
+      processConfiguration.faceChipSize = 160
     case .VGGFace2_resnet_Lite,
         .VGGFace2_senet_Lite:
-      config.faceChipSize = 224
+      processConfiguration.faceChipSize = 224
     }
 
-    let faces = knownFaceLocations.map { (location) -> Face in
-      Face(localIdentifier: "id", faceCroppedImage: UIImage(),
-           faceObservation: VNFaceObservation(boundingBox: location),
-           quality: 0,
-           roll: 0,
-           faceEncoding: [],
-           faceEmotion: .none)
+    let faces = knownFaceLocations.map {
+      Face(faceObservation: VNFaceObservation(boundingBox: $0))
     }
 
-    let asset = ProcessAsset(identifier: "id",
-                             image: faceImage,
-                             faces: faces)
+    let asset = ProcessAsset(
+      identifier: UUID().uuidString,
+      image: faceImage,
+      faces: faces
+    )
 
-    let input = ProcessInput(asset: asset,
-                             configuration: config)
-    let encoding = await Processor
+    let input = ProcessInput(
+      asset: asset,
+      configuration: processConfiguration
+    )
+
+    let encoding = Processor
       .singleInputProcessor(element: input, preformOn: ActionType.faceEncoding.process)
       .asset.faces
       .map { (face) -> [Double] in
@@ -74,32 +70,30 @@ public class LKDeepLook {
   /// - Parameters:
   ///   - faceImage: The image that contains one or more faces.
   ///   - knownFaceLocations: Optional - the bounding boxes of each face if you already know them.
+  ///   - processConfiguration: Allow fine tuning process configuration.
   /// - Returns: A list of `VNFaceLandmarks2D` of face feature locations (eyes, nose, etc)
   public func faceLandmarks(
     _ faceImage: UIImage,
-    knownFaceLocations: [CGRect] = []
-  ) async -> [VNFaceLandmarkRegion2D] {
-    let config = ProcessConfiguration()
-    config.minimumFaceArea = 0
+    knownFaceLocations: [CGRect] = [],
+    processConfiguration: ProcessConfiguration = ProcessConfiguration()
+  ) -> [VNFaceLandmarkRegion2D] {
 
-    let faces = knownFaceLocations.map { (location) -> Face in
-      Face(localIdentifier: "id",
-           faceCroppedImage: UIImage(),
-           faceObservation: VNFaceObservation(boundingBox: location),
-           quality: 0,
-           roll: 0,
-           faceEncoding: [],
-           faceEmotion: .none)
+    let faces = knownFaceLocations.map {
+      Face(faceObservation: VNFaceObservation(boundingBox: $0))
     }
 
-    let asset = ProcessAsset(identifier: "id",
-                             image: faceImage,
-                             faces: faces)
+    let asset = ProcessAsset(
+      identifier: "id",
+      image: faceImage,
+      faces: faces
+    )
 
-    let input = ProcessInput(asset: asset,
-                             configuration: config)
+    let input = ProcessInput(
+      asset: asset,
+      configuration: processConfiguration
+    )
 
-    let landmarks = await Processor
+    let landmarks = Processor
       .singleInputProcessor(element: input, preformOn: ActionType.faceEncoding.process)
       .asset.faces
       .compactMap { $0.landmarks?.allPoints }
@@ -108,17 +102,41 @@ public class LKDeepLook {
 
   /// Returns an array of bounding boxes of human faces in an image.
   ///
-  /// - Parameter faceImage: The image that contains one or more faces.
+  /// - Parameters:
+  ///   - faceImage: The image that contains one or more faces.
+  ///   - processConfiguration: Allow fine tuning process configuration.
   /// - Returns: A list of found face normalized locations. Bottom - Left coordinate system.
-  public func faceLocation(_ faceImage: UIImage) async -> [CGRect] {
+  public func faceLocation(
+    _ faceImage: UIImage,
+    processConfiguration: ProcessConfiguration = ProcessConfiguration()
+  ) -> [CGRect] {
     let input = ProcessInput(
-      asset: ProcessAsset(identifier: "id",
-                          image: faceImage),
-      configuration: ProcessConfiguration()
+      asset: ProcessAsset(image: faceImage),
+      configuration: processConfiguration
     )
 
-    return await Processor
+    return Processor
       .singleInputProcessor(element: input, preformOn: Actions.faceLocation)
+      .asset.normalizedBoundingBoxes
+  }
+
+  /// Returns an array of bounding boxes of human faces in an image.
+  ///
+  /// - Parameters:
+  ///   - faceImage: The image that contains one or more faces.
+  ///   - processConfiguration: Allow fine tuning process configuration.
+  /// - Returns: A list of found face normalized locations. Bottom - Left coordinate system.
+  public func videoFaceLocation(
+    _ faceImage: CVImageBuffer,
+    processConfiguration: ProcessConfiguration = ProcessConfiguration()
+  ) -> [CGRect] {
+    let input = ProcessInput(
+      asset: ProcessAsset(imageBuffer: faceImage),
+      configuration: processConfiguration
+    )
+
+    return Processor
+      .singleInputProcessor(element: input, preformOn: Actions.videoFaceRectangle)
       .asset.normalizedBoundingBoxes
   }
 
@@ -189,36 +207,79 @@ public class LKDeepLook {
   ///
   /// - Parameters:
   ///   - faceImage: The image that contains one or more faces.
-  ///   - knownFaceLocations: Optional - the bounding boxes of each face if you already know them.
+  ///   - knownFaceLocations: Optional - the bounding boxes of each face if you
+  ///    already know them.
+  ///   - processConfiguration: Allow fine tuning process configuration.
   /// - Returns: List of emotion recognize for each face in the image.
   public func faceEmotion(
     _ faceImage: UIImage,
-    knownFaceLocations: [CGRect] = []
-  ) async -> [Face.FaceEmotion] {
-
+    knownFaceLocations: [CGRect] = [],
+    processConfiguration: ProcessConfiguration = ProcessConfiguration()
+  ) -> [Face.FaceEmotion] {
     let action = ActionType.faceEmotion.process
-    let config = ProcessConfiguration()
-    config.minimumFaceArea = 0
     let faces = knownFaceLocations.map { (location) -> Face in
-      Face(localIdentifier: "id",
-           faceCroppedImage: UIImage(),
-           faceObservation: VNFaceObservation(boundingBox: location),
-           quality: 0,
-           roll: 0,
-           faceEncoding: [],
-           faceEmotion: .none)
+      Face(
+        faceObservation: VNFaceObservation(boundingBox: location)
+      )
     }
-    let asset = ProcessAsset(identifier: "id",
-                             image: faceImage,
-                             faces: faces)
-    let input = ProcessInput(asset: asset,
-                             configuration: config)
 
-    let landmarks = await Processor
+    let asset = ProcessAsset(
+      identifier: UUID().uuidString,
+      image: faceImage,
+      faces: faces
+    )
+    let input = ProcessInput(asset: asset,
+                             configuration: processConfiguration)
+
+    let landmarks = Processor
       .singleInputProcessor(element: input,
                             preformOn: action)
       .asset.faces
       .compactMap { $0.faceEmotion }
     return landmarks
+  }
+
+  /// An image analysis request that finds and recognizes text in an image.
+  ///
+  /// - Parameters:
+  ///   - image: The image contain text.
+  ///   - processConfiguration: Allow fine tuning process configuration.
+  /// - Returns: List of detected texts.
+  public func textRecognition(
+    _ image: UIImage,
+    processConfiguration: ProcessConfiguration = ProcessConfiguration()
+  ) -> [String] {
+    let asset = ProcessInput(
+      asset: ProcessAsset(identifier: UUID().uuidString, image: image),
+      configuration: processConfiguration
+    )
+    return Processor
+      .singleInputProcessor(
+        element: asset,
+        preformOn: Actions.textRecognition
+      ).asset.text
+  }
+
+  /// An image analysis request that finds and recognizes text in an image.
+  ///
+  /// - Parameters:
+  ///   - imageBuffer: The buffer contain text.
+  ///   - processConfiguration: Allow fine tuning process configuration.
+  /// - Returns: List of detected texts.
+  public func videoTextRecognition(
+    _ imageBuffer: CVImageBuffer,
+    processConfiguration: ProcessConfiguration = ProcessConfiguration()
+  ) -> [String] {
+    precondition (!Thread.isMainThread, "Do not run on main thread.")
+
+    let asset = ProcessInput(
+      asset: ProcessAsset(imageBuffer: imageBuffer),
+      configuration: processConfiguration
+    )
+    return Processor
+      .singleInputProcessor(
+        element: asset,
+        preformOn: Actions.videoTextRecognition
+      ).asset.text
   }
 }

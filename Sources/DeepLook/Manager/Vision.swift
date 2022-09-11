@@ -1,18 +1,9 @@
-//
-//  ALVisionManager.swift
-//  ALFacerKit
-//
 //  Created by amir.lahav on 16/11/2019.
 //  Copyright © 2019 la-labs. All rights reserved.
-//
 
 import Foundation
 import CoreML
-#if os(OSX)
-import AppKit
-#elseif os(iOS)
 import UIKit
-#endif
 
 class Vision {
     static let assetService = AssetService()
@@ -37,7 +28,6 @@ extension Vision {
     try await stack |> doProcess(process)
   }
 
-
   static func perform<T>(image: UIImage, model: MLModel, completion: @escaping (Result<T, VisionProcessError>)-> Void) {
     let asset = ProcessAsset(identifier: "localIdentifier", image: image)
     let input = ProcessInput(asset: asset)
@@ -55,6 +45,6 @@ extension Vision {
   ) throws -> GenericStackProcessor<ProcessInput,ProcessOutput>
   {
     let process = try Processor.makeSingleProcessProcessor(preformOn: process)
-    return Processor.makeStackProcessor(processor: process)
+    return try Processor.makeStackProcessor(processor: process)
   }
 }
