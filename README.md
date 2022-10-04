@@ -56,7 +56,7 @@ import DeepLook
 ```DeepLook``` provide the most simple API for computer vision analysis. Unlike other API in this package ```DeepLook``` is not using a background thread. It is your responsibility to call it from any background thread you like, like ```DispatchQueue.global().async``` to not block the ```main``` thread. 
 
 ### Find faces in pictures - [```Demo```](https://github.com/LA-Labs/DeepLook_Snippets/blob/main/Snippets/Face_location.swift)
-![Screenshot](https://github.com/LA-Labs/LookKit_Demo/blob/main/face_locations_demo.png)
+![Screenshot](https://github.com/LA-Labs/DeepLook_Demo/blob/main/face_locations_demo.png)
 
 Find all the faces that appear in a picture:
 ```swift
@@ -120,7 +120,7 @@ let faceLandmarks = DeepLook.faceLandmarks(image, knownFaceLocations: faceLocati
 ### Identify faces in pictures
 
 Recognize who appears in each photo.
-![Screenshot](https://github.com/LA-Labs/LookKit_Demo/blob/main/face_recognition_demo.png)
+![Screenshot](https://github.com/LA-Labs/DeepLook_Demo/blob/main/face_recognition_demo.png)
 
 ```swift
 // load 2 images to compare.
@@ -146,7 +146,7 @@ let results = DeepLook.faceDistance([unknown_encoding], faceToCompare: angelina_
 
 
 ### Find facial attribute in picture [```Demo```](https://github.com/LA-Labs/DeepLook_Snippets/blob/main/Snippets/Face_emotion.swift)
-![Screenshot](https://github.com/LA-Labs/LookKit_Demo/blob/main/emotion_demo.png)
+![Screenshot](https://github.com/LA-Labs/DeepLook_Demo/blob/main/emotion_demo.png)
 
 
 ```swift

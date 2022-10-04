@@ -1,8 +1,3 @@
-//
-//  AssetFetchingOptions.swift
-//  
-//
-//  Created by Amir Lahav on 23/09/2020.
 //  Copyright © 2019 la-labs. All rights reserved.
 
 import Foundation

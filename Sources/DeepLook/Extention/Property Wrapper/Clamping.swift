@@ -1,6 +1,6 @@
 //
 //  Clamping.swift
-//  LookKit
+//  DeepLook
 //
 //  Created by Amir Lahav on 09/03/2021.
 //  Copyright © 2019 la-labs. All rights reserved.
