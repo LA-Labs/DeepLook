@@ -170,7 +170,7 @@ public class LKActions {
   public func videoTextRecognition(
     input: ProcessInput
   ) throws -> ProcessInput {
-    var textRequest = VNRecognizeTextRequest()
+    let textRequest = VNRecognizeTextRequest()
 
     textRequest.recognitionLevel = input.configuration.textRecognitionLevel
     textRequest.usesLanguageCorrection = input.configuration.usesLanguageCorrection
