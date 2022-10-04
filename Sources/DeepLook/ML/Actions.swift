@@ -91,7 +91,7 @@ public class LKActions {
     let request = VNDetectFaceRectanglesRequest()
     
 #if targetEnvironment(simulator)
-    textRequest.usesCPUOnly = true
+    request.usesCPUOnly = true
 #endif
     try requestHandler.perform([request])
     guard let observations = request.results else {
@@ -114,7 +114,7 @@ public class LKActions {
     let request = VNDetectFaceRectanglesRequest()
     
 #if targetEnvironment(simulator)
-    textRequest.usesCPUOnly = true
+    request.usesCPUOnly = true
 #endif
     try requestHandler.perform([request])
     guard let observations = request.results else {
@@ -133,7 +133,7 @@ public class LKActions {
   public func textRecognition(
     input: ProcessInput
   ) throws -> ProcessInput {
-    var textRequest = VNRecognizeTextRequest()
+    let textRequest = VNRecognizeTextRequest()
 
     // Configure for running in real-time.
     textRequest.recognitionLevel = input.configuration.textRecognitionLevel
@@ -438,7 +438,7 @@ public class LKActions {
       let request = VNCoreMLRequest(model: model)
       request.imageCropAndScaleOption = .scaleFill
 #if targetEnvironment(simulator)
-      textRequest.usesCPUOnly = true
+      request.usesCPUOnly = true
 #endif
       let requestHandler = VNImageRequestHandler(cgImage: (input.asset.image.cgImage!), options: [:])
       try requestHandler.perform([request])
