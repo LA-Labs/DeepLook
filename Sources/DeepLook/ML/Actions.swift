@@ -65,7 +65,7 @@ public class LKActions {
   
   /// An image encoding request that encode facial features to floating-point vector.
   var faceEncoding: Action {
-    faceQuality >>> cropAndAlignFaces >>> encodeFaces
+    cropAndAlignFaces >>> encodeFaces
   }
   
   /// An image analysis request that finds facial emotion (such as happy and angry) in an image.
