@@ -196,7 +196,7 @@ public class LKActions {
         tags: input.asset.tags,
         boundingBoxes: input.asset.normalizedBoundingBoxes,
         faces: input.asset.faces,
-        text: result,
+        text: texts,
         imageBuffer: input.asset.imageBuffer
       ),
       configuration: input.configuration
