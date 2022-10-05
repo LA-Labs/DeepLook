@@ -181,11 +181,13 @@ public class LKActions {
                                                orientation: .up,
                                                options: [:])
     try requestHandler.perform([textRequest])
-    
-    let result = textRequest.results?.compactMap { observation in
-      // Return the string of the top VNRecognizedText instance.
-      observation.topCandidates(1).first?.string
-    } ?? []
+
+    guard let result = textRequest.results else {
+      return input
+    }
+    let texts: [String] = result.compactMap { visionResult in
+      visionResult.topCandidates(1).first?.string
+    }
     
     return ProcessInput(
       asset: .init(
