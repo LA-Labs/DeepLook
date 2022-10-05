@@ -54,8 +54,8 @@ public class ProcessConfiguration {
 
   /// Minimum face square area to keep detecting object in pipe
   ///
-  /// The default value is 4000 points (150x150) pixels
-  @NonNegative public var minimumFaceArea: CGFloat = 22500
+  /// The default value is 2500 points (50x50) points
+  @NonNegative public var minimumFaceArea: CGFloat = 2500
 
 
 
