@@ -22,7 +22,8 @@ public class LKActions {
   lazy var faceNet: VNCoreMLModel? = try? Models.getModel(by: .faceNet)
   lazy var vggResnet: VNCoreMLModel? = try? Models.getModel(by: .VGGFace2_resnet)
   lazy var vggSenet: VNCoreMLModel? = try? Models.getModel(by: .VGGFace2_senet)
-  
+  let textRequest = VNRecognizeTextRequest()
+
   
   /// shared instance
   public static let `default` = LKActions()
@@ -170,8 +171,7 @@ public class LKActions {
   public func videoTextRecognition(
     input: ProcessInput
   ) throws -> ProcessInput {
-    let textRequest = VNRecognizeTextRequest()
-    
+
     textRequest.recognitionLevel = input.configuration.textRecognitionLevel
     textRequest.usesLanguageCorrection = input.configuration.usesLanguageCorrection
     textRequest.regionOfInterest = input.configuration.roi
