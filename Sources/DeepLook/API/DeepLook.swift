@@ -133,6 +133,7 @@ public class LKDeepLook {
     _ faceImage: CVImageBuffer,
     processConfiguration: ProcessConfiguration = ProcessConfiguration()
   ) -> [CGRect] {
+    precondition (!Thread.isMainThread, "Do not run on main thread.")
     let input = ProcessInput(
       asset: ProcessAsset(imageBuffer: faceImage),
       configuration: processConfiguration
@@ -250,12 +251,17 @@ public class LKDeepLook {
   /// - Returns: List of detected texts.
   public func textRecognition(
     _ image: UIImage,
+    textRecognitionLevel: VNRequestTextRecognitionLevel = .fast,
+    usesLanguageCorrection: Bool = false,
     processConfiguration: ProcessConfiguration = ProcessConfiguration()
   ) -> [String] {
     let asset = ProcessInput(
       asset: ProcessAsset(identifier: UUID().uuidString, image: image),
       configuration: processConfiguration
     )
+    processConfiguration.textRecognitionLevel = textRecognitionLevel
+    processConfiguration.usesLanguageCorrection = usesLanguageCorrection
+
     return Processor
       .singleInputProcessor(
         element: asset,
@@ -271,9 +277,11 @@ public class LKDeepLook {
   /// - Returns: List of detected texts.
   public func videoTextRecognition(
     _ imageBuffer: CVImageBuffer,
+    usesLanguageCorrection: Bool = false,
     processConfiguration: ProcessConfiguration = ProcessConfiguration()
   ) -> [String] {
     precondition (!Thread.isMainThread, "Do not run on main thread.")
+    processConfiguration.usesLanguageCorrection = usesLanguageCorrection
 
     let asset = ProcessInput(
       asset: ProcessAsset(imageBuffer: imageBuffer),

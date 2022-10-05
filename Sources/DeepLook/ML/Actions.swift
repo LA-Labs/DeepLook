@@ -32,49 +32,49 @@ public class LKActions {
   //MARK: Public
   
   /// An image analysis request that finds faces within an image.
-  public var faceLocation: Action {
+  var faceLocation: Action {
     faceRectangle
   }
   
   /// A request to locate objects in an image.
   /// Objects include 100 different classes.
-  public var objectLocation: Action {
+  var objectLocation: Action {
     objectLocationDetection
   }
   
   /// A request to classify an image.
   /// Objects include 1000 different classes.
-  public var objectDetecting: Action {
+  var objectDetecting: Action {
     tagPhoto
   }
   
   /// A request that produces a floating-point number representing the capture quality of a given face in a photo.
-  public var faceQuality: Action {
+  var faceQuality: Action {
     imageQuality
   }
   
   /// An image analysis request that finds facial features (such as the eyes and mouth) in an image.
-  public var faceLandmarks: Action {
+  var faceLandmarks: Action {
     featureDetection
   }
   
   /// An image analysis request that finds facial features crop and align the face in an image.
-  public var cropAndAlignFaces: Action {
+  var cropAndAlignFaces: Action {
     featureDetection >>> cropChipFaces
   }
   
   /// An image encoding request that encode facial features to floating-point vector.
-  public var faceEncoding: Action {
+  var faceEncoding: Action {
     faceQuality >>> cropAndAlignFaces >>> encodeFaces
   }
   
   /// An image analysis request that finds facial emotion (such as happy and angry) in an image.
-  public var faceEmotion: Action {
+  var faceEmotion: Action {
     cropAndAlignFaces >>> faceEmotionProcess
   }
   
   //MARK: Internal
-  internal func fetchAsset() -> Action {
+  func fetchAsset() -> Action {
     fetchAsset
   }
   

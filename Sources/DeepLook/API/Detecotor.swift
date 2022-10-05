@@ -17,13 +17,14 @@ public class LKDetector {
   //MARK: Public API
   /// Apply vision actions on user gallery photos.
   /// Action can be chained to preform multiple request
-  /// Like Action.objectDetection >>> Action.faceLocation.
+  /// like .objectDetection + .faceLocation.
+  ///
   /// - Parameters:
   ///   - actions: Action request like face location, object detection, face landmarks
-  ///   - options: options for fetch asset from user galley.
+  ///   - options: Options for fetch asset from user galley.
   ///   Can be order and limited.
-  ///   - processConfiguration: configuration for action process, like model, image size etc.
-  ///   - completion: result contain list of ProcessOutput that contain all data requested.
+  ///   - processConfiguration: Configuration for action process, like model, image size etc.
+  /// - Returns: Result contain list of ProcessOutput that contain all data requested.
   public func analyze(
     _ actions: ActionType<ProcessInput>,
     with options: AssetFetchingOptions,
@@ -38,12 +39,13 @@ public class LKDetector {
 
   /// Apply vision actions on an image.
   /// Action can be chained to preform multiple request
-  /// Like `.objectDetection` >>> `.faceLocation`.
+  /// like .objectDetection + .faceLocation.
+  ///
   /// - Parameters:
   ///   - actions: Action request to perform on source images like face location, object detection, face landmarks.
   ///   - sourceImage: Source image to perform on.
-  ///   - processConfiguration: configuration for action process, like model, image size etc.
-  ///   - completion: result contain list of ProcessOutput that contain all data requested.
+  ///   - processConfiguration: Configuration for action process, like model, image size etc.
+  /// - Returns: Result contain list of ProcessOutput that contain all data requested.
   public func analyze(
     _ actions: ActionType<ProcessInput>,
     sourceImage: UIImage,
@@ -55,12 +57,13 @@ public class LKDetector {
 
   /// Apply computer vision actions on multiple provided images.
   /// Action can be chained to preform multiple request
-  /// Like `.objectDetection` + `.faceLocation`.
+  /// like .objectDetection + .faceLocation.
+  ///
   /// - Parameters:
   ///   - actions: Action request to perform on source images like face location, object detection, face landmarks.
   ///   - sourceImages: Source images to perform on.
-  ///   - processConfiguration: configuration for action process, like model, image size etc.
-  ///   - completion: result contain list of ProcessOutput that contain all data requested.
+  ///   - processConfiguration: Configuration for action process, like model, image size etc.
+  /// - Returns: Result contain list of ProcessOutput that contain all data requested.
   public func analyze(
     _ actions: ActionType<ProcessInput>,
     sourceImages: UIImage...,
