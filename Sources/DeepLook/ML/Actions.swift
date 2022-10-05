@@ -175,7 +175,8 @@ public class LKActions {
     textRequest.recognitionLevel = input.configuration.textRecognitionLevel
     textRequest.usesLanguageCorrection = input.configuration.usesLanguageCorrection
     textRequest.regionOfInterest = input.configuration.roi
-    
+    print(textRequest.recognitionLevel, textRequest.usesLanguageCorrection, textRequest.regionOfInterest)
+
     let requestHandler = VNImageRequestHandler(cvPixelBuffer: input.asset.imageBuffer!,
                                                orientation: .up,
                                                options: [:])
