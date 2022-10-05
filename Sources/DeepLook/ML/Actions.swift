@@ -22,7 +22,7 @@ public class LKActions {
   lazy var faceNet: VNCoreMLModel? = try? Models.getModel(by: .faceNet)
   lazy var vggResnet: VNCoreMLModel? = try? Models.getModel(by: .VGGFace2_resnet)
   lazy var vggSenet: VNCoreMLModel? = try? Models.getModel(by: .VGGFace2_senet)
-
+  
   
   /// shared instance
   public static let `default` = LKActions()
@@ -134,7 +134,7 @@ public class LKActions {
     input: ProcessInput
   ) throws -> ProcessInput {
     let textRequest = VNRecognizeTextRequest()
-
+    
     // Configure for running in real-time.
     textRequest.recognitionLevel = input.configuration.textRecognitionLevel
     // Language correction won't help recognizing phone numbers. It also
@@ -171,7 +171,7 @@ public class LKActions {
     input: ProcessInput
   ) throws -> ProcessInput {
     let textRequest = VNRecognizeTextRequest()
-
+    
     textRequest.recognitionLevel = input.configuration.textRecognitionLevel
     textRequest.usesLanguageCorrection = input.configuration.usesLanguageCorrection
     textRequest.regionOfInterest = input.configuration.roi
@@ -201,57 +201,33 @@ public class LKActions {
   }
   
   private func featureDetection(input: ProcessInput) throws -> ProcessInput {
-    return try autoreleasepool { () -> ProcessInput in
-      precondition(input.asset.image.cgImage != nil, "must provide cgImage \(input.asset.identifier)")
-      let requestHandler = VNImageRequestHandler(cgImage: (input.asset.image.cgImage!), options: [:])
-      let request = VNDetectFaceLandmarksRequest()
+    precondition(input.asset.image.cgImage != nil, "must provide cgImage \(input.asset.identifier)")
+    let requestHandler = VNImageRequestHandler(cgImage: (input.asset.image.cgImage!), options: [:])
+    let request = VNDetectFaceLandmarksRequest()
 #if targetEnvironment(simulator)
-      request.usesCPUOnly = true
+    request.usesCPUOnly = true
 #endif
-      if !input.asset.faces.isEmpty {
-        request.inputFaceObservations = input.asset.faces.map({ $0.faceObservation  })
-      }
-      try requestHandler.perform([request])
-      guard let observations = request.results else {
-        throw VisionProcessError.facesDetecting
-      }
+    if !input.asset.faces.isEmpty {
+      request.inputFaceObservations = input.asset.faces.map({ $0.faceObservation  })
+    }
+    try requestHandler.perform([request])
+    guard let observations = request.results else {
+      throw VisionProcessError.facesDetecting
+    }
+    
+    guard observations.count == input.asset.faces.count else {
       
-      guard observations.count == input.asset.faces.count else {
-        
-        let faces = observations.compactMap { (observation) -> Face? in
-          guard hasMinimumLandmarkRequirement(observation: observation, input: input) else {
-            return nil
-          }
-          return Face(localIdentifier: input.asset.identifier,
-                      faceCroppedImage: UIImage(),
-                      faceObservation: observation,
-                      quality: 0,
-                      roll: 0,
-                      faceEncoding: [],
-                      faceEmotion: .none)
-        }
-        
-        let asset = ProcessAsset(identifier: input.asset.identifier,
-                                 image: input.asset.image,
-                                 tags: input.asset.tags,
-                                 boundingBoxes: boundingBoxToRects(observation: observations),
-                                 faces: faces,
-                                 text: input.asset.text)
-        return ProcessInput(asset: asset, configuration: input.configuration)
-      }
-      
-      
-      let faces = zip(input.asset.faces, observations).compactMap { (face, observation) -> Face? in
+      let faces = observations.compactMap { (observation) -> Face? in
         guard hasMinimumLandmarkRequirement(observation: observation, input: input) else {
           return nil
         }
-        return Face(localIdentifier: face.localIdentifier,
-                    faceCroppedImage: face.faceCroppedImage,
+        return Face(localIdentifier: input.asset.identifier,
+                    faceCroppedImage: UIImage(),
                     faceObservation: observation,
-                    quality: face.quality,
-                    roll: face.roll,
-                    faceEncoding: face.faceEncoding,
-                    faceEmotion: face.faceEmotion)
+                    quality: 0,
+                    roll: 0,
+                    faceEncoding: [],
+                    faceEmotion: .none)
       }
       
       let asset = ProcessAsset(identifier: input.asset.identifier,
@@ -262,136 +238,152 @@ public class LKActions {
                                text: input.asset.text)
       return ProcessInput(asset: asset, configuration: input.configuration)
     }
+    
+    
+    let faces = zip(input.asset.faces, observations).compactMap { (face, observation) -> Face? in
+      guard hasMinimumLandmarkRequirement(observation: observation, input: input) else {
+        return nil
+      }
+      return Face(localIdentifier: face.localIdentifier,
+                  faceCroppedImage: face.faceCroppedImage,
+                  faceObservation: observation,
+                  quality: face.quality,
+                  roll: face.roll,
+                  faceEncoding: face.faceEncoding,
+                  faceEmotion: face.faceEmotion)
+    }
+    
+    let asset = ProcessAsset(identifier: input.asset.identifier,
+                             image: input.asset.image,
+                             tags: input.asset.tags,
+                             boundingBoxes: boundingBoxToRects(observation: observations),
+                             faces: faces,
+                             text: input.asset.text)
+    return ProcessInput(asset: asset, configuration: input.configuration)
   }
   
   private func encodeFaces(input: ProcessInput) throws -> ProcessInput {
-    return try autoreleasepool { () -> ProcessInput in
-      var model: VNCoreMLModel?
-      switch input.configuration.faceEncoderModel {
-      case .facenet:
-        model = faceNet
-      case .VGGFace2_resnet_Lite:
-        model = vggResnet
-      case .VGGFace2_senet_Lite:
-        model = vggSenet
-      }
-      
-      guard let mlModel = model else {
-        return input
-      }
-      let request = VNCoreMLRequest(model: mlModel)
-#if targetEnvironment(simulator)
-      request.usesCPUOnly = true
-#endif
-      let faces = try input.asset.faces.compactMap({ (face) -> Face? in
-        guard let cgImage = face.faceCroppedImage.cgImage else {
-          return nil
-        }
-        let MLRequestHandler = VNImageRequestHandler(cgImage: cgImage,
-                                                     options: [:])
-        try MLRequestHandler.perform([request])
-        return embeddingsHandler(face: face,
-                                 request: request,
-                                 configuration: input.configuration)
-      })
-      let asset = ProcessAsset(identifier: input.asset.identifier,
-                               image: input.asset.image,
-                               tags: input.asset.tags,
-                               boundingBoxes: input.asset.normalizedBoundingBoxes,
-                               faces: faces,
-                               text: input.asset.text)
-      
-      return ProcessInput(asset: asset, configuration: input.configuration)
+    var model: VNCoreMLModel?
+    switch input.configuration.faceEncoderModel {
+    case .facenet:
+      model = faceNet
+    case .VGGFace2_resnet_Lite:
+      model = vggResnet
+    case .VGGFace2_senet_Lite:
+      model = vggSenet
     }
+    
+    guard let mlModel = model else {
+      return input
+    }
+    let request = VNCoreMLRequest(model: mlModel)
+#if targetEnvironment(simulator)
+    request.usesCPUOnly = true
+#endif
+    let faces = try input.asset.faces.compactMap({ (face) -> Face? in
+      guard let cgImage = face.faceCroppedImage.cgImage else {
+        return nil
+      }
+      let MLRequestHandler = VNImageRequestHandler(cgImage: cgImage,
+                                                   options: [:])
+      try MLRequestHandler.perform([request])
+      return embeddingsHandler(face: face,
+                               request: request,
+                               configuration: input.configuration)
+    })
+    let asset = ProcessAsset(identifier: input.asset.identifier,
+                             image: input.asset.image,
+                             tags: input.asset.tags,
+                             boundingBoxes: input.asset.normalizedBoundingBoxes,
+                             faces: faces,
+                             text: input.asset.text)
+    
+    return ProcessInput(asset: asset, configuration: input.configuration)
   }
   
   private func imageQuality(input: ProcessInput) throws -> ProcessInput {
-    return try autoreleasepool { () -> ProcessInput in
-      guard input.configuration.minimumQualityFilter != .none else {
-        return input
-      }
-      precondition(input.asset.image.cgImage != nil, "must provide cgImage \(input.asset.identifier)")
-      
-      let requestHandler = VNImageRequestHandler(cgImage: input.asset.image.cgImage!, options: [:])
-      let request = VNDetectFaceCaptureQualityRequest()
+    guard input.configuration.minimumQualityFilter != .none else {
+      return input
+    }
+    precondition(input.asset.image.cgImage != nil, "must provide cgImage \(input.asset.identifier)")
+    
+    let requestHandler = VNImageRequestHandler(cgImage: input.asset.image.cgImage!, options: [:])
+    let request = VNDetectFaceCaptureQualityRequest()
 #if targetEnvironment(simulator)
-      request.usesCPUOnly = true
+    request.usesCPUOnly = true
 #endif
-      if !input.asset.faces.isEmpty {
-        request.inputFaceObservations = input.asset.faces.map({ $0.faceObservation })
-      }
-      try requestHandler.perform([request])
-      guard let observations = request.results else {
-        throw VisionProcessError.facesDetecting
-      }
-      guard observations.count == input.asset.faces.count else {
-        
-        let faces = observations.compactMap { (observation) -> Face? in
-          if observation.faceCaptureQuality ?? 0 < input.configuration.minimumQualityFilter.value {
-            return nil
-          }
-          return Face(localIdentifier: input.asset.identifier,
-                      faceCroppedImage: UIImage(),
-                      faceObservation: observation,
-                      quality: observation.faceCaptureQuality ?? 0,
-                      roll: 0,
-                      faceEncoding: [],
-                      faceEmotion: .none)
-        }
-        
-        let asset = ProcessAsset(identifier: input.asset.identifier,
-                                 image: input.asset.image,
-                                 tags: input.asset.tags,
-                                 boundingBoxes: boundingBoxToRects(observation: observations),
-                                 faces: faces,
-                                 text: input.asset.text)
-        return ProcessInput(asset: asset, configuration: input.configuration)
-      }
-      let faces = zip(input.asset.faces, observations).compactMap { (face, observation) -> Face? in
+    if !input.asset.faces.isEmpty {
+      request.inputFaceObservations = input.asset.faces.map({ $0.faceObservation })
+    }
+    try requestHandler.perform([request])
+    guard let observations = request.results else {
+      throw VisionProcessError.facesDetecting
+    }
+    guard observations.count == input.asset.faces.count else {
+      
+      let faces = observations.compactMap { (observation) -> Face? in
         if observation.faceCaptureQuality ?? 0 < input.configuration.minimumQualityFilter.value {
           return nil
         }
-        return Face(localIdentifier: face.localIdentifier,
-                    faceCroppedImage: face.faceCroppedImage,
-                    faceObservation: face.faceObservation,
+        return Face(localIdentifier: input.asset.identifier,
+                    faceCroppedImage: UIImage(),
+                    faceObservation: observation,
                     quality: observation.faceCaptureQuality ?? 0,
-                    roll: face.roll,
-                    faceEncoding: face.faceEncoding,
-                    faceEmotion: face.faceEmotion)
+                    roll: 0,
+                    faceEncoding: [],
+                    faceEmotion: .none)
       }
+      
       let asset = ProcessAsset(identifier: input.asset.identifier,
                                image: input.asset.image,
                                tags: input.asset.tags,
-                               boundingBoxes: input.asset.normalizedBoundingBoxes,
+                               boundingBoxes: boundingBoxToRects(observation: observations),
                                faces: faces,
                                text: input.asset.text)
       return ProcessInput(asset: asset, configuration: input.configuration)
     }
+    let faces = zip(input.asset.faces, observations).compactMap { (face, observation) -> Face? in
+      if observation.faceCaptureQuality ?? 0 < input.configuration.minimumQualityFilter.value {
+        return nil
+      }
+      return Face(localIdentifier: face.localIdentifier,
+                  faceCroppedImage: face.faceCroppedImage,
+                  faceObservation: face.faceObservation,
+                  quality: observation.faceCaptureQuality ?? 0,
+                  roll: face.roll,
+                  faceEncoding: face.faceEncoding,
+                  faceEmotion: face.faceEmotion)
+    }
+    let asset = ProcessAsset(identifier: input.asset.identifier,
+                             image: input.asset.image,
+                             tags: input.asset.tags,
+                             boundingBoxes: input.asset.normalizedBoundingBoxes,
+                             faces: faces,
+                             text: input.asset.text)
+    return ProcessInput(asset: asset, configuration: input.configuration)
   }
   
   private func tagPhoto(input: ProcessInput) throws -> ProcessInput {
-    return try autoreleasepool { () -> ProcessInput in
-      let requestHandler = VNImageRequestHandler(cgImage: (input.asset.image.cgImage!), options: [:])
-      let request = VNClassifyImageRequest()
+    let requestHandler = VNImageRequestHandler(cgImage: (input.asset.image.cgImage!), options: [:])
+    let request = VNClassifyImageRequest()
 #if targetEnvironment(simulator)
-      request.usesCPUOnly = true
+    request.usesCPUOnly = true
 #endif
-      try requestHandler.perform([request])
-      var categories: [DetectedObject] = []
-      
-      if let observations = request.results {
-        categories = observations
-          .filter { $0.hasMinimumRecall(0.01, forPrecision: 0.9) }
-          .reduce(into: [DetectedObject]()) { arr, observation in arr.append(DetectedObject(identifier: observation.identifier , confidence: observation.confidence, normalizedLocation: .zero))}
-      }
-      let asset = ProcessAsset(identifier: input.asset.identifier,
-                               image: input.asset.image,
-                               tags: categories,
-                               boundingBoxes: input.asset.normalizedBoundingBoxes,
-                               faces: input.asset.faces,
-                               text: input.asset.text)
-      return ProcessInput(asset: asset, configuration: input.configuration)
+    try requestHandler.perform([request])
+    var categories: [DetectedObject] = []
+    
+    if let observations = request.results {
+      categories = observations
+        .filter { $0.hasMinimumRecall(0.01, forPrecision: 0.9) }
+        .reduce(into: [DetectedObject]()) { arr, observation in arr.append(DetectedObject(identifier: observation.identifier , confidence: observation.confidence, normalizedLocation: .zero))}
     }
+    let asset = ProcessAsset(identifier: input.asset.identifier,
+                             image: input.asset.image,
+                             tags: categories,
+                             boundingBoxes: input.asset.normalizedBoundingBoxes,
+                             faces: input.asset.faces,
+                             text: input.asset.text)
+    return ProcessInput(asset: asset, configuration: input.configuration)
   }
   
   private func objectLocationDetection(input: ProcessInput) throws -> ProcessInput {
@@ -431,38 +423,35 @@ public class LKActions {
   }
   
   private func faceEmotionProcess(input: ProcessInput) throws -> ProcessInput {
-    return try autoreleasepool { () -> ProcessInput in
-      precondition(input.asset.image.cgImage != nil, "must provide cgImage \(input.asset.identifier)")
-      
-      let model = try Models.getModel(by: .faceExpression)
-      let request = VNCoreMLRequest(model: model)
-      request.imageCropAndScaleOption = .scaleFill
+    precondition(input.asset.image.cgImage != nil, "must provide cgImage \(input.asset.identifier)")
+    
+    let model = try Models.getModel(by: .faceExpression)
+    let request = VNCoreMLRequest(model: model)
+    request.imageCropAndScaleOption = .scaleFill
 #if targetEnvironment(simulator)
-      request.usesCPUOnly = true
+    request.usesCPUOnly = true
 #endif
-      let requestHandler = VNImageRequestHandler(cgImage: (input.asset.image.cgImage!), options: [:])
-      try requestHandler.perform([request])
-      
-      
-      let faces = try input.asset.faces.compactMap({ (face) -> Face? in
-        guard let cgImage = face.faceCroppedImage.cgImage else {
-          return nil
-        }
-        let MLRequestHandler = VNImageRequestHandler(cgImage: cgImage, options: [:])
-        try MLRequestHandler.perform([request])
-        return emotionHandler(face: face, request: request, configuration: input.configuration)
-      })
-      
-      let asset = ProcessAsset(identifier: input.asset.identifier,
-                               image: input.asset.image,
-                               tags: input.asset.tags,
-                               boundingBoxes: input.asset.normalizedBoundingBoxes,
-                               faces: faces,
-                               text: input.asset.text)
-      
-      return ProcessInput(asset: asset, configuration: input.configuration)
-      
-    }
+    let requestHandler = VNImageRequestHandler(cgImage: (input.asset.image.cgImage!), options: [:])
+    try requestHandler.perform([request])
+    
+    
+    let faces = try input.asset.faces.compactMap({ (face) -> Face? in
+      guard let cgImage = face.faceCroppedImage.cgImage else {
+        return nil
+      }
+      let MLRequestHandler = VNImageRequestHandler(cgImage: cgImage, options: [:])
+      try MLRequestHandler.perform([request])
+      return emotionHandler(face: face, request: request, configuration: input.configuration)
+    })
+    
+    let asset = ProcessAsset(identifier: input.asset.identifier,
+                             image: input.asset.image,
+                             tags: input.asset.tags,
+                             boundingBoxes: input.asset.normalizedBoundingBoxes,
+                             faces: faces,
+                             text: input.asset.text)
+    
+    return ProcessInput(asset: asset, configuration: input.configuration)
   }
   
   func custom<T>(model: MLModel) -> CustomFilter<T> {
