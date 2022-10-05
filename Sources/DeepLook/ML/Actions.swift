@@ -172,8 +172,8 @@ public class LKActions {
   ) throws -> ProcessInput {
     let textRequest = VNRecognizeTextRequest()
     
-    textRequest.recognitionLevel = .fast
-    textRequest.usesLanguageCorrection = false
+    textRequest.recognitionLevel = input.configuration.textRecognitionLevel
+    textRequest.usesLanguageCorrection =  input.configuration.usesLanguageCorrection
     textRequest.regionOfInterest = input.configuration.roi
 
     let requestHandler = VNImageRequestHandler(cvPixelBuffer: input.asset.imageBuffer!,
