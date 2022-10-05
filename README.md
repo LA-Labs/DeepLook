@@ -35,7 +35,7 @@ It has 4 main API's:
 dependencies: [
   .package(
       url:  "https://github.com/LA-Labs/DeepLook.git",
-      .branch("master")
+      .branch("main")
   )
 ]
 ```
