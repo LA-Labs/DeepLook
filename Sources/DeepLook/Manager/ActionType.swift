@@ -1,10 +1,9 @@
-//  Created by Amir Lahav on 30/06/2022.
 //  Copyright © 2019 la-labs. All rights reserved.
 
 import Foundation
 
-public struct ActionType {
-  public var process: (ProcessInput) throws -> ProcessInput
+public struct ActionType<A> {
+  public var process: (A) throws -> A
 }
 
 public extension ActionType {
@@ -14,27 +13,31 @@ public extension ActionType {
 }
 
 public extension ActionType {
-  static var faceLocation: ActionType {
+  static var faceLocation: ActionType<ProcessInput> {
     .init(process: Actions.faceLocation)
   }
 
-  static var objectDetecting: ActionType {
+  static var objectDetecting: ActionType<ProcessInput> {
     .init(process: Actions.objectDetecting)
   }
 
-  static var objectLocation: ActionType {
+  static var objectLocation: ActionType<ProcessInput> {
     .init(process: Actions.objectLocation)
   }
 
-  static var faceEncoding: ActionType {
+  static var faceEncoding: ActionType<ProcessInput> {
     .init(process: Actions.faceEncoding)
   }
 
-  static var faceEmotion: ActionType {
+  static var faceEmotion: ActionType<ProcessInput> {
     .init(process: Actions.faceEmotion)
   }
 
-  static var faceQuality: ActionType {
+  static var faceQuality: ActionType<ProcessInput> {
     .init(process: Actions.faceQuality)
+  }
+
+  static var videoTextRecognition: ActionType<ProcessInput> {
+    .init(process: Actions.videoTextRecognition)
   }
 }

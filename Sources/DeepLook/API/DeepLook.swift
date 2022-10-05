@@ -56,7 +56,10 @@ public class LKDeepLook {
     )
 
     let encoding = Processor
-      .singleInputProcessor(element: input, preformOn: ActionType.faceEncoding.process)
+      .singleInputProcessor(
+        element: input,
+        preformOn: ActionType<ProcessInput>.faceEncoding.process
+      )
       .asset.faces
       .map { (face) -> [Double] in
         face.faceEncoding
@@ -94,7 +97,7 @@ public class LKDeepLook {
     )
 
     let landmarks = Processor
-      .singleInputProcessor(element: input, preformOn: ActionType.faceEncoding.process)
+      .singleInputProcessor(element: input, preformOn: ActionType<ProcessInput>.faceEncoding.process)
       .asset.faces
       .compactMap { $0.landmarks?.allPoints }
     return landmarks
@@ -216,7 +219,7 @@ public class LKDeepLook {
     knownFaceLocations: [CGRect] = [],
     processConfiguration: ProcessConfiguration = ProcessConfiguration()
   ) -> [Face.FaceEmotion] {
-    let action = ActionType.faceEmotion.process
+    let action = ActionType<ProcessInput>.faceEmotion.process
     let faces = knownFaceLocations.map { (location) -> Face in
       Face(
         faceObservation: VNFaceObservation(boundingBox: location)
@@ -279,7 +282,9 @@ public class LKDeepLook {
     return Processor
       .singleInputProcessor(
         element: asset,
-        preformOn: Actions.videoTextRecognition
+        preformOn: ActionType<ProcessInput>
+          .videoTextRecognition
+          .process
       ).asset.text
   }
 }

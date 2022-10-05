@@ -25,26 +25,27 @@ public class LKDetector {
   ///   - processConfiguration: configuration for action process, like model, image size etc.
   ///   - completion: result contain list of ProcessOutput that contain all data requested.
   public func analyze(
-    _ actions: ActionType,
+    _ actions: ActionType<ProcessInput>,
     with options: AssetFetchingOptions,
     processConfiguration: ProcessConfiguration = ProcessConfiguration()
   ) async throws -> [ProcessOutput] {
-      let assets = Vision.assetService.stackInputs(with: options,
-                                                   processConfiguration: processConfiguration)
+      let assets = Vision.assetService.stackInputs(
+        with: options,
+        processConfiguration: processConfiguration
+      )
       return try await Vision.detect(objects: assets, process: actions.process)
     }
 
-
   /// Apply vision actions on an image.
   /// Action can be chained to preform multiple request
-  /// Like `Action.objectDetection` >>> `Action.faceLocation`.
+  /// Like `.objectDetection` >>> `.faceLocation`.
   /// - Parameters:
-  ///   - actions: Action request like face location, object detection, face landmarks
+  ///   - actions: Action request to perform on source images like face location, object detection, face landmarks.
   ///   - sourceImage: Source image to perform on.
   ///   - processConfiguration: configuration for action process, like model, image size etc.
   ///   - completion: result contain list of ProcessOutput that contain all data requested.
   public func analyze(
-    _ actions: ActionType,
+    _ actions: ActionType<ProcessInput>,
     sourceImage: UIImage,
     processConfiguration: ProcessConfiguration = ProcessConfiguration()
   )  async throws -> [ProcessOutput] {
@@ -54,15 +55,14 @@ public class LKDetector {
 
   /// Apply computer vision actions on multiple provided images.
   /// Action can be chained to preform multiple request
-  /// Like `Action.objectDetection` >>> `Action.faceLocation`.
+  /// Like `.objectDetection` + `.faceLocation`.
   /// - Parameters:
-  ///   - actions: Action request like face location, object detection, face landmarks
+  ///   - actions: Action request to perform on source images like face location, object detection, face landmarks.
   ///   - sourceImages: Source images to perform on.
   ///   - processConfiguration: configuration for action process, like model, image size etc.
   ///   - completion: result contain list of ProcessOutput that contain all data requested.
-
   public func analyze(
-    _ actions: ActionType,
+    _ actions: ActionType<ProcessInput>,
     sourceImages: UIImage...,
     processConfiguration: ProcessConfiguration = ProcessConfiguration()
   ) async throws -> [ProcessOutput] {
@@ -93,13 +93,13 @@ public class LKDetector {
 private extension LKDetector {
 
   func analyze(
-    _ actions: ActionType,
+    _ actions: ActionType<ProcessInput>,
     sourceImages: [UIImage],
     processConfiguration: ProcessConfiguration = ProcessConfiguration()
   ) async throws -> [ProcessOutput] {
-    let inputAsset = sourceImages.map { (sourceImage) -> ProcessAsset in
+    let inputAsset = sourceImages.map { (sourceImage) in
       ProcessAsset(identifier: "sourceImage", image: sourceImage)
-    }.map { (processAsset) -> ProcessInput in
+    }.map { (processAsset) in
       ProcessInput(asset: processAsset, configuration: processConfiguration)
     }.chunked(into: 10)
     var objects = Stack<[ProcessInput]>()

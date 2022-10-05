@@ -1,6 +1,4 @@
-//  Created by amir.lahav on 16/11/2019.
 //  Copyright © 2019 la-labs. All rights reserved.
-//
 
 import Foundation
 import Photos
@@ -35,9 +33,6 @@ class Processor {
     }
   }
 
-  /// Create operation queue to process all assets.
-  /// - Return analyzed objects
-  /// - Parameter images: User Images
   static func singleProcessor<Input: Sendable, Output: Sendable>(
     elements: [Input],
     preformOn: @escaping AsyncSinglePipe<Input,Output>) async throws -> [Output] {
@@ -62,9 +57,6 @@ class Processor {
       }
     }
 
-  /// Create operation queue to process all assets.
-  /// - Return analyzed objects
-  /// - Parameter images: User Images
   static func makeSingleProcessProcessor<Input, Output>(preformOn: @escaping AsyncSinglePipe<Input,Output>) throws -> AsyncMultiplePipe<Input, Output> {
     return { (element) in
       return try await singleProcessor(elements: element, preformOn: preformOn)
