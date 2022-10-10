@@ -15,6 +15,25 @@ public class LKDeepLook {
   // initiate only once.
   private init() { }
 
+  /// Given an image, returns an array of texts describing objects in the image.
+  ///
+  /// - Parameters:
+  ///   - image: The image that contains one or more objects.
+  ///   - processConfiguration: Allow fine tuning process configuration.
+  /// - Returns: A sorted list by probability of classified object.
+  public func imageClassification(
+    _ faceImage: UIImage,
+    processConfiguration: ProcessConfiguration = ProcessConfiguration()
+  ) -> [String] {
+    let input = ProcessInput(
+      asset: ProcessAsset(image: faceImage),
+      configuration: processConfiguration
+    )
+
+    return Processor
+      .singleInputProcessor(element: input, preformOn: Actions.objectDetecting)
+      .asset.tags.map(\.identifier)
+  }
 
   /// Given an image, return the Multi-dimension face encoding for each face in the image.
   ///
@@ -103,7 +122,7 @@ public class LKDeepLook {
     return landmarks
   }
 
-  /// Returns an array of bounding boxes of human faces in an image.
+  /// Given an image, returns an array of bounding boxes of human faces in an image.
   ///
   /// - Parameters:
   ///   - faceImage: The image that contains one or more faces.
