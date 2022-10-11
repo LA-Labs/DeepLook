@@ -369,7 +369,7 @@ public class LKActions {
     let requestHandler = VNImageRequestHandler(cgImage: (input.asset.image.cgImage!), options: [:])
     let request = VNClassifyImageRequest()
 #if targetEnvironment(simulator)
-    request.usesCPUOnly = false
+//    request.usesCPUOnly = true
 #endif
     try requestHandler.perform([request])
     var categories: [DetectedObject] = []
