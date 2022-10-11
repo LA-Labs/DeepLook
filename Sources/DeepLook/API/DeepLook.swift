@@ -22,11 +22,11 @@ public class LKDeepLook {
   ///   - processConfiguration: Allow fine tuning process configuration.
   /// - Returns: A sorted list by probability of classified object.
   public func imageClassification(
-    _ faceImage: UIImage,
+    _ image: UIImage,
     processConfiguration: ProcessConfiguration = ProcessConfiguration()
   ) -> [String] {
     let input = ProcessInput(
-      asset: ProcessAsset(image: faceImage),
+      asset: ProcessAsset(image: image),
       configuration: processConfiguration
     )
 
