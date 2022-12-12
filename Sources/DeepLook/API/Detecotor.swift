@@ -4,8 +4,10 @@ import Foundation
 import UIKit
 
 /// Reference to `LKDetector.default` for quick bootstrapping and examples.
+@available(iOS 13.0, *)
 public let Detector = LKDetector.default
 
+@available (iOS 13.0, *)
 public class LKDetector {
 
   // shared instance
@@ -92,7 +94,7 @@ public class LKDetector {
   }
 }
 
-
+@available (iOS 13.0, *)
 private extension LKDetector {
 
   func analyze(

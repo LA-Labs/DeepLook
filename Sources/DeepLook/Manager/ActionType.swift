@@ -12,6 +12,7 @@ public extension ActionType {
   }
 }
 
+@available (iOS 13.0, *)
 public extension ActionType {
   static var faceLocation: ActionType<ProcessInput> {
     .init(process: Actions.faceLocation)

@@ -8,6 +8,7 @@ class Vision {
     static let assetService = AssetService()
 }
 
+@available (iOS 13.0, *)
 extension Vision {
 
   static func detect(objects stack: Stack<[ProcessInput]>,

@@ -4,8 +4,10 @@ import Foundation
 import UIKit
 
 /// Reference to `LKRecognition.default` for quick bootstrapping and examples.
+@available (iOS 13.0, *)
 public let Recognition = LKRecognition.default
 
+@available (iOS 13.0, *)
 public class LKRecognition {
   
   // shared instance
@@ -252,6 +254,7 @@ public class LKRecognition {
   }
 }
 
+@available (iOS 13.0, *)
 private extension LKRecognition {
   func groupFaces(faces: [Face], clusterOptions: ClusterOptions) -> [[Face]] {
     switch clusterOptions.clusterType {
