@@ -13,7 +13,7 @@ import AppKit
 import UIKit
 #endif
 
-
+@available (iOS 13.0, *)
 public class ImageFetcherService {
     
     private let imgManager = PHImageManager.default()

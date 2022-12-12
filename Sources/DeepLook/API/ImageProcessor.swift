@@ -4,8 +4,10 @@ import Foundation
 import UIKit
 
 /// Reference to `LKImageProcessor.default` for quick bootstrapping and examples.
+@available (iOS 13.0, *)
 public let ImageProcessor = LKImageProcessor.default
 
+@available (iOS 13.0, *)
 public class LKImageProcessor {
 
   // shared instance

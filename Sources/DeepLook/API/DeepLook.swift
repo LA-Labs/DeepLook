@@ -5,8 +5,10 @@ import UIKit
 import Vision
 
 /// Reference to `LKRecognition.default` for quick bootstrapping and examples.
+@available (iOS 13.0, *)
 public let DeepLook = LKDeepLook.default
 
+@available (iOS 13.0, *)
 public class LKDeepLook {
 
   /// shared instance.

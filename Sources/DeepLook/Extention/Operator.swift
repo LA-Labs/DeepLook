@@ -16,6 +16,7 @@ func |> <U, T> (x: U, f: (U) throws -> T) rethrows -> T {
     return try f(x)
 }
 
+@available (iOS 13.0, *)
 func |> <U, T> (x: U, f: (U) async throws -> T) async rethrows -> T {
     return try await f(x)
 }

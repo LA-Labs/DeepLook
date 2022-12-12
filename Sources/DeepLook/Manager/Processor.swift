@@ -10,6 +10,7 @@ typealias AsyncMultiplePipe<Input,Output> = ([Input]) async throws -> [Output]
 typealias GenericStackProcessor<Input,Output> = (Stack<[Input]>) async throws -> [Output]
 typealias StackProcessor = (Stack<[ProcessAsset]>) throws -> [ProcessAsset]
 
+@available (iOS 13.0, *)
 class Processor {    
   static func singleInputProcessor<Input, Output>(
     element: Input,

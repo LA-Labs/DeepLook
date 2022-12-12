@@ -14,8 +14,10 @@ typealias JobPipeline = (ProcessInput) throws -> ProcessOutput
 typealias CustomFilter<T> = (ProcessInput) throws -> T
 
 /// Reference to `LKActions.default` for quick bootstrapping and examples.
+@available (iOS 13.0, *)
 public let Actions = LKActions.default
 
+@available (iOS 13.0, *)
 public class LKActions {
   
   /// Models
@@ -520,6 +522,7 @@ public class LKActions {
   }
 }
 
+@available (iOS 13.0, *)
 private extension LKActions {
 
   func boundingBoxToRects(observation: [VNFaceObservation]) -> [CGRect] {

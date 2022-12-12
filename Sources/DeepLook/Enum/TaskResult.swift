@@ -1,6 +1,7 @@
 //  Created by Amir Lahav on 30/07/2022.
 //  Copyright © 2019 la-labs. All rights reserved.
 
+@available (iOS 13.0, *)
 public enum TaskResult<Success: Sendable>: Sendable {
   case success(Success)
   case failure(Error)
